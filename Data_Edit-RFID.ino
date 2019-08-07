@@ -13,8 +13,15 @@ void setup() {
    SPI.begin();       // Init SPI bus
    mfrc522.PCD_Init(); // Init MFRC522
    Serial.println("RFID reading UID");
+   
+pinMode(22,INTPUT);//100
+pinMode(24,INTPUT);//200
+pinMode(26,INTPUT);//300
+pinMode(28,INTPUT);//400
+pinMode(30,INTPUT);//500
 }
 void loop() {
+   
 /*if ( mfrc522.PICC_IsNewCardPresent())
     {
         if ( mfrc522.PICC_ReadCardSerial())
