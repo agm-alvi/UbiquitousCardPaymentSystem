@@ -3,7 +3,7 @@
 #define SS_PIN 53
 #define RST_PIN 49
 int a_amount = 5000, b_amount = 5000, c_amount = 5000;
-
+int amount = 0;
 char A_card = "3F AD 4D 29";
 char B_card = "BO 77 BB 25";
 char C_card = "71 F3 3D 08";
@@ -14,14 +14,13 @@ void setup() {
    mfrc522.PCD_Init(); // Init MFRC522
    Serial.println("RFID reading UID");
    
-pinMode(22,INTPUT);//100
-pinMode(24,INTPUT);//200
-pinMode(26,INTPUT);//300
-pinMode(28,INTPUT);//400
-pinMode(30,INTPUT);//500
+pinMode(23,INPUT);//100
+pinMode(25,INPUT);//200
+pinMode(27,INPUT);//300
+pinMode(29,INPUT);//400
+pinMode(31,INPUT);//500
 }
 void loop() {
-   
 /*if ( mfrc522.PICC_IsNewCardPresent())
     {
         if ( mfrc522.PICC_ReadCardSerial())
@@ -36,7 +35,14 @@ void loop() {
             mfrc522.PICC_HaltA();
         }
 }*/
+if(digitalRead(23) == HIGH) amount = 100;
+else if (digitalRead(25) == HIGH) amount = 200;
 
+else if (digitalRead(27) == HIGH) amount = 300;
+
+else if (digitalRead(29) == HIGH) amount = 400;
+
+else if (digitalRead(31) == HIGH) amount = 500;
   // Look for new cards
   if ( ! mfrc522.PICC_IsNewCardPresent()) 
   {
@@ -64,14 +70,14 @@ void loop() {
   if (content.substring(1) == "3F AD 4D 29") //change here the UID of the card/cards that you want to give access
   {
     Serial.println("Authorized access");
-    a_amount -=200;
+    a_amount -=amount;
     Serial.println(a_amount);
     delay(1000);
   }
   else if (content.substring(1) == "B0 77 BB 25" ) //change here the UID of the card/cards that you want to give access
   {
     Serial.println("Authorized access");
-    b_amount -=300;
+    b_amount -=amount;
     Serial.println(b_amount);
     delay(1000);
   }
