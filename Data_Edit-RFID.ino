@@ -5,7 +5,7 @@
 #define RST_PIN 49
 const int rs = 2, en = 3, d4 = 4, d5 = 5, d6 = 6, d7 = 7;
 LiquidCrystal lcd(rs,en,d4,d5,d6,d7);
-
+String lcdprnt = "Paid ";
 int a_amount = 5000, b_amount = 5000, c_amount = 5000;
 int amount = 0;
 char A_card = "3F AD 4D 29";
@@ -13,6 +13,7 @@ char B_card = "BO 77 BB 25";
 char C_card = "71 F3 3D 08";
 MFRC522 mfrc522(SS_PIN, RST_PIN); // Instance of the class
 void setup() {
+  lcd.begin(16,2);
    Serial.begin(9600);
    SPI.begin();       // Init SPI bus
    mfrc522.PCD_Init(); // Init MFRC522
@@ -64,7 +65,9 @@ else if (digitalRead(31) == HIGH) amount = 500;
     return;
   }
   //Show UID on serial monitor
+  lcd.clear();
   Serial.print("UID tag :");
+  lcd.print("UID tag :");
   String content= "";
   byte letter;
   for (byte i = 0; i < mfrc522.uid.size; i++) 
@@ -75,6 +78,7 @@ else if (digitalRead(31) == HIGH) amount = 500;
      content.concat(String(mfrc522.uid.uidByte[i], HEX));
   }
   Serial.println();
+  
   Serial.print("Message : ");
   content.toUpperCase();
   if (content.substring(1) == "3F AD 4D 29") //change here the UID of the card/cards that you want to give access
@@ -82,21 +86,37 @@ else if (digitalRead(31) == HIGH) amount = 500;
     Serial.println("Authorized access");
     a_amount -=amount;
     Serial.println(a_amount);
-    delay(1000);
+  lcd.clear();
+  lcd.print(content);
+  lcd.setCursor(0,1);
+  lcdprnt = lcdprnt+amount;
+  lcd.print(lcdprnt);
+    delay(2000);
+   
   }
   else if (content.substring(1) == "B0 77 BB 25" ) //change here the UID of the card/cards that you want to give access
   {
     Serial.println("Authorized access");
     b_amount -=amount;
     Serial.println(b_amount);
-    delay(1000);
+  lcd.clear();
+  lcd.print(content);
+  lcd.setCursor(0,1);
+  lcdprnt = lcdprnt+amount;
+  lcd.print(lcdprnt);
+    delay(2000);
   }
  else if (content.substring(1) == "71 F3 3D 08") //change here the UID of the card/cards that you want to give access
   {
     Serial.println("Authorized access");
     c_amount -=amount;
     Serial.println(c_amount);
-    delay(1000);
+  lcd.clear();
+  lcd.print(content);
+  lcd.setCursor(0,1);
+  lcdprnt = lcdprnt+amount;
+  lcd.print(lcdprnt);
+    delay(2000);
   }
  else   {
     Serial.println(" Access denied");
