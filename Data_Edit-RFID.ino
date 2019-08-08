@@ -45,14 +45,14 @@ void loop() {
         }
 }*/
 digitalWrite(8,HIGH);
-if(digitalRead(2) == HIGH) amount = 100;
-else if (digitalRead(3) == HIGH) amount = 200;
+if(digitalRead(23) == HIGH) amount = 100;
+else if (digitalRead(25) == HIGH) amount = 200;
 
-else if (digitalRead(4) == HIGH) amount = 300;
+else if (digitalRead(27) == HIGH) amount = 300;
 
-else if (digitalRead(5) == HIGH) amount = 400;
+else if (digitalRead(29) == HIGH) amount = 400;
 
-else if (digitalRead(6) == HIGH) amount = 500;
+else if (digitalRead(31) == HIGH) amount = 500;
   // Look for new cards
   if ( ! mfrc522.PICC_IsNewCardPresent()) 
   {
