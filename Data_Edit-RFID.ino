@@ -91,13 +91,13 @@ else if (digitalRead(31) == HIGH) amount = 500;
     Serial.println(b_amount);
     delay(1000);
   }
- /*else if (content.substring(1) == C_card) //change here the UID of the card/cards that you want to give access
+ else if (content.substring(1) == "71 F3 3D 08") //change here the UID of the card/cards that you want to give access
   {
     Serial.println("Authorized access");
     c_amount -=amount;
     Serial.println(c_amount);
     delay(1000);
-  }*/
+  }
  else   {
     Serial.println(" Access denied");
     }
