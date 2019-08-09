@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 06, 2019 at 02:26 PM
+-- Generation Time: Aug 09, 2019 at 01:04 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -71,10 +71,22 @@ CREATE TABLE `toll_booth` (
 --
 
 CREATE TABLE `users` (
-  `u_id` int(5) NOT NULL,
+  `u_id` varchar(11) NOT NULL,
   `Name` varchar(50) NOT NULL,
   `Balance` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`u_id`, `Name`, `Balance`) VALUES
+('3F AD 4D 29', 'AAA', 5000),
+('71 F3 3D 08', 'CCC', 5000),
+('A1 F4 78 D5', 'DDD', 5000),
+('41 24 9D D5', 'EEE', 5000),
+('C1 7B E5 D5', 'FFF', 5000),
+('B0 77 BB 25', 'BBB', 5000);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
