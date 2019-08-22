@@ -18,9 +18,8 @@ byte colPins[COLS] = {31, 33, 35, 37}; //connect to the column pinouts of the ke
 int sum = 0;
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
 
-//void please_pay(char amount[]);
 
-//char amount[5] = {0,0,0,0,0};
+
 void setup() {
   // put your setup code here, to run once:
   lcd.begin(16,2);
@@ -48,7 +47,7 @@ lcd.print("Key Input");
      key = keypad.getKey();
   if (key != NO_KEY){
    // Serial.println(key);
-    lcd.print(key);
+    Serial.print(key);
     int am;
        switch(key){
       case '0' : am = 0; break;
@@ -63,25 +62,29 @@ lcd.print("Key Input");
       case '9' : am = 9; break;
       
       case 'A' : goto Start; break;
-      case 'C' : sum = 0; break;
+     // case 'B' : sum = (sum-am)/100; am =0; break;
+      
+      case 'C' : sum = 0; am = 0; break;
       case 'D' : goto ending; break;
       
       default :   break;
     }
  
     
-    Serial.print(am);
+    lcd.print(am);
     sum = (sum*10)+ am;
     }
   }
   ending:
+  Serial.println();
   Serial.print("Sum =  ");
 Serial.print(sum);
 delay(2000);
 lcd.clear();
-lcd.print("Please Pay:");
-lcd.setCursor(0,1);
+lcd.print("Pay:");
+//lcd.setCursor(0,1);
 lcd.print(sum);
+lcd.print(" Taka");
 
 
 exit(0); 
