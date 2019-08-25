@@ -6,11 +6,12 @@
 const int rs = 2, en = 3, d4 = 4, d5 = 5, d6 = 6, d7 = 7;
 LiquidCrystal lcd(rs,en,d4,d5,d6,d7);
 String lcdprnt = "Paid ";
-int a_amount = 5000, b_amount = 5000, c_amount = 5000;
+int a_amount = 5000, b_amount = 5000, c_amount = 5000, d_amount = 200;
 int amount = 0;
 char A_card = "3F AD 4D 29";
 char B_card = "BO 77 BB 25";
 char C_card = "71 F3 3D 08";
+char D_card = "A1 F4 78 D5";
 MFRC522 mfrc522(SS_PIN, RST_PIN); // Instance of the class
 void setup() {
   lcd.begin(16,2);
@@ -23,12 +24,12 @@ void setup() {
    lcd.clear();
    lcd.println("Swipe Card");
 pinMode(8,OUTPUT);//5 volt
-   
+   /*
 pinMode(23,INPUT);//100
 pinMode(25,INPUT);//200
 pinMode(27,INPUT);//300
 pinMode(29,INPUT);//400
-pinMode(31,INPUT);//500
+pinMode(31,INPUT);//500*/
 }
 void loop() {
   
@@ -46,7 +47,7 @@ void loop() {
             mfrc522.PICC_HaltA();
         }
 }*/
-digitalWrite(8,HIGH);
+digitalWrite(8,HIGH);/*
 if(digitalRead(23) == HIGH) amount = 100;
 else if (digitalRead(25) == HIGH) amount = 200;
 
@@ -54,7 +55,7 @@ else if (digitalRead(27) == HIGH) amount = 300;
 
 else if (digitalRead(29) == HIGH) amount = 400;
 
-else if (digitalRead(31) == HIGH) amount = 500;
+else if (digitalRead(31) == HIGH)*/ amount = 500;
   // Look for new cards
   if ( ! mfrc522.PICC_IsNewCardPresent()) 
   {
@@ -123,7 +124,19 @@ else if (digitalRead(31) == HIGH) amount = 500;
   lcd.print(lcdprnt);
     delay(2000);
   }
+ else if (content.substring(1) == "A1 F4 78 D5") //change here the UID of the card/cards that you want to give access
+  {
+    Serial.println("Authorized access");
+    d_amount -=amount;
+    Serial.println(c_amount);
+  lcd.clear();
+  lcd.print(content);
+  lcd.setCursor(0,1);
+  lcdprnt = lcdprnt+amount;
+  lcd.print(lcdprnt);
+    delay(2000);
+  }
  else   {
     Serial.println(" Access denied");
     }
-} 
+}
