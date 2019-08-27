@@ -4,7 +4,7 @@
 #include <Keypad.h>
 #include<stdlib.h>
 const byte ROWS = 4; //four rows
-const byte COLS = 4; //three columns
+const byte COLS = 4; //four columns
 
 char keys[ROWS][COLS] = {
   {'1','2','3','A'},
@@ -23,16 +23,23 @@ const int rs = 2, en = 3, d4 = 4, d5 = 5, d6 = 6, d7 = 7;
 LiquidCrystal lcd(rs,en,d4,d5,d6,d7);
 
 
-int a_amount = 5000, b_amount = 5000, c_amount = 200;
+int a_amount = 5000, b_amount = 200, c_amount = 3000;
 int sum = 0;
 char A_card = "3F AD 4D 29";
 char B_card = "BO 77 BB 25";
 char C_card = "71 F3 3D 08";
 
-String lcdprnt = "Paid ";
+char D_card = "A1 F4 78 D5";
+
+String lcdprnt ;
 MFRC522 mfrc522(SS_PIN, RST_PIN); // Instance of the class
 
 void setup() {
+    digitalWrite(8,HIGH);
+    digitalWrite(9,LOW);
+    digitalWrite(10,LOW);
+    
+  lcdprnt = "Paid "; 
   sum = 0;
   lcd.begin(16,2);
    Serial.begin(9600);
@@ -43,10 +50,11 @@ void setup() {
   lcd.clear();
   lcd.print("Enter Amount: ");
   Serial.begin(9600);
-  delay(2000);
- 
+  
    //lcd.clear();
-pinMode(8,OUTPUT);//5 volt
+pinMode(8,OUTPUT);//red
+pinMode(9,OUTPUT);//yellow
+pinMode(10,OUTPUT);//green
 
 Start:
   lcd.setCursor(0,1);
@@ -118,7 +126,6 @@ void loop() {
   // Look for new cards
   if ( ! mfrc522.PICC_IsNewCardPresent()) 
   {
-    digitalWrite(8,HIGH);
     return;
   }
   // Select one of the cards
@@ -128,10 +135,12 @@ void loop() {
   }
   //Show UID on serial monitor
   lcd.clear();
-  digitalWrite(8,LOW);
-  Serial.print("UID tag :");
-  lcd.print("UID tag :");
-  
+    digitalWrite(8,LOW);
+    digitalWrite(9,HIGH);
+    digitalWrite(10,LOW);
+    Serial.print("UID tag :");
+  //lcd.print("UID tag :");
+  lcd.print("Hellow");
   String content= "";
   byte letter;
   for (byte i = 0; i < mfrc522.uid.size; i++) 
@@ -151,7 +160,8 @@ void loop() {
     a_amount -=sum;
     Serial.println(a_amount);
   lcd.setCursor(0,1);
-  lcd.print(content);
+  //lcd.print(content);
+  lcd.print("Jahid Hasan Alvi");
   delay(waiting);
   lcd.clear();
   lcdprnt = lcdprnt+sum;
@@ -166,7 +176,8 @@ void loop() {
     b_amount -=sum;
     Serial.println(b_amount);
   lcd.setCursor(0,1);
-  lcd.print(content);
+  //lcd.print(content);
+  lcd.print("Mubina Jerin");
   delay(waiting);
   lcd.clear();
   lcdprnt = lcdprnt+sum;
@@ -181,7 +192,8 @@ void loop() {
     c_amount -=sum;
     Serial.println(c_amount);
  lcd.setCursor(0,1);
-  lcd.print(content);
+  //lcd.print(content);
+  lcd.print("Ekhtear Uddin Khan");
   delay(waiting);
   lcd.clear();
   lcdprnt = lcdprnt+sum;
@@ -196,6 +208,10 @@ void loop() {
 }
 
 void endPrint(){
+    digitalWrite(8,LOW);
+    digitalWrite(9,LOW);
+    digitalWrite(10,HIGH);
+    
 delay(5000);
 lcd.clear();
 lcd.print("Thank You");
@@ -203,3 +219,4 @@ delay(5000);
 setup();
 
 }
+ 
