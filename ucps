@@ -30,7 +30,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `filling_station` (
   `sl` int(10) NOT NULL,
-  `ID` int(10) NOT NULL,
+  `ID` varchar(10) NOT NULL,
   `u_id` varchar(12) NOT NULL,
   `u_Name` varchar(50) NOT NULL,
   `Amount` int(10) NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE `filling_station` (
 
 CREATE TABLE `parking_lot` (
   `sl` int(10) NOT NULL,
-  `ID` int(10) NOT NULL,
+  `ID` varchar(10) NOT NULL,
   `u_id` varchar(12) NOT NULL,
   `u_Name` varchar(50) NOT NULL,
   `Amount` int(10) NOT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE `parking_lot` (
 
 CREATE TABLE `toll_booth` (
   `sl` int(10) NOT NULL,
-  `ID` int(10) NOT NULL,
+  `ID` varchar(10) NOT NULL,
   `u_id` varchar(12) NOT NULL,
   `u_Name` varchar(50) NOT NULL,
   `Amount` int(10) NOT NULL,
