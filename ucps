@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `filling_station` (
   `sl` int(10) NOT NULL,
   `ID` int(10) NOT NULL,
-  `u_id` varchar(10) NOT NULL,
+  `u_id` varchar(12) NOT NULL,
   `u_Name` varchar(50) NOT NULL,
   `Amount` int(10) NOT NULL,
   `Date` date NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE `filling_station` (
 CREATE TABLE `parking_lot` (
   `sl` int(10) NOT NULL,
   `ID` int(10) NOT NULL,
-  `u_id` varchar(10) NOT NULL,
+  `u_id` varchar(12) NOT NULL,
   `u_Name` varchar(50) NOT NULL,
   `Amount` int(10) NOT NULL,
   `Date` date NOT NULL,
@@ -63,7 +63,7 @@ CREATE TABLE `parking_lot` (
 CREATE TABLE `toll_booth` (
   `sl` int(10) NOT NULL,
   `ID` int(10) NOT NULL,
-  `u_id` varchar(10) NOT NULL,
+  `u_id` varchar(12) NOT NULL,
   `u_Name` varchar(50) NOT NULL,
   `Amount` int(10) NOT NULL,
   `Date` date NOT NULL,
@@ -85,7 +85,7 @@ INSERT INTO `toll_booth` (`sl`, `ID`, `u_id`, `u_Name`, `Amount`, `Date`, `Time`
 
 CREATE TABLE `transactions` (
   `sl` int(10) NOT NULL,
-  `u_id` varchar(10) NOT NULL,
+  `u_id` varchar(12) NOT NULL,
   `u_Name` varchar(50) NOT NULL,
   `Amount` int(10) NOT NULL,
   `trx_field` varchar(20) NOT NULL,
@@ -107,7 +107,7 @@ INSERT INTO `transactions` (`sl`, `u_id`, `u_Name`, `Amount`, `trx_field`, `Date
 --
 
 CREATE TABLE `users` (
-  `u_id` varchar(11) NOT NULL,
+  `u_id` varchar(12) NOT NULL,
   `Name` varchar(50) NOT NULL,
   `Balance` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
