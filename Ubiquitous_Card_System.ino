@@ -2,6 +2,7 @@
 #include <MFRC522.h>
 #include <LiquidCrystal.h>
 #include <Keypad.h>
+
 #include<stdlib.h>
 const byte ROWS = 4; //four rows
 const byte COLS = 4; //four columns
@@ -23,17 +24,25 @@ const int rs = 2, en = 3, d4 = 4, d5 = 5, d6 = 6, d7 = 7;
 LiquidCrystal lcd(rs,en,d4,d5,d6,d7);
 
 
-int a_amount = 5000, b_amount = 200, c_amount = 3000;
-int sum = 0;
-char A_card = "3F AD 4D 29";
-char B_card = "BO 77 BB 25";
-char C_card = "71 F3 3D 08";
-
-char D_card = "A1 F4 78 D5";
+int a_amount = 5000, b_amount = 2000, c_amount = 300;
+int sum = 0, userN;
+//char A_card = "3F AD 4D 29";
+//char B_card = "BO 77 BB 25";
+//char C_card = "71 F3 3D 08";
+//char D_card = "A1 F4 78 D5";
 
 String lcdprnt ;
 MFRC522 mfrc522(SS_PIN, RST_PIN); // Instance of the class
-
+struct Info{
+  int id;
+  char cid[12];
+  char Uname[20];
+  int amount;
+}user[5]= { {1, "3F AD 4D 29", "Jahid Hasan Alvi", 5000}, 
+            {2, "BO 77 BB 25", "Ekhtear Uddin Khan", 3000},
+            {3, "71 F3 3D 08", "Mubina Jerin", 200},
+            {4, "A1 F4 78 D5", "Sokhina ", 600}
+};
 void setup() {
     digitalWrite(8,HIGH);
     digitalWrite(9,LOW);
@@ -154,11 +163,31 @@ void loop() {
   
   Serial.print("Message : ");
   content.toUpperCase();
+  for(int i = 0; i<5; i++){
+    if(content.substring(1) == user[i].cid) {userN = i;break;}
+    else   {
+    Serial.println(" Access denied");
+    }
+  }
+  Serial.println("Authorized access");
+    user[userN].amount -=sum;
+    Serial.println(user[userN].amount);
+  lcd.setCursor(0,1);
+  //lcd.print(content);
+  lcd.print(user[userN].Uname);
+  delay(waiting);
+  lcd.clear();
+  lcdprnt = lcdprnt+sum;
+  lcd.print(lcdprnt);
+  lcd.print(" Tk");
+  endPrint();  
+ 
+  /*
   if (content.substring(1) == "3F AD 4D 29") //change here the UID of the card/cards that you want to give access
   {
     Serial.println("Authorized access");
     a_amount -=sum;
-    Serial.println(a_amount);
+    Serial.println(amountAll[0]);
   lcd.setCursor(0,1);
   //lcd.print(content);
   lcd.print("Jahid Hasan Alvi");
@@ -174,7 +203,7 @@ void loop() {
   {
     Serial.println("Authorized access");
     b_amount -=sum;
-    Serial.println(b_amount);
+    Serial.println(amountAll[1]);
   lcd.setCursor(0,1);
   //lcd.print(content);
   lcd.print("Mubina Jerin");
@@ -190,7 +219,7 @@ void loop() {
   {
     Serial.println("Authorized access");
     c_amount -=sum;
-    Serial.println(c_amount);
+    Serial.println(amountAll[2]);
  lcd.setCursor(0,1);
   //lcd.print(content);
   lcd.print("Ekhtear Uddin Khan");
@@ -201,9 +230,10 @@ void loop() {
   lcd.print(" Tk");
   endPrint();  
   }
+  
  else   {
     Serial.println(" Access denied");
-    }
+    }*/
 
 }
 
