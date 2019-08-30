@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 09, 2019 at 01:04 PM
+-- Generation Time: Aug 30, 2019 at 07:39 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -29,11 +29,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `filling_station` (
-  `Name` varchar(50) NOT NULL,
+  `sl` int(10) NOT NULL,
   `ID` int(10) NOT NULL,
   `u_id` int(10) NOT NULL,
   `u_Name` varchar(50) NOT NULL,
-  `Amount` int(10) NOT NULL
+  `Amount` int(10) NOT NULL,
+  `Date` date NOT NULL,
+  `Time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -43,11 +45,13 @@ CREATE TABLE `filling_station` (
 --
 
 CREATE TABLE `parking_lot` (
-  `Name` varchar(50) NOT NULL,
+  `sl` int(10) NOT NULL,
   `ID` int(10) NOT NULL,
   `u_id` int(10) NOT NULL,
   `u_Name` varchar(50) NOT NULL,
-  `Amount` int(10) NOT NULL
+  `Amount` int(10) NOT NULL,
+  `Date` date NOT NULL,
+  `Time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -57,11 +61,13 @@ CREATE TABLE `parking_lot` (
 --
 
 CREATE TABLE `toll_booth` (
-  `Name` varchar(50) NOT NULL,
-  `T_ID` int(10) NOT NULL,
+  `sl` int(10) NOT NULL,
+  `ID` int(10) NOT NULL,
   `u_id` int(10) NOT NULL,
-  `u_Name` int(50) NOT NULL,
-  `Amount` int(10) NOT NULL
+  `u_Name` varchar(50) NOT NULL,
+  `Amount` int(10) NOT NULL,
+  `Date` date NOT NULL,
+  `Time` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -87,6 +93,27 @@ INSERT INTO `users` (`u_id`, `Name`, `Balance`) VALUES
 ('41 24 9D D5', 'EEE', 5000),
 ('C1 7B E5 D5', 'FFF', 5000),
 ('B0 77 BB 25', 'BBB', 5000);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `filling_station`
+--
+ALTER TABLE `filling_station`
+  ADD PRIMARY KEY (`sl`),
+  ADD UNIQUE KEY `Name` (`sl`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `filling_station`
+--
+ALTER TABLE `filling_station`
+  MODIFY `sl` int(10) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
