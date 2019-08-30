@@ -1,9 +1,16 @@
-#include <SPI.h>
-#include <MFRC522.h>
+#include <SoftwareSerial.h>
+#include <ArduinoJson.h>
+
+
 #include <LiquidCrystal.h>
 #include <Keypad.h>
 
+#include <SPI.h>
+#include <MFRC522.h>
+
 #include<stdlib.h>
+SoftwareSerial srl(22,23);//(RX,TX)
+
 const byte ROWS = 4; //four rows
 const byte COLS = 4; //four columns
 
@@ -13,26 +20,17 @@ char keys[ROWS][COLS] = {
   {'7','8','9','C'},
   {'*','0','#','D'}
 };
-int waiting = 3000;
-byte rowPins[ROWS] = {23, 25, 27, 29}; //connect to the row pinouts of the keypad
-byte colPins[COLS] = {31, 33, 35, 37}; //connect to the column pinouts of the keypad
+byte rowPins[ROWS] = {25, 27, 29, 31}; //connect to the row pinouts of the keypad
+byte colPins[COLS] = {33, 35, 37, 39}; //connect to the column pinouts of the keypad
 Keypad keypad = Keypad( makeKeymap(keys), rowPins, colPins, ROWS, COLS );
 
-#define SS_PIN 53
-#define RST_PIN 49
 const int rs = 2, en = 3, d4 = 4, d5 = 5, d6 = 6, d7 = 7;
 LiquidCrystal lcd(rs,en,d4,d5,d6,d7);
 
-
-int a_amount = 5000, b_amount = 2000, c_amount = 300;
-int sum = 0, userN;
-//char A_card = "3F AD 4D 29";
-//char B_card = "BO 77 BB 25";
-//char C_card = "71 F3 3D 08";
-//char D_card = "A1 F4 78 D5";
-
-String lcdprnt ;
+#define SS_PIN 53 
+#define RST_PIN 49 //For MFRC522
 MFRC522 mfrc522(SS_PIN, RST_PIN); // Instance of the class
+
 struct Info{
   int id;
   char cid[12];
@@ -43,6 +41,11 @@ struct Info{
             {3, "71 F3 3D 08", "Mubina Jerin", 200},
             {4, "A1 F4 78 D5", "Sokhina ", 600}
 };
+
+//int a_amount = 5000, b_amount = 2000, c_amount = 300;
+int waiting = 3000;
+int sum = 0, userN;
+String lcdprnt ;
 void setup() {
     digitalWrite(8,HIGH);
     digitalWrite(9,LOW);
@@ -54,7 +57,7 @@ void setup() {
    Serial.begin(9600);
    SPI.begin();       // Init SPI bus
    mfrc522.PCD_Init(); // Init MFRC522
-   lcd.print("Welcome");
+   lcd.print("Welcome to UCPS");
   delay(2000);
   lcd.clear();
   lcd.print("Enter Amount: ");
@@ -180,6 +183,23 @@ void loop() {
   lcdprnt = lcdprnt+sum;
   lcd.print(lcdprnt);
   lcd.print(" Tk");
+
+   StaticJsonBuffer<1000> jsonBuffer;
+   JsonObject& root = jsonBuffer.createObject();
+   root["data1"] = user[userN].cid;
+   root["data2"] = user[userN].Uname;
+   root["data3"] = user[userN].amount;
+
+lcd.setCursor(0,1);
+  
+   if (srl.available()>0)
+   {lcd.print("Sent to Server");
+   root.printTo(srl);
+   }
+   else 
+   {lcd.print("server Timeout");}
+
+  
   endPrint();  
  
   /*
