@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Toll Booth</title>
+	<title>Filling Station</title>
 </head>
 <body>
 
-	<h1>Toll Booth</h1>
+	<h1>Filling Station</h1>
 	<hr>
 
 	<form action="" method="post" name="">
@@ -61,8 +61,8 @@
 		$u_name = $_POST['u_name'];
 		$amount = $_POST['amount'];
         $amountValue = (int)$amount;
-        $trx_field = "Toll Booth ". $id;
-		$sql1 = "INSERT INTO toll_booth (ID, u_id, u_Name, Amount, Date, Time) VALUES ('".$id."','".$u_id."','".$u_name."','".$amountValue."', '".$d."', '".$t."')"; //nodemcu_ldr_table = Youre_table_name
+        $trx_field = "Filling Station ". $id;
+		$sql1 = "INSERT INTO filling_station (ID, u_id, u_Name, Amount, Date, Time) VALUES ('".$id."','".$u_id."','".$u_name."','".$amountValue."', '".$d."', '".$t."')"; //nodemcu_ldr_table = Youre_table_name
         
         $sql2 = "INSERT INTO transactions (u_id, u_Name, Amount, trx_field, Date, Time) VALUES ('".$u_id."','".$u_name."','".$amountValue."','".$trx_field."', '".$d."', '".$t."')"; //nodemcu_ldr_table = Youre_table_name
 echo "insert";
