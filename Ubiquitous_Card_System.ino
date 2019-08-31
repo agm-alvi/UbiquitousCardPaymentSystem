@@ -38,8 +38,9 @@ struct Info{
   int amount;
 }user[5]= { {1, "3F AD 4D 29", "Jahid Hasan Alvi", 5000}, 
             {2, "BO 77 BB 25", "Ekhtear Uddin Khan", 3000},
-            {3, "71 F3 3D 08", "Mubina Jerin", 200},
-            {4, "A1 F4 78 D5", "Sokhina ", 600}
+            {3, "71 F3 3D 08", "Mubina Jerin", 2000},
+            {4, "A1 F4 78 D5", "Zunayeed Bin Zahir", 10000},
+            {5, "C1 7B E5 D5", "Rishad Arfin", 600}
 };
 
 //int a_amount = 5000, b_amount = 2000, c_amount = 300;
@@ -119,22 +120,6 @@ lcd.println("Swipe Card");
 delay(2000);   
 }
 void loop() {
-  
-
-/*if ( mfrc522.PICC_IsNewCardPresent())
-    {
-        if ( mfrc522.PICC_ReadCardSerial())
-        {
-           Serial.print("Tag UID:");
-           for (byte i = 0; i < mfrc522.uid.size; i++) {
-                  Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ");
-                  Serial.print(mfrc522.uid.uidByte[i], HEX);
-            }
-          
-            Serial.println();
-            mfrc522.PICC_HaltA();
-        }
-}*/ 
   // Look for new cards
   if ( ! mfrc522.PICC_IsNewCardPresent()) 
   {
@@ -202,59 +187,6 @@ lcd.setCursor(0,1);
   
   endPrint();  
  
-  /*
-  if (content.substring(1) == "3F AD 4D 29") //change here the UID of the card/cards that you want to give access
-  {
-    Serial.println("Authorized access");
-    a_amount -=sum;
-    Serial.println(amountAll[0]);
-  lcd.setCursor(0,1);
-  //lcd.print(content);
-  lcd.print("Jahid Hasan Alvi");
-  delay(waiting);
-  lcd.clear();
-  lcdprnt = lcdprnt+sum;
-  lcd.print(lcdprnt);
-  lcd.print(" Tk");
-  endPrint();  
- 
-  }
-  else if (content.substring(1) == "B0 77 BB 25" ) //change here the UID of the card/cards that you want to give access
-  {
-    Serial.println("Authorized access");
-    b_amount -=sum;
-    Serial.println(amountAll[1]);
-  lcd.setCursor(0,1);
-  //lcd.print(content);
-  lcd.print("Mubina Jerin");
-  delay(waiting);
-  lcd.clear();
-  lcdprnt = lcdprnt+sum;
-  lcd.print(lcdprnt);
-  lcd.print(" Tk");
-  endPrint();  
- 
-}
- else if (content.substring(1) == "71 F3 3D 08") //change here the UID of the card/cards that you want to give access
-  {
-    Serial.println("Authorized access");
-    c_amount -=sum;
-    Serial.println(amountAll[2]);
- lcd.setCursor(0,1);
-  //lcd.print(content);
-  lcd.print("Ekhtear Uddin Khan");
-  delay(waiting);
-  lcd.clear();
-  lcdprnt = lcdprnt+sum;
-  lcd.print(lcdprnt);
-  lcd.print(" Tk");
-  endPrint();  
-  }
-  
- else   {
-    Serial.println(" Access denied");
-    }*/
-
 }
 
 void endPrint(){
@@ -269,4 +201,3 @@ delay(5000);
 setup();
 
 }
- 
