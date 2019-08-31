@@ -59,7 +59,7 @@ void loop() {
   JsonObject& root = jsonBuffer.parseObject(srl);
   if (root == JsonObject::invalid())
     return;
- 
+ //Data from Serial Port
   Serial.println("JSON received and parsed");
   root.prettyPrintTo(Serial);
   Serial.print("Data 1 ");
@@ -72,20 +72,18 @@ void loop() {
   Serial.print("   Data 3 ");
   amount=root["data3"];
   Serial.print(amount);
-  //int ldrvalue=analogRead(A0);  //Read Analog value of LDR
-  /*int ldrvalue = 11;
-  LdrValueSend = String(ldrvalue);   //String to interger conversion*/
+  
   /*
   u_name = "Alvi";
   u_id = "3F AD 4D 29";
-  int amount = 350;
+  amount = 350;
   */
    int id = 2;
   idValue = String(id);
   amountValue = String(amount);
   //Post Data
-  //postData = "ldrvalue=" + LdrValueSend; //ignore
   postData = "ID=" +idValue+ "&u_id="+u_id+ "&u_name="+u_name+ "&amount"+amount;
+  
   http.begin("http://192.168.43.68/UbiquitousCardPayment/insert_toll-booth.php");              //Specify request destination
   http.addHeader("Content-Type", "application/x-www-form-urlencoded");    //Specify content-type header
  
@@ -97,7 +95,7 @@ void loop() {
   Serial.println(httpCode);   //Print HTTP return code
   Serial.println("payload ");
   Serial.println(payload);    //Print request response payload
- // Serial.println("LDR Value=" + LdrValueSend);
+ 
   Serial.println(postData);
   http.end();  //Close connection
 
