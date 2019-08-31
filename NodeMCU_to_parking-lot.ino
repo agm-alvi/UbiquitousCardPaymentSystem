@@ -74,7 +74,7 @@ void loop() {
   Serial.print(amount);
   
   /*
-  u_name = "Alvi";
+  u_name = "Ekhtear";
   u_id = "3F AD 4D 29";
   amount = 350;
   */
@@ -84,7 +84,7 @@ void loop() {
   //Post Data
   postData = "id=" +idValue+ "&u_id="+u_id+ "&u_name="+u_name+ "&amount"+amount;
   
-  http.begin("http://192.168.43.68/UbiquitousCardPayment/insert_toll-booth.php");              //Specify request destination
+  http.begin("http://192.168.43.68/UbiquitousCardPayment/insert_parking-lot.php");              //Specify request destination
   http.addHeader("Content-Type", "application/x-www-form-urlencoded");    //Specify content-type header
  
   int httpCode = http.POST(postData);   //Send the request
