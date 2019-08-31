@@ -40,7 +40,7 @@ struct Info{
             {2, "BO 77 BB 25", "Ekhtear Uddin Khan", 3000},
             {3, "71 F3 3D 08", "Mubina Jerin", 2000},
             {4, "A1 F4 78 D5", "Zunayeed Bin Zahir", 10000},
-            {5, "C1 7B E5 D5", "Rishad Arfin", 600}
+            {5, "C1 7B E5 D5", "Sokhina ", 600}
 };
 
 //int a_amount = 5000, b_amount = 2000, c_amount = 300;
@@ -201,3 +201,4 @@ delay(5000);
 setup();
 
 }
+ 
