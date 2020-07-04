@@ -1,5 +1,5 @@
 #include <SoftwareSerial.h>
-#include <ArduinoJson.h>
+//#include <ArduinoJson.h>
 
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h> 
@@ -9,15 +9,22 @@
 SoftwareSerial srl(D6,D5);//(RX,TX);
 int Led_OnBoard = 2;                  // Initialize the Led_OnBoard 
 
-const char* ssid = "OnePlus 6";                  // Your wifi Name       
-const char* password = "12345789";          // Your wifi Password
+//const char* ssid = "OnePlus 6";                  // Your wifi Name       
+//const char* password = "12345789";          // Your wifi Password
 
-const char *host = "192.168.43.68"; //Your pc or server (database) IP, example : 192.168.0.0 , if you are a windows os user, open cmd, then type ipconfig then look at IPv4 Address.
+const char* ssid = "Tom & Jerry";                  // Your wifi Name       
+const char* password = "new0news";          // Your wifi Password
+
+const char *host = " 192.168.43.35"; //Your pc or server (database) IP, example : 192.168.0.0 , if you are a windows os user, open cmd, then type ipconfig then look at IPv4 Address.
 
 void setup() {
   // put your setup code here, to run once:
   delay(1000);
   pinMode(Led_OnBoard, OUTPUT);       // Initialize the Led_OnBoard pin as an output
+  pinMode(D0, OUTPUT);
+  pinMode(D1, INPUT);
+  pinMode(D2, INPUT);
+  pinMode(D3, INPUT);
   Serial.begin(9600);
   srl.begin(9600);
   WiFi.mode(WIFI_OFF);        //Prevents reconnection issue (taking too long to connect)
@@ -44,6 +51,7 @@ void setup() {
   Serial.print("IP address: ");
   Serial.println(WiFi.localIP());  //IP address assigned to your ESP
   while (!Serial) continue;
+  digitalWrite(D0,HIGH);
 }
 
 void loop() {
@@ -52,14 +60,15 @@ void loop() {
  
   String  postData;
   String idValue,  amountValue;
-  const char*  u_name;
+  /*const char*  u_name;
   const char* u_id;
-  int amount;
-  StaticJsonBuffer<1000> jsonBuffer;
+  int amount;*/
+  String u_name, u_id;
+ /* StaticJsonBuffer<1000> jsonBuffer;
   JsonObject& root = jsonBuffer.parseObject(srl);
   if (root == JsonObject::invalid())
     return;
- //Data from Serial Port
+ 
   Serial.println("JSON received and parsed");
   root.prettyPrintTo(Serial);
   Serial.print("Data 1 ");
@@ -72,19 +81,28 @@ void loop() {
   Serial.print("   Data 3 ");
   amount=root["data3"];
   Serial.print(amount);
+ */
+   if(digitalRead(D1)==HIGH){
+      u_id = "3F AD 4D 29";}
+  else if(digitalRead(D2)==HIGH){
+      u_id = "B0 77 BB 25";}
+  else if(digitalRead(D3)==HIGH){
+      u_id = "A1 F4 78 D5";}
+   else
+    u_id = "";
+  int amount = 500;
+  Serial.print("Enter ID: ");
+  //u_id = Serial.read();
+
+  Serial.print("Enter Amount: ");
+  //amount = Serial.read();
+
   
-  /*
-  u_name = "Alvi";
-  u_id = "3F AD 4D 29";
-  amount = 350;
-  */
    int id = 2;
   idValue = String(id);
   amountValue = String(amount);
-  //Post Data
-  postData = "id=" +idValue+ "&u_id="+u_id+ "&u_name="+u_name+ "&amount"+amount;
-  
-  http.begin("http://192.168.43.68/UbiquitousCardPayment/insert_toll-booth.php");              //Specify request destination
+  postData = "ID=" +idValue+ "&u_id="+u_id+ "&amount"+amountValue;
+  http.begin("http://192.168.43.35/UbiquitousCardPayment/insert_toll-booth.php");              //Specify request destination
   http.addHeader("Content-Type", "application/x-www-form-urlencoded");    //Specify content-type header
  
   int httpCode = http.POST(postData);   //Send the request
@@ -95,7 +113,7 @@ void loop() {
   Serial.println(httpCode);   //Print HTTP return code
   Serial.println("payload ");
   Serial.println(payload);    //Print request response payload
- 
+ // Serial.println("LDR Value=" + LdrValueSend);
   Serial.println(postData);
   http.end();  //Close connection
 
@@ -103,4 +121,5 @@ void loop() {
   digitalWrite(Led_OnBoard, LOW);
   delay(1000);
   digitalWrite(Led_OnBoard, HIGH);
+  
 }
