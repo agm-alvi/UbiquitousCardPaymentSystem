@@ -75,7 +75,7 @@
          $bal = $bal - $amountValue;
         $u_name = $res['Name']; 
         
-        $trx_id = "TB".$id."-".$res['u_sl']."-".$timestamp;
+        $trx_id = "TB".$id."-".$res['u_sl']."-".$timestamp;//id
         echo $res['Balance'];
         echo $bal;
         echo $trx_id;
