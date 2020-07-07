@@ -17,7 +17,7 @@
 //fetching data in descending order (lastest entry first)
 
 
-$result = "SELECT U.u_id, U.Name, U.Balance FROM users U ORDER BY U.Name ASC";
+$result = "SELECT U.u_id, U.Name, U.Balance FROM customers U ORDER BY U.Name ASC";
 $result = mysqli_query($conn, $result);
 
 ?>
