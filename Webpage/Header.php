@@ -19,11 +19,11 @@
             <div class="col-md-8">
                 <div class="menu">
                     <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#about_us">About Us</a></li>
-                        <li><a href="#uses">Uses</a></li>
+                        <li><a href="index.php">Home</a></li>
+                        <li><a href="index.php#about_us">About Us</a></li>
+                        <li><a href="index.php#uses">Uses</a></li>
                         <li><a href="logout.php">Sign out</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="index.php#contact">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
