@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 08, 2020 at 12:04 AM
+-- Generation Time: Jul 08, 2020 at 12:54 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -21,6 +21,56 @@ SET time_zone = "+00:00";
 --
 -- Database: `ucps`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `card_recharge`
+--
+
+CREATE TABLE `card_recharge` (
+  `sl` int(10) NOT NULL,
+  `ID` int(10) NOT NULL,
+  `u_id` varchar(10) NOT NULL,
+  `u_Name` varchar(50) NOT NULL,
+  `Amount` int(10) NOT NULL,
+  `Date` date NOT NULL,
+  `Time` time NOT NULL,
+  `trx_id` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `card_recharge`
+--
+
+INSERT INTO `card_recharge` (`sl`, `ID`, `u_id`, `u_Name`, `Amount`, `Date`, `Time`, `trx_id`) VALUES
+(2, 24, '3F AD 4D 2', 'Jahid Hasan Alvi', 1000, '2020-03-25', '19:06:12', 'CR24-001-20032519061');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customers`
+--
+
+CREATE TABLE `customers` (
+  `u_sl` varchar(10) NOT NULL,
+  `u_id` varchar(11) NOT NULL,
+  `Name` varchar(50) NOT NULL,
+  `Balance` int(10) NOT NULL,
+  `pass` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customers`
+--
+
+INSERT INTO `customers` (`u_sl`, `u_id`, `Name`, `Balance`, `pass`) VALUES
+('001', '3F AD 4D 29', 'Jahid Hasan Alvi', 5500, 'abcd'),
+('002', 'B0 77 BB 25', 'Ekhtear Uddin Khan', 4700, 'efgh'),
+('003', 'A1 F4 78 D5', 'Asha Das', 5000, 'ijkl'),
+('004', 'C1 7B E5 D5', 'UVW', 5000, ''),
+('005', '71 F3 3D 08', 'XYZ', 1700, ''),
+('006', '41 24 9D D5', 'PQR', 4300, '');
 
 -- --------------------------------------------------------
 
@@ -110,9 +160,50 @@ INSERT INTO `transactions` (`sl`, `u_id`, `u_Name`, `Amount`, `trx_field`, `Date
 (108, 'B0 77 BB 25', 'Ekhtear Uddin Khan', 300, 'Toll Booth 14', '2020-03-25', '18:44:50', 'TB14-002-20032518445'),
 (109, '41 24 9D D5', 'PQR', 700, 'Toll Booth 72', '2020-03-26', '21:53:40', 'TB72-006-20032621534');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vendors`
+--
+
+CREATE TABLE `vendors` (
+  `id` int(10) NOT NULL,
+  `Field` varchar(20) NOT NULL,
+  `Thana` varchar(20) NOT NULL,
+  `District` varchar(50) NOT NULL,
+  `Division` varchar(50) NOT NULL,
+  `Field_ID` int(10) NOT NULL,
+  `pass` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `vendors`
+--
+
+INSERT INTO `vendors` (`id`, `Field`, `Thana`, `District`, `Division`, `Field_ID`, `pass`) VALUES
+(1, 'Toll Booth', 'Gendaria', 'Dhaka', 'Dhaka', 30111002, 'asdfg'),
+(2, 'Parking Lot', 'Vatara', 'Dhaka', 'Dhaka', 30143205, 'qwert'),
+(3, 'Filling Station', 'Mirpur Model', 'Dhaka', 'Dhaka', 30122404, 'zxcvb'),
+(4, 'Recharge Center', 'Shyampur', 'Dhaka', 'Dhaka', 30136602, 'poiuy');
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `card_recharge`
+--
+ALTER TABLE `card_recharge`
+  ADD PRIMARY KEY (`sl`),
+  ADD UNIQUE KEY `Name` (`sl`),
+  ADD UNIQUE KEY `trx_id` (`trx_id`);
+
+--
+-- Indexes for table `customers`
+--
+ALTER TABLE `customers`
+  ADD UNIQUE KEY `u_sl` (`u_sl`);
+ALTER TABLE `customers` ADD FULLTEXT KEY `u_sl_2` (`u_sl`);
 
 --
 -- Indexes for table `filling_station`
@@ -147,8 +238,20 @@ ALTER TABLE `transactions`
   ADD UNIQUE KEY `trx_id` (`trx_id`);
 
 --
+-- Indexes for table `vendors`
+--
+ALTER TABLE `vendors`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `card_recharge`
+--
+ALTER TABLE `card_recharge`
+  MODIFY `sl` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `filling_station`
@@ -173,6 +276,12 @@ ALTER TABLE `toll_booth`
 --
 ALTER TABLE `transactions`
   MODIFY `sl` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+
+--
+-- AUTO_INCREMENT for table `vendors`
+--
+ALTER TABLE `vendors`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
