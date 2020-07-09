@@ -54,7 +54,7 @@ include 'connection.php';
         $res = mysqli_fetch_array($result);
         
         $bal = (int)$res['Balance'] ;
-         $bal = $bal - $amountValue;
+         $bal = $bal + $amountValue;
         $u_name = $res['Name']; 
         
         $trx_id = "CR".$id."-".$res['u_sl']."-".$timestamp;//id for Toll Booth (TB)
