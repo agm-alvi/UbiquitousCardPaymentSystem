@@ -60,6 +60,7 @@
 
 #header .menu ul {
     float: right;
+    background: #252e30;
 }
 
 #header .menu ul li {
@@ -80,7 +81,9 @@
     color: #2ecc71;
     text-decoration-style: solid;
 }
-
+#header .menu ul li .dropdown-menu a{
+    background: #252e30;
+}
 #explanations {
     margin-top: 100px;
     margin-bottom: 100px;

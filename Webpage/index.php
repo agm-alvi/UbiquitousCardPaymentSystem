@@ -14,7 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/indexStyle.css">
+    <link rel="stylesheet" href="css/indexPageStyle.css">
 </head>
 
 <body>
@@ -30,7 +30,12 @@
                         <li><a href="#">Home</a></li>
                         <li><a href="#about_us">About Us</a></li>
                         <li><a href="#uses">Uses</a></li>
-                        <li><a href="login.php">Sign in</a></li>
+                        <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sign In <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="login_customer.php">Customer Sign In</a></li>
+                            <li><a href="login_vendor.php">Vendor Sign In</a></li>
+                        </ul>
+                    </li>
                         <li><a href="#contact">Contact Us</a></li>
                     </ul>
                 </div>
@@ -49,19 +54,19 @@
             </ol>
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
-                <div class="item active"> <img src="img/tollBooth.png" alt="Toll Booth" style="width:100%;">
+                <div class="item active"> <img src="img/bannerTollBooth.png" alt="Toll Booth" style="width:100%;">
                     <div class="carousel-caption myclass">
                         <h1>Toll Booth</h1>
                         <p><a class="btn btn-primary btn-lg" href="#" role="button">LEARN MORE</a></p>
                     </div>
                 </div>
-                <div class="item"> <img src="img/parkingLot.png" alt="Parking Lot" style="width:100%;">
+                <div class="item"> <img src="img/bannerParkingLot.png" alt="Parking Lot" style="width:100%;">
                     <div class="carousel-caption myclass">
                         <h1> Parking Lot</h1>
                         <p><a class="btn btn-primary btn-lg" href="#" role="button">LEARN MORE</a></p>
                     </div>
                 </div>
-                <div class="item"> <img src="img/fillingStation.png" alt="Filling Station" style="width:100%;">
+                <div class="item"> <img src="img/bannerFillingStation.png" alt="Filling Station" style="width:100%;">
                     <div class="carousel-caption myclass">
                         <h1>Filling Station</h1>
                         <p><a class="btn btn-primary btn-lg" href="#" role="button">LEARN MORE</a></p>
