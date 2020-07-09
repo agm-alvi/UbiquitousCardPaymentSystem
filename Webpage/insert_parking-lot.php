@@ -57,7 +57,7 @@ include 'connection.php';
          $bal = $bal - $amountValue;
         $u_name = $res['Name']; 
         
-        $trx_id = "PL".$id."-".$res['u_sl']."-".$timestamp;//id for Toll Booth (TB)
+        $trx_id = "PL".$id."-".$res['u_sl']."-".$timestamp;//id for Parking Lot (PL)
         echo $res['Balance'];
         echo $bal;
         echo $trx_id;
