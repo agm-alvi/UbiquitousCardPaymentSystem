@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <title>Toll Booth Bill Pay || UCPS</title>
     <link rel="icon" type="image/png" href="img/titleIcon.png">
-    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
