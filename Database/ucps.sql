@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 09, 2020 at 10:14 PM
+-- Generation Time: Jul 09, 2020 at 11:55 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -31,7 +31,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `card_recharge` (
   `sl` int(10) NOT NULL,
   `ID` int(10) NOT NULL,
-  `u_id` varchar(10) NOT NULL,
+  `u_id` varchar(15) NOT NULL,
   `u_Name` varchar(50) NOT NULL,
   `Amount` int(10) NOT NULL,
   `Date` date NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE `card_recharge` (
 --
 
 INSERT INTO `card_recharge` (`sl`, `ID`, `u_id`, `u_Name`, `Amount`, `Date`, `Time`, `trx_id`) VALUES
-(2, 24, '3F AD 4D 2', 'Jahid Hasan Alvi', 1000, '2020-03-25', '19:06:12', 'CR24-001-20032519061');
+(2, 24, '3F AD 4D 29', 'Jahid Hasan Alvi', 1000, '2020-03-25', '19:06:12', 'CR24-001-20032519061');
 
 -- --------------------------------------------------------
 
@@ -82,7 +82,7 @@ INSERT INTO `customers` (`u_sl`, `u_id`, `Name`, `Balance`, `username`, `passwor
 CREATE TABLE `filling_station` (
   `sl` int(10) NOT NULL,
   `ID` int(10) NOT NULL,
-  `u_id` varchar(10) NOT NULL,
+  `u_id` varchar(15) NOT NULL,
   `u_Name` varchar(50) NOT NULL,
   `Amount` int(10) NOT NULL,
   `Date` date NOT NULL,
@@ -99,7 +99,7 @@ CREATE TABLE `filling_station` (
 CREATE TABLE `parking_lot` (
   `sl` int(10) NOT NULL,
   `ID` int(10) NOT NULL,
-  `u_id` varchar(10) NOT NULL,
+  `u_id` varchar(15) NOT NULL,
   `u_Name` varchar(50) NOT NULL,
   `Amount` int(10) NOT NULL,
   `Date` date NOT NULL,
@@ -116,7 +116,7 @@ CREATE TABLE `parking_lot` (
 CREATE TABLE `toll_booth` (
   `sl` int(10) UNSIGNED ZEROFILL NOT NULL,
   `ID` int(10) NOT NULL,
-  `u_id` varchar(12) NOT NULL,
+  `u_id` varchar(15) NOT NULL,
   `u_Name` varchar(50) NOT NULL,
   `Amount` int(10) NOT NULL,
   `Date` date NOT NULL,
