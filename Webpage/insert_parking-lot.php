@@ -48,7 +48,7 @@ include 'connection.php';
         $trx_field = "Parking Lot ". $id;//tollbooth
         
         
-        $result = "SELECT U.u_sl, U.u_id, U.Name, U.Balance FROM users U WHERE U.u_id = '$u_id'";
+        $result = "SELECT U.u_sl, U.u_id, U.Name, U.Balance FROM customers U WHERE U.u_id = '$u_id'";
         $result = mysqli_query($conn, $result);
 
         $res = mysqli_fetch_array($result);
@@ -61,7 +61,7 @@ include 'connection.php';
         echo $res['Balance'];
         echo $bal;
         echo $trx_id;
-        $sqlUp = "UPDATE `users` SET `Balance`='".$bal."' WHERE u_id='".$u_id."'";
+        $sqlUp = "UPDATE `customers` SET `Balance`='".$bal."' WHERE u_id='".$u_id."'";
         
 		$sql1 = "INSERT INTO parking_lot (ID, u_id, u_Name, Amount, Date, Time, trx_id) VALUES ('".$id."','".$u_id."','".$u_name."','".$amountValue."', '".$d."', '".$t."', '".$trx_id."')"; //insert on toll booth table
         
