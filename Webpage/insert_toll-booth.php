@@ -75,7 +75,7 @@ include 'connection.php';
 	}
 	$conn->close();
     
-     include 'Footer.php';
+    php include 'Footer.php';
     ?>
 </body>
 
