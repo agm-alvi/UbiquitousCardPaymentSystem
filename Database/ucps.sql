@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 09, 2020 at 11:55 PM
+-- Generation Time: Jul 10, 2020 at 01:54 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -36,7 +36,7 @@ CREATE TABLE `card_recharge` (
   `Amount` int(10) NOT NULL,
   `Date` date NOT NULL,
   `Time` time NOT NULL,
-  `trx_id` varchar(20) NOT NULL
+  `trx_id` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -44,7 +44,7 @@ CREATE TABLE `card_recharge` (
 --
 
 INSERT INTO `card_recharge` (`sl`, `ID`, `u_id`, `u_Name`, `Amount`, `Date`, `Time`, `trx_id`) VALUES
-(2, 24, '3F AD 4D 29', 'Jahid Hasan Alvi', 1000, '2020-03-25', '19:06:12', 'CR24-001-20032519061');
+(2, 24, '3F AD 4D 29', 'Jahid Hasan Alvi', 1000, '2020-03-25', '19:06:12', 'CR024-001-200325190612');
 
 -- --------------------------------------------------------
 
@@ -87,7 +87,7 @@ CREATE TABLE `filling_station` (
   `Amount` int(10) NOT NULL,
   `Date` date NOT NULL,
   `Time` time NOT NULL,
-  `trx_id` varchar(20) NOT NULL
+  `trx_id` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -104,7 +104,7 @@ CREATE TABLE `parking_lot` (
   `Amount` int(10) NOT NULL,
   `Date` date NOT NULL,
   `Time` time NOT NULL,
-  `trx_id` varchar(20) NOT NULL
+  `trx_id` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -121,7 +121,7 @@ CREATE TABLE `toll_booth` (
   `Amount` int(10) NOT NULL,
   `Date` date NOT NULL,
   `Time` time NOT NULL,
-  `trx_id` varchar(20) NOT NULL
+  `trx_id` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -129,11 +129,9 @@ CREATE TABLE `toll_booth` (
 --
 
 INSERT INTO `toll_booth` (`sl`, `ID`, `u_id`, `u_Name`, `Amount`, `Date`, `Time`, `trx_id`) VALUES
-(0000000128, 24, '71 F3 3D 08', 'XYZ', 300, '2020-03-25', '18:32:23', 'TB24-005-20032518322'),
-(0000000129, 35, '3F AD 4D 29', 'Jahid Hasan Alvi', 500, '2020-03-25', '18:42:44', 'TB35-001-20032518424'),
-(0000000130, 14, 'B0 77 BB 25', 'Ekhtear Uddin Khan', 300, '2020-03-25', '18:44:50', 'TB14-002-20032518445'),
-(0000000131, 72, '41 24 9D D5', 'PQR', 700, '2020-03-26', '21:53:40', 'TB72-006-20032621534'),
-(0000000134, 15, 'A1 F4 78 D5', 'Asha Das', 900, '2020-07-10', '02:11:55', 'TB15-003-20071002115');
+(0000000129, 603, '3F AD 4D 29', 'Jahid Hasan Alvi', 500, '2020-03-25', '18:42:44', 'TB603-001-200325184244'),
+(0000000130, 615, 'B0 77 BB 25', 'Ekhtear Uddin Khan', 300, '2020-03-25', '18:44:50', 'TB615-002-200325184450'),
+(0000000134, 615, 'A1 F4 78 D5', 'Asha Das', 900, '2020-03-27', '02:11:55', 'TB615-003-200327021155');
 
 -- --------------------------------------------------------
 
@@ -149,7 +147,7 @@ CREATE TABLE `transactions` (
   `trx_field` varchar(20) NOT NULL,
   `Date` date NOT NULL,
   `Time` time NOT NULL,
-  `trx_id` varchar(20) NOT NULL
+  `trx_id` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -157,11 +155,9 @@ CREATE TABLE `transactions` (
 --
 
 INSERT INTO `transactions` (`sl`, `u_id`, `u_Name`, `Amount`, `trx_field`, `Date`, `Time`, `trx_id`) VALUES
-(106, '71 F3 3D 08', 'XYZ', 300, 'Toll Booth 24', '2020-03-25', '18:32:23', 'TB24-005-20032518322'),
-(107, '3F AD 4D 29', 'Jahid Hasan Alvi', 500, 'Toll Booth 35', '2020-03-25', '18:42:44', 'TB35-001-20032518424'),
-(108, 'B0 77 BB 25', 'Ekhtear Uddin Khan', 300, 'Toll Booth 14', '2020-03-25', '18:44:50', 'TB14-002-20032518445'),
-(109, '41 24 9D D5', 'PQR', 700, 'Toll Booth 72', '2020-03-26', '21:53:40', 'TB72-006-20032621534'),
-(112, 'A1 F4 78 D5', 'Asha Das', 900, 'Toll Booth 15', '2020-07-10', '02:11:55', 'TB15-003-20071002115');
+(107, '3F AD 4D 29', 'Jahid Hasan Alvi', 500, 'Toll Booth 603', '2020-03-25', '18:42:44', 'TB603-001-200325184244'),
+(108, 'B0 77 BB 25', 'Ekhtear Uddin Khan', 300, 'Toll Booth 615', '2020-03-25', '18:44:50', 'TB615-002-200325184450'),
+(112, 'A1 F4 78 D5', 'Asha Das', 900, 'Toll Booth 615', '2020-03-27', '02:11:55', 'TB615-003-200327021155');
 
 -- --------------------------------------------------------
 
@@ -175,7 +171,7 @@ CREATE TABLE `vendors` (
   `Thana` varchar(20) NOT NULL,
   `District` varchar(50) NOT NULL,
   `Division` varchar(50) NOT NULL,
-  `Field_ID` int(10) NOT NULL,
+  `username` int(10) NOT NULL,
   `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -183,11 +179,11 @@ CREATE TABLE `vendors` (
 -- Dumping data for table `vendors`
 --
 
-INSERT INTO `vendors` (`id`, `Field`, `Thana`, `District`, `Division`, `Field_ID`, `password`) VALUES
-(1, 'Toll Booth', 'Gendaria', 'Dhaka', 'Dhaka', 30111002, 'asdfg'),
+INSERT INTO `vendors` (`id`, `Field`, `Thana`, `District`, `Division`, `username`, `password`) VALUES
+(1, 'Toll Booth', 'Gendaria', 'Dhaka', 'Dhaka', 30111615, 'asdfg'),
 (2, 'Parking Lot', 'Vatara', 'Dhaka', 'Dhaka', 30143205, 'qwert'),
 (3, 'Filling Station', 'Mirpur Model', 'Dhaka', 'Dhaka', 30122404, 'zxcvb'),
-(4, 'Recharge Center', 'Shyampur', 'Dhaka', 'Dhaka', 30136602, 'poiuy');
+(4, 'Recharge Center', 'Shyampur', 'Dhaka', 'Dhaka', 30136002, 'poiuy');
 
 --
 -- Indexes for dumped tables
