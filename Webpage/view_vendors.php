@@ -1,7 +1,7 @@
 <?php
 include 'connection.php';
 
-$result = "SELECT v.id, v.Field, v.Thana, v.District, v.Division, v.Field_ID FROM vendors v ORDER BY v.id ASC";
+$result = "SELECT v.id, v.Field, v.Thana, v.District, v.Division, v.username FROM vendors v ORDER BY v.id ASC";
 $result = mysqli_query($conn, $result);
 
 ?>
@@ -76,7 +76,7 @@ $result = mysqli_query($conn, $result);
                                             <?php echo $res['Division']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $res['Field_ID'];?>
+                                            <?php echo $res['username'];?>
                                         </td>
                                     </tr>
                                 </tbody>
