@@ -29,7 +29,7 @@
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#about_us">About Us</a></li>
-                        <li><a href="#uses">Uses</a></li>
+                        <li><a href="#portfolio">Fields</a></li>
                         <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sign In <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="login_customer.php">Customer Sign In</a></li>
