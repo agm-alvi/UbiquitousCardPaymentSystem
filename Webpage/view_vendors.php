@@ -9,7 +9,7 @@ $result = mysqli_query($conn, $result);
     <html>
 
     <head>
-        <title>Vendors || UCPS</title>
+        <title>Vendors List|| UCPS</title>
         <link rel="icon" type="image/png" href="img/titleIcon.png">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
