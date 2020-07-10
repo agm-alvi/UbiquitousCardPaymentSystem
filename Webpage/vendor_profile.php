@@ -9,8 +9,19 @@ include 'connection.php';
 $name = $_SESSION["username"];
 $resultu = "SELECT * FROM vendors U where U.username = '".$name."' ";
 $resultu = mysqli_query($conn, $resultu);
-$id = "Toll Booth ".substr($name,-3);
-
+$wid = substr($name,-3);
+if($wid<200){
+$id = "Recharge Center ".$wid;    
+}
+else if($wid>=200 && $wid<400){
+$id = "Parking Lot ".$wid;    
+}
+else if($wid>=400 && $wid<600){
+$id = "Filling Station ".$wid;    
+}
+else{
+$id = "Toll Booth ".$wid;    
+}
 $result = "SELECT * FROM transactions T where T.trx_field LIKE '".$id."'";
 $result = mysqli_query($conn, $result);
 
@@ -46,79 +57,92 @@ $result = mysqli_query($conn, $result);
                                         <h1>Welcome <?php echo $resu['username'];?>
                             </h1>
                                         <h3>Type: <?php echo $resu['Field'];?></h3>
-                                    
-                                        <h3>Address: <?php echo $resu['Thana'];?>, <?php echo $resu['District'];?>, <?php echo $resu['Division'];?></h3></center>
+                                        <h3>Address: <?php echo $resu['Thana'];?>, <?php echo $resu['District'];?>, <?php echo $resu['Division'];?></h3> </center>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3"></div>
                     </div>
                 </div>
-        <div class="container-fluid" id="top">
-                <div class="row">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-6">
-                        <h1>Trasnsaction List</h1>
-                        <hr> </div>
-                    <div class="col-md-3"></div>
-                </div>
-            </div>
-            <div class="container-fluid" id="tab">
-                <div class="row">
-                    <div class="col-md-2"></div>
-                    <div class="col-md-8">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Sl</th>
-                                    <th>Name</th>
-                                    <th>User Id</th>
-                                    <th>Amount</th>
-                                    <th>Sector</th>
-                                    <th>Date</th>
-                                    <th>Time</th>
-                                    <th>Transaction Id</th>
-                                </tr>
-                            </thead>
-                            <?php 
+                <div class="container-fluid" id="tab">
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-8">
+                            <h1>Trasnsaction List</h1>
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Sl</th>
+                                        <th>Name</th>
+                                        <th>User Id</th>
+                                        <th>Amount</th>
+                                        <th>Sector</th>
+                                        <th>Date</th>
+                                        <th>Time</th>
+                                        <th>Transaction Id</th>
+                                    </tr>
+                                </thead>
+                                <?php 
                     while($res = mysqli_fetch_array($result)) { 
                     ?>
-                                <tbody>
-                                    <tr>
-                                        <td>
-                                            <?php echo $res['sl']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $res['u_Name']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $res['u_id']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $res['Amount'];?>
-                                        </td>
-                                        <td>
-                                            <?php echo $res['trx_field']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $res['Date']; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $res['Time'];?>
-                                        </td>
-                                        <td>
-                                            <?php echo $res['trx_id'];?>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                                <?php   
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <?php echo $res['sl']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $res['u_Name']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $res['u_id']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $res['Amount'];?>
+                                            </td>
+                                            <td>
+                                                <?php echo $res['trx_field']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $res['Date']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $res['Time'];?>
+                                            </td>
+                                            <td>
+                                                <?php echo $res['trx_id'];?>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <?php   
                     }
                     ?>
-                        </table>
+                            </table>
+                        </div>
+                        <div class="col-md-2"></div>
                     </div>
-                    <div class="col-md-2"></div>
                 </div>
-            </div>
+                <div class="container-fluid" id="top">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4"></div>
+                        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                            <?php 
+                        if($wid<200){?> <a href="insert_card-recharge.php">Input Card Recharge</a>
+                                <?php    }
+                        else if($wid>=200 && $wid<400){
+                            ?> <a href="insert_parking-lot.php">Input Parking Lot</a>
+                                    <?php   }
+                        else if($wid>=400 && $wid<600){
+                          ?> <a href="insert_Filling-station.php">Input Filling Station</a>
+                                        <?php       
+                        }
+                        else{
+                            ?> <a href="insert_toll-booth.php">Input Toll Booth</a>
+                                            <?php                           }
+                        ?>
+                                                <hr> </div>
+                        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4"></div>
+                    </div>
+                </div>
                 <?php include 'Footer.php'; ?>
     </body>
 
