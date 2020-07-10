@@ -22,7 +22,7 @@
     <div class="container-fluid" id="header">
         <div class="row">
             <div class="col-md-4">
-                <div class="logo"> <img src="img/logoHead.png" alt="LOGO"> </div>
+                <div class="logo"> <img src="img/logoHead.png" alt="LOGO" width="200px"> </div>
             </div>
             <div class="col-md-8">
                 <div class="menu">
