@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(empty($_SESSION["username"]))
+{
+  header('Location: index.php');
+}
+require 'connection.php';
+
+$name = $_SESSION["username"];
+$wid = substr($name,-3);
+?>
 <!DOCTYPE html>
 <html>
 
@@ -19,9 +30,9 @@
         <h1>Toll Booth</h1>
         <hr>
         <form action="" method="post" name="">
-            <h3>TB id:
+            <!--<h3>TB id:
             <input type="text" name="id" placeholder="Enter id"></h3>
-            <!--  <h3>Name:
+              <h3>Name:
             <input type="text" name="u_name" placeholder="Enter u name"></h3>-->
             <h3>uID:
             <input type="text" name="u_id" placeholder="Enter uID"></h3>
@@ -38,13 +49,14 @@ include 'connection.php';
     if(!empty($_POST['u_id']))
     {
         echo "online";
-		$id = $_POST['id'];
-        $idValue = (int)$id;
+	//	$id = $_POST['id'];
+        
+        $idValue = (int)$wid;
 		$u_id = $_POST['u_id'];
 	//	$u_name = $_POST['u_name'];
 		$amount = $_POST['amount'];
         $amountValue = (int)$amount;
-        $trx_field = "Toll Booth ". $id;//tollbooth
+        $trx_field = "Toll Booth ". $wid;//tollbooth
         
         
         $result = "SELECT U.u_sl, U.u_id, U.Name, U.Balance FROM customers U WHERE U.u_id = '$u_id'";
@@ -56,13 +68,13 @@ include 'connection.php';
          $bal = $bal - $amountValue;
         $u_name = $res['Name']; 
         
-        $trx_id = "TB".$id."-".$res['u_sl']."-".$timestamp;//id for Toll Booth (TB)
+        $trx_id = "TB".$wid."-".$res['u_sl']."-".$timestamp;//id for Toll Booth (TB)
         echo $res['Balance'];
         echo $bal;
         echo $trx_id;
         $sqlUp = "UPDATE `customers` SET `Balance`='".$bal."' WHERE u_id='".$u_id."'";
         
-		$sql1 = "INSERT INTO toll_booth (ID, u_id, u_Name, Amount, Date, Time, trx_id) VALUES ('".$id."','".$u_id."','".$u_name."','".$amountValue."', '".$d."', '".$t."', '".$trx_id."')"; //insert on toll booth table
+		$sql1 = "INSERT INTO toll_booth (ID, u_id, u_Name, Amount, Date, Time, trx_id) VALUES ('".$wid."','".$u_id."','".$u_name."','".$amountValue."', '".$d."', '".$t."', '".$trx_id."')"; //insert on toll booth table
         
         $sql2 = "INSERT INTO transactions (u_id, u_Name, Amount, trx_field, Date, Time, trx_id) VALUES ('".$u_id."','".$u_name."','".$amountValue."','".$trx_field."', '".$d."', '".$t."', '".$trx_id."')"; //insert on transaction table
         echo "insert";
@@ -74,7 +86,7 @@ include 'connection.php';
 	}
 	$conn->close();
     
-    php include 'Footer.php';
+ include 'Footer.php';
     ?>
 </body>
 
