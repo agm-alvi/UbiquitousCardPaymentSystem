@@ -39,6 +39,8 @@ $wid = substr($name,-3);
             <h3>Amount:
             <input type="text" name="amount" placeholder="Enter your amount"></h3>
             <input type="submit" name="Submit" value="Submit"> </form>
+    
+    <a href="login_vendor.php">Go Back</a>
         <?php
 include 'connection.php';
     //Get current date and time
