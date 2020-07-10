@@ -45,7 +45,9 @@ $result = mysqli_query($conn, $result);
                                     <center>
                                         <h1>Welcome <?php echo $resu['username'];?>
                             </h1>
-                                        <h4></h4> </center>
+                                        <h3>Type: <?php echo $resu['Field'];?></h3>
+                                    
+                                        <h3>Address: <?php echo $resu['Thana'];?>, <?php echo $resu['District'];?>, <?php echo $resu['Division'];?></h3></center>
                                 </div>
                             </div>
                         </div>
