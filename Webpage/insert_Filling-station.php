@@ -1,3 +1,14 @@
+<?php
+session_start();
+if(empty($_SESSION["username"]))
+{
+  header('Location: index.php');
+}
+require 'connection.php';
+
+$name = $_SESSION["username"];
+$wid = substr($name,-3);
+?>
 <!DOCTYPE html>
 <html>
 
@@ -5,7 +16,6 @@
     <meta charset="UTF-8">
     <title>Filling Station Bill Pay || UCPS</title>
     <link rel="icon" type="image/png" href="img/titleIcon.png">
-    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -20,15 +30,17 @@
         <h1>Filling Station</h1>
         <hr>
         <form action="" method="post" name="">
-            <h3>FS id:
+            <!--<h3>TB id:
             <input type="text" name="id" placeholder="Enter id"></h3>
-            <!--  <h3>Name:
+              <h3>Name:
             <input type="text" name="u_name" placeholder="Enter u name"></h3>-->
             <h3>uID:
             <input type="text" name="u_id" placeholder="Enter uID"></h3>
             <h3>Amount:
             <input type="text" name="amount" placeholder="Enter your amount"></h3>
             <input type="submit" name="Submit" value="Submit"> </form>
+    
+    <a href="login_vendor.php">Go Back</a>
         <?php
 include 'connection.php';
     //Get current date and time
@@ -39,13 +51,14 @@ include 'connection.php';
     if(!empty($_POST['u_id']))
     {
         echo "online";
-		$id = $_POST['id'];
-        $idValue = (int)$id;
+	//	$id = $_POST['id'];
+        
+        $idValue = (int)$wid;
 		$u_id = $_POST['u_id'];
 	//	$u_name = $_POST['u_name'];
 		$amount = $_POST['amount'];
         $amountValue = (int)$amount;
-        $trx_field = "Filling Station ". $id;//FillingStation
+        $trx_field = "Filling Station ". $wid;//fillingStation
         
         
         $result = "SELECT U.u_sl, U.u_id, U.Name, U.Balance FROM customers U WHERE U.u_id = '$u_id'";
@@ -57,13 +70,13 @@ include 'connection.php';
          $bal = $bal - $amountValue;
         $u_name = $res['Name']; 
         
-        $trx_id = "FS".$id."-".$res['u_sl']."-".$timestamp;//id for Filling Station (FS)
+        $trx_id = "TB".$wid."-".$res['u_sl']."-".$timestamp;//id for Filling Station (FS)
         echo $res['Balance'];
         echo $bal;
         echo $trx_id;
         $sqlUp = "UPDATE `customers` SET `Balance`='".$bal."' WHERE u_id='".$u_id."'";
         
-		$sql1 = "INSERT INTO filling_station (ID, u_id, u_Name, Amount, Date, Time, trx_id) VALUES ('".$id."','".$u_id."','".$u_name."','".$amountValue."', '".$d."', '".$t."', '".$trx_id."')"; //insert on Filling Station table
+		$sql1 = "INSERT INTO toll_booth (ID, u_id, u_Name, Amount, Date, Time, trx_id) VALUES ('".$wid."','".$u_id."','".$u_name."','".$amountValue."', '".$d."', '".$t."', '".$trx_id."')"; //insert on Filling Station table
         
         $sql2 = "INSERT INTO transactions (u_id, u_Name, Amount, trx_field, Date, Time, trx_id) VALUES ('".$u_id."','".$u_name."','".$amountValue."','".$trx_field."', '".$d."', '".$t."', '".$trx_id."')"; //insert on transaction table
         echo "insert";
@@ -75,7 +88,7 @@ include 'connection.php';
 	}
 	$conn->close();
     
-    php include 'Footer.php';
+ include 'Footer.php';
     ?>
 </body>
 
