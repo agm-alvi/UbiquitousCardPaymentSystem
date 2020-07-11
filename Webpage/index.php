@@ -96,7 +96,7 @@
             <div class="col-md-5" id="img"> <img src="img/UCPS.png" alt="" width="100%"> </div>
             <div class="col-md-7">
                 <div class="row">
-                    <div class="about_me_p">
+                    <div class="about_us_p">
                         <h1>About Us</h1>
                         <p>Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri.</p>
                         <p> Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei.</p>
@@ -160,35 +160,34 @@
             <p>Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. </p>
         </div>
         <div class="row">
-            <div class="col-md-4 category">
+            <div class="col-md-4 category" id="CR">
                 <h4>Filtered By Category</h4>
                 <div class="p_menu">
                     <ul type="none">
-                        <li><a href="#">All</a></li>
-                        <li><a href="#">Toll Booths</a></li>
-                        <li><a href="#">Parking Lots</a></li>
-                        <li><a href="#">Filling Stations</a></li>
-                        <li><a href="#">Recharge Counters</a></li>
+                        <li><a href="#TB">Toll Booths</a></li>
+                        <li><a href="#PL">Parking Lots</a></li>
+                        <li><a href="#FS">Filling Stations</a></li>
+                        <li><a href="#CR">Recharge Counters</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-md-4"><img src="img/TB1.jpg" alt="TB1"></div>
+            <div class="col-md-4"><img src="img/CR2.jpg" alt="CR2"></div>
             <div class="col-md-4"><img src="img/CR1.jpg" alt="CR1"></div>
         </div>
-        <div class="row">
-            <div class="col-md-4"><img src="img/PL1.jpg" alt="PL1"></div>
+        <div class="row" id="TB">
+            <div class="col-md-4"><img src="img/TB1.jpg" alt="TB1"></div>
             <div class="col-md-4"><img src="img/TB2.jpg" alt="TB2"></div>
-            <div class="col-md-4"><img src="img/FS1.jpg" alt="FS1"></div>
-        </div>
-        <div class="row">
-            <div class="col-md-4"><img src="img/CR2.jpg" alt="CR2"></div>
-            <div class="col-md-4"><img src="img/FS2.jpg" alt="FS2"></div>
-            <div class="col-md-4"><img src="img/PL2.jpg" alt="PL2"></div>
-        </div>
-        <div class="row">
             <div class="col-md-4"><img src="img/TB3.jpg" alt="TB3"></div>
+        </div>
+        <div class="row" id="PL">
+            <div class="col-md-4"><img src="img/PL2.jpg" alt="PL2"></div>
             <div class="col-md-4"><img src="img/PL3.jpg" alt="PL3"></div>
+            <div class="col-md-4"><img src="img/PL1.jpg" alt="PL1"></div>
+        </div>
+        <div class="row" id="FS">
             <div class="col-md-4"><img src="img/FS3.jpg" alt="FS3"></div>
+            <div class="col-md-4"><img src="img/FS2.jpg" alt="FS2"></div>
+            <div class="col-md-4"><img src="img/FS1.jpg" alt="FS1"></div>
         </div>
     </div>
     <!-- portfolio ends -->
