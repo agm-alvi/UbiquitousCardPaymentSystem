@@ -1,4 +1,11 @@
 <?php
+session_start();
+if(empty($_SESSION["username"]))
+{
+  header('Location: index.php');
+}
+require 'connection.php';
+
 include 'connection.php';
 
 $result = "SELECT T.sl, T.u_id, T.u_Name, T.Amount, T.trx_field, T.Date, T.Time, T.trx_id FROM transactions T ORDER BY T.sl ASC";

@@ -1,4 +1,11 @@
 <?php
+session_start();
+if(empty($_SESSION["username"]))
+{
+  header('Location: index.php');
+}
+require 'connection.php';
+
 include 'connection.php';
 
 $result = "SELECT v.id, v.Field, v.Thana, v.District, v.Division, v.username FROM vendors v ORDER BY v.id ASC";

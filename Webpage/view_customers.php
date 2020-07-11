@@ -1,4 +1,11 @@
 <?php
+session_start();
+if(empty($_SESSION["username"]))
+{
+  header('Location: index.php');
+}
+require 'connection.php';
+
 include 'connection.php';
 
 $result = "SELECT U.u_id, U.Name, U.Balance FROM customers U ORDER BY U.Name ASC";
