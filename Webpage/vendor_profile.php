@@ -10,7 +10,7 @@ $name = $_SESSION["username"];
 $resultu = "SELECT * FROM vendors U where U.username = '".$name."' ";
 $resultu = mysqli_query($conn, $resultu);
 $wid = substr($name,-3);
-if($wid<200){
+if($wid>=1 && $wid<200){
 $id = "Recharge Center ".$wid;    
 }
 else if($wid>=200 && $wid<400){
@@ -126,7 +126,7 @@ $result = mysqli_query($conn, $result);
                         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4"></div>
                         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
                             <?php 
-                        if($wid<200){?> <a href="insert_card-recharge.php">Input Card Recharge</a>
+                        if($wid>=1 && $wid<200){?> <a href="insert_card-recharge.php">Input Card Recharge</a>
                                 <?php    }
                         else if($wid>=200 && $wid<400){
                             ?> <a href="insert_parking-lot.php">Input Parking Lot</a>
@@ -135,9 +135,13 @@ $result = mysqli_query($conn, $result);
                           ?> <a href="insert_Filling-station.php">Input Filling Station</a>
                                         <?php       
                         }
-                        else{
+                        elseif($wid>=600 && $wid<800){
                             ?> <a href="insert_toll-booth.php">Input Toll Booth</a>
                                             <?php                           }
+                        else{
+                            ?> <a href="index.php">Homepage</a>
+                                            <?php                           }
+
                         ?>
                                                 <hr> </div>
                         <div class="col-xs-12 col-sm-3 col-md-3 col-lg-4"></div>
