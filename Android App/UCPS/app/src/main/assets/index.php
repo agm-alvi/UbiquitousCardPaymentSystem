@@ -31,11 +31,11 @@
                         <li><a href="#portfolio">Fields</a></li>
                         <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sign In <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="login_customer.php">Customer Sign In</a></li>
-                                <li><a href="login_vendor.php">Vendor Sign In</a></li>
+                                <li><a href="http://ucps.epizy.com/login_customer.php">Customer Sign In</a></li>
+                                <li><a href="http://ucps.epizy.com/login_vendor.php">Vendor Sign In</a></li>
                             </ul>
                         </li>
-                        <li><a href="Contact.php">Contact Us</a></li>
+                        <li><a href="http://ucps.epizy.com/Contact.php">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
