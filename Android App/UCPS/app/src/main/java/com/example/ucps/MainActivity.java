@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         WebView webView = (WebView) findViewById(R.id.webView);
-        webView.loadUrl("file:///android_asset/index.php");
+        webView.loadUrl("file:///android_asset/login_customer.php");
         webView.getSettings().setJavaScriptEnabled(true);
     }
 }
