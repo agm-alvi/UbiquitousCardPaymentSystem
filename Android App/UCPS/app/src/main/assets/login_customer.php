@@ -1,5 +1,5 @@
 <?php
-session_start();
+/*session_start();
 if(!empty($_SESSION["username"]))
 {
       if($_SESSION["username"] =="admin")
@@ -8,7 +8,7 @@ if(!empty($_SESSION["username"]))
       }else{
         header('Location: user_profile.php');
       }
-}
+}*/
 require 'connection.php';
 if(isset($_POST['username']) && isset($_POST['password']))
 {
