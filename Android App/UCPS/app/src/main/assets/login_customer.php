@@ -1,38 +1,3 @@
-<?php
-/*session_start();
-if(!empty($_SESSION["username"]))
-{
-      if($_SESSION["username"] =="admin")
-      {
-        header('Location: admin.php');
-      }else{
-        header('Location: user_profile.php');
-      }
-}*/
-require 'connection.php';
-if(isset($_POST['username']) && isset($_POST['password']))
-{
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $login_user ="select * from customers where username='$username' && password ='$password'";
-    $result = $conn->query($login_user);
-    if ($result->num_rows > 0) {
-      while($row = $result->fetch_assoc()) {
-        $_SESSION["username"] = $row['username'];
-       // $_SESSION["email"] = $row['email'];
-      }
-      if($username =="admin")
-      {
-        header('Location: admin.php');
-      }else{
-        header('Location: user_profile.php');
-      }
-    }else{
-      echo "<script>alert('wrong username & Password')</script>";
-    }
-  
-}
-?>
     <!DOCTYPE html>
     <html lang="en">
 
@@ -69,7 +34,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
                                 <div class="form-group">
                                     <label for="password">Password:</label>
                                     <input type="password" class="form-control" id="password" name="password" required placeholder="Password">
-                                    <input type="checkbox" onclick="myFunction()"> &nbsp;Show Password </div>
+                                     </div>
                                 <button type="submit" class="btn btn-primary btn-block">Log In</button>
                             </form>
                         </div>
@@ -83,14 +48,3 @@ if(isset($_POST['username']) && isset($_POST['password']))
     </body>
 
     </html>
-    <script type="text/javascript">
-        function myFunction() {
-            var x = document.getElementById("password");
-            if (x.type === "password") {
-                x.type = "text";
-            }
-            else {
-                x.type = "password";
-            }
-        }
-    </script>
