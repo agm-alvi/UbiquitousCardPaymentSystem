@@ -26,11 +26,19 @@
 }
 
 .starter .carousel-inner .item h1 {
-    font-size: 60px;
     border-bottom: 2px solid white;
     border-top: 2px solid white;
 }
 
+.starter .col-md-12 .col-lg-12 .carousel-inner .item h1 {
+    font-size: 60px;
+}
+.starter col-sm-12 .carousel-inner .item h1 {
+    font-size: 30px;
+}
+.starter col-xs-12 .carousel-inner .item h1 {
+    font-size: 15px;
+}
 
 .starter .carousel-inner .item .carousel-caption {
     position: absolute;
