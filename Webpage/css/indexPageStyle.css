@@ -29,21 +29,15 @@
     font-size: 60px;
     border-bottom: 2px solid white;
     border-top: 2px solid white;
-    width: 745px;
 }
 
-.starter .carousel-inner .item .btn {
-    background: transparent;
-    border: 2px solid #ffffff;
-    border-radius: 0px;
-    margin-top: 40px;
-    font-size: 18px;
-    padding: 10px 25px;
-}
 
 .starter .carousel-inner .item .carousel-caption {
-    top: 375px;
-    left: 250px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
 }
 
 #header {
@@ -82,9 +76,11 @@
     color: #2ecc71;
     text-decoration-style: solid;
 }
-#header .menu ul li .dropdown-menu a{
+
+#header .menu ul li .dropdown-menu a {
     background: #252e30;
 }
+
 #explanations {
     margin-top: 100px;
     margin-bottom: 100px;
