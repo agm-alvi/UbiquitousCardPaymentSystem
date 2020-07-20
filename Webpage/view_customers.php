@@ -3,9 +3,12 @@ session_start();
 if(empty($_SESSION["username"]))
 {
   header('Location: index.php');
+}else{
+  if($_SESSION["username"] != "admin")
+  {
+    header('Location: login_customer.php');
+  }
 }
-require 'connection.php';
-
 include 'connection.php';
 
 $result = "SELECT * FROM customers U ORDER BY U.Name ASC";

@@ -6,7 +6,7 @@ if(empty($_SESSION["username"]))
 }else{
   if($_SESSION["username"] != "admin")
   {
-    header('Location: index.php');
+    header('Location: login_customer.php');
   }
 }
 
