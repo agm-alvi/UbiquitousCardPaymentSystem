@@ -16,7 +16,7 @@ if ($result_user->num_rows > 0) {
   while($row_user = $result_user->fetch_assoc()) {
     $password = $row_user['password'];
     $name = $row_user['name'];
-    $contact_no = $row_user['contact_no'];
+    $gender = $row_user['gender'];
     $hNs_no = $row_user['hNs_no'];
     $thana = $row_user['thana'];
     $district = $row_user['district'];
@@ -31,6 +31,7 @@ if(isset($_POST['submit']))
 {
   $password = $_POST['password'];
     $name = $_POST['name'];
+    $gender = $_POST['gender'];
     $contact_no = $_POST['contact_no'];
     $email = $_POST['email'];
     $hNs_no = $_POST['hNs_no'];
@@ -40,7 +41,7 @@ if(isset($_POST['submit']))
     $country = $_POST['country'];
 //      $update_info ="UPDATE `userinfo` SET `fullname`='$fullname',`username`='$username',`email`='$email',`password`='$password' WHERE userinfo_id = '$user_id'";
     
-    $update_info = "UPDATE `customers` SET `name`= '$name',`password`= '$password' ,`contact_no`= '$contact_no', `email`= '$email' ,`hNs_no`= '$hNs_no',`thana`= '$thana',`district`='$district',`zip_code`='$zip_code',`country`= '$country' WHERE username = '".$username."'";
+    $update_info = "UPDATE `customers` SET `name`= '$name',`password`= '$password', `contact_no`= '$contact_no', `gender`= '$gender', `email`= '$email' ,`hNs_no`= '$hNs_no', `thana`='$thana', `district`='$district', `zip_code`='$zip_code', `country`= '$country' WHERE username = '".$username."'";
   
     if ($conn->query($update_info) === TRUE) {
         $_SESSION["username"] = $username;
@@ -95,6 +96,11 @@ if(isset($_POST['submit']))
                         <input type="password" class="form-control" id="password" placeholder="update password" name="password" value="<?php echo $password ?>" required>
                         <input type="checkbox" onclick="myFunction()"> &nbsp;Show Password
                     </div>
+                    <div class="form-group">
+                        <label for="Gender">Gender:</label>
+                        <input type="text" class="form-control" id="name" placeholder="Update Gender (Male/Female)" name="gender" value="<?php echo $gender ?>" required>
+                    </div>
+                    
                     <div class="form-group">
                         <label for="contact_no">Contact No:</label>
                         <input type="text" class="form-control" id="contact_no" placeholder="Update Contact No" name="contact_no" value="<?php echo $contact_no ?>" required>
