@@ -9,6 +9,8 @@ if(empty($_SESSION["username"]))
     header('Location: login_customer.php');
   }
 }
+
+
 include 'connection.php';
 
 $result = "SELECT * FROM customers U ORDER BY U.Name ASC";
