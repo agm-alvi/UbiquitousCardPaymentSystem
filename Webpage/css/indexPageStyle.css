@@ -33,9 +33,11 @@
 .starter .col-md-12 .col-lg-12 .carousel-inner .item h1 {
     font-size: 60px;
 }
+
 .starter col-sm-12 .carousel-inner .item h1 {
     font-size: 30px;
 }
+
 .starter col-xs-12 .carousel-inner .item h1 {
     font-size: 15px;
 }
@@ -55,10 +57,12 @@
 
 #explanations h1 {
     color: #566366;
+    font-size: 5vw;
 }
 
 #explanations p {
     color: #919191;
+    font-size: 2vw;
 }
 
 #about_us {
@@ -240,4 +244,3 @@ textarea {
     color: #ffffff;
     padding: 10px;
 }
-
