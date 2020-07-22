@@ -73,6 +73,7 @@ $resultr = mysqli_query($conn, $resultr);
                         
                         <strong>Username: <?php echo $resu['username']; ?></strong>
                         <strong>User ID:  <?php echo $resu['u_id']; ?>    </strong>
+                        <strong>Gender:  <?php echo $resu['gender']; ?>    </strong>
                         <strong>Contact no: <?php echo $resu['contact_no']; ?></strong>
                         <strong>Email: <?php echo $resu['email'];?></strong>
                         <strong>House & Street no: <?php echo $resu['hNs_no']; ?></strong>
