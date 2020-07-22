@@ -62,6 +62,7 @@ $result = mysqli_query($conn, $result);
                                     <th>Sl</th>
                                     <th>Name</th>
                                     <th>User Id</th>
+                                    <th>Gender</th>
                                     <th>Balance</th>
                                     <th>House & Street no</th>
                                     <th>Thana</th>
@@ -85,6 +86,10 @@ $result = mysqli_query($conn, $result);
                                         <td>
                                             <?php echo $res['u_id']; ?>
                                         </td>
+                                        <td>
+                                            <?php echo $res['gender'];?>
+                                        </td>
+                                        
                                         <td>
                                             <?php echo $res['Balance'];?>
                                         </td>
