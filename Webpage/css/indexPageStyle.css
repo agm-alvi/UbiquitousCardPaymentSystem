@@ -26,65 +26,30 @@
 }
 
 .starter .carousel-inner .item h1 {
-    font-size: 60px;
     border-bottom: 2px solid white;
     border-top: 2px solid white;
-    width: 745px;
 }
 
-.starter .carousel-inner .item .btn {
-    background: transparent;
-    border: 2px solid #ffffff;
-    border-radius: 0px;
-    margin-top: 40px;
-    font-size: 18px;
-    padding: 10px 25px;
+.starter .col-md-12 .col-lg-12 .carousel-inner .item h1 {
+    font-size: 60px;
+}
+
+.starter col-sm-12 .carousel-inner .item h1 {
+    font-size: 30px;
+}
+
+.starter col-xs-12 .carousel-inner .item h1 {
+    font-size: 15px;
 }
 
 .starter .carousel-inner .item .carousel-caption {
-    top: 375px;
-    left: 250px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
 }
 
-#header {
-    background: #252e30;
-}
-
-#header logo {
-    padding-top: 5px;
-    width: 200px;
-}
-
-#header .menu {
-    height: 70px;
-}
-
-#header .menu ul {
-    float: right;
-    background: #252e30;
-}
-
-#header .menu ul li {
-    display: inline;
-}
-
-#header .menu ul li a {
-    text-decoration: none;
-    display: inline-block;
-    color: white;
-    transition: .8s;
-    padding: 0px 15px;
-    font-size: 20px;
-    line-height: 70px;
-}
-
-#header .menu ul li a:hover {
-    color: #2ecc71;
-    text-decoration-style: solid;
-}
-#header .menu ul li .dropdown-menu a{
-    background: #252e30;
-}
 #explanations {
     margin-top: 100px;
     margin-bottom: 100px;
@@ -92,10 +57,12 @@
 
 #explanations h1 {
     color: #566366;
+    font-size: 5vw;
 }
 
 #explanations p {
     color: #919191;
+    font-size: 2vw;
 }
 
 #about_us {
@@ -276,43 +243,4 @@ textarea {
     background: #4b5456;
     color: #ffffff;
     padding: 10px;
-}
-
-.footer {
-    background: #191f21;
-    color: #4b5456;
-    text-align: center;
-}
-
-.footer p {
-    margin-top: 40px;
-    margin-bottom: 20px;
-}
-
-.footer .sites {
-    margin-bottom: 50px;
-}
-
-.footer .sites ul {}
-
-.footer .sites ul li {
-    background: #4b5456;
-    display: inline-block;
-    height: 35px;
-    width: 35px;
-    margin-left: 10px;
-    border-radius: 50%;
-}
-
-.footer .sites ul li a {
-    text-decoration: none;
-    display: inline-block;
-    color: #191f21;
-    transition: .8s;
-    font-size: 25px;
-}
-
-.footer .sites ul li a:hover {
-    color: #ffffff;
-    text-decoration-style: solid;
 }

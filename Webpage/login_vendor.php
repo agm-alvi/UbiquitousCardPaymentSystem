@@ -4,7 +4,7 @@ if(!empty($_SESSION["username"]))
 {
       if($_SESSION["username"] =="admin")
       {
-        header('Location: admin.php');
+        header('Location: admin_profile.php');
       }else{
         header('Location: vendor_profile.php');
       }

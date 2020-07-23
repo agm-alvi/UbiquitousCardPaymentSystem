@@ -14,7 +14,7 @@ $wid = substr($name,-3);
 
 <head>
     <meta charset="UTF-8">
-    <title>Parking Lot Bill Pay || UCPS</title>
+    <title>Ferry Terminal Bill Pay || UCPS</title>
     <link rel="icon" type="image/png" href="img/titleIcon.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,9 +32,9 @@ $wid = substr($name,-3);
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3"></div>
             <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-                <h1>Parking Lot Fare Pay</h1>
+                <h1>Ferry Terminal Fare Pay</h1>
                 <hr>
-                <form action="" method="post" name="PLForm">
+                <form action="" method="post" name="FTForm">
                     <h3>uID:
                         <input type="text" name="u_id" placeholder="Enter uID"></h3>
                     <h3>Amount:
@@ -61,7 +61,7 @@ include 'connection.php';
 	//	$u_name = $_POST['u_name'];
 		$amount = $_POST['amount'];
         $amountValue = (int)$amount;
-        $trx_field = "Parking Lot ". $wid;//parkinglot
+        $trx_field = "Ferry Terminal ". $wid;//ferryterminal
         
         
         $result = "SELECT U.u_sl, U.u_id, U.Name, U.Balance FROM customers U WHERE U.u_id = '$u_id'";
@@ -73,13 +73,13 @@ include 'connection.php';
          $bal = $bal - $amountValue;
         $u_name = $res['Name']; 
         
-        $trx_id = "PL".$wid."-".$res['u_sl']."-".$timestamp;//id for Parking Lot (PL)
+        $trx_id = "FT".$wid."-".$res['u_sl']."-".$timestamp;//id for Ferry Terminal (FT)
         echo $res['Balance'];
         echo $bal;
         echo $trx_id;
         $sqlUp = "UPDATE `customers` SET `Balance`='".$bal."' WHERE u_id='".$u_id."'";
         
-		$sql1 = "INSERT INTO parking_lot (ID, u_id, u_Name, Amount, Date, Time, trx_id) VALUES ('".$wid."','".$u_id."','".$u_name."','".$amountValue."', '".$d."', '".$t."', '".$trx_id."')"; //insert on parking lot table
+		$sql1 = "INSERT INTO ferry_terminal (ID, u_id, u_Name, Amount, Date, Time, trx_id) VALUES ('".$wid."','".$u_id."','".$u_name."','".$amountValue."', '".$d."', '".$t."', '".$trx_id."')"; //insert on ferry terminal table
         
         $sql2 = "INSERT INTO transactions (u_id, u_Name, Amount, trx_field, Date, Time, trx_id) VALUES ('".$u_id."','".$u_name."','".$amountValue."','".$trx_field."', '".$d."', '".$t."', '".$trx_id."')"; //insert on transaction table
         echo "insert";

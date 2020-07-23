@@ -3,12 +3,17 @@ session_start();
 if(empty($_SESSION["username"]))
 {
   header('Location: index.php');
+}else{
+  if($_SESSION["username"] != "admin")
+  {
+    header('Location: login_customer.php');
+  }
 }
-require 'connection.php';
+
 
 include 'connection.php';
 
-$result = "SELECT U.u_id, U.Name, U.Balance FROM customers U ORDER BY U.Name ASC";
+$result = "SELECT * FROM customers U ORDER BY U.Name ASC";
 $result = mysqli_query($conn, $result);
 
 ?>
@@ -23,7 +28,7 @@ $result = mysqli_query($conn, $result);
         <meta property="og:image" content="img/UCPS.png" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        <link rel="stylesheet" href="listViewStyle.css">
+        //<link rel="stylesheet" href="listViewStyle.css">
         <style>
             table {
                 counter-reset: section;
@@ -40,24 +45,33 @@ $result = mysqli_query($conn, $result);
         <?php include 'Header.php'; ?>
             <div class="container-fluid" id="top">
                 <div class="row">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-6">
-                        <h1>Customers Informations</h1>
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8">
+                        <h1 align="center">Customers Informations</h1>
                         <hr> </div>
-                    <div class="col-md-3"></div>
+                    <div class="col-md-2"></div>
                 </div>
             </div>
             <div class="container-fluid" id="tab">
                 <div class="row">
-                    <div class="col-md-3"></div>
-                    <div class="col-md-6">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-10">
                         <table class="table table-hover">
                             <thead>
                                 <tr>
                                     <th>Sl</th>
                                     <th>Name</th>
                                     <th>User Id</th>
+                                    <th>Gender</th>
                                     <th>Balance</th>
+                                    <th>House & Street no</th>
+                                    <th>Thana</th>
+                                    <th>District</th>
+                                    <th>Zip Code</th>
+                                    <th>Country</th>
+                                    <th>Contact No</th>
+                                    <th>Email</th>
+                                    
                                 </tr>
                             </thead>
                             <?php 
@@ -67,13 +81,38 @@ $result = mysqli_query($conn, $result);
                                     <tr>
                                         <td class="count"></td>
                                         <td>
-                                            <?php echo $res['Name']; ?>
+                                            <?php echo $res['name']; ?>
                                         </td>
                                         <td>
                                             <?php echo $res['u_id']; ?>
                                         </td>
                                         <td>
+                                            <?php echo $res['gender'];?>
+                                        </td>
+                                        
+                                        <td>
                                             <?php echo $res['Balance'];?>
+                                        </td>
+                                        <td>
+                                            <?php echo $res['hNs_no'];?>
+                                        </td>
+                                        <td>
+                                            <?php echo $res['thana'];?>
+                                        </td>
+                                        <td>
+                                            <?php echo $res['district'];?>
+                                        </td>
+                                        <td>
+                                            <?php echo $res['zip_code'];?>
+                                        </td>
+                                        <td>
+                                            <?php echo $res['country'];?>
+                                        </td>
+                                        <td>
+                                            <?php echo $res['contact_no'];?>
+                                        </td>
+                                        <td>
+                                            <?php echo $res['email'];?>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -82,7 +121,7 @@ $result = mysqli_query($conn, $result);
                     ?>
                         </table>
                     </div>
-                    <div class="col-md-3"></div>
+                    <div class="col-md-1"></div>
                 </div>
             </div>
             <?php include 'Footer.php'; ?>

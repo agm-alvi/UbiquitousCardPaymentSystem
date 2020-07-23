@@ -23,24 +23,27 @@ $wid = substr($name,-3);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/insertPagesStyle.css"> </head>
+    <link rel="stylesheet" href="css/insertPagesStyle.css">
+</head>
 
 <body>
     <?php include 'Header.php'; ?>
-        <h1>Toll Booth</h1>
-        <hr>
-        <form action="" method="post" name="">
-            <!--<h3>TB id:
-            <input type="text" name="id" placeholder="Enter id"></h3>
-              <h3>Name:
-            <input type="text" name="u_name" placeholder="Enter u name"></h3>-->
-            <h3>uID:
-            <input type="text" name="u_id" placeholder="Enter uID"></h3>
-            <h3>Amount:
-            <input type="text" name="amount" placeholder="Enter your amount"></h3>
-            <input type="submit" name="Submit" value="Submit"> </form>
-    
-    <a href="login_vendor.php">Go Back</a>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3"></div>
+            <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                <h1>Toll Booth Fare Pay</h1>
+                <hr>
+                <form action="" method="post" name="TBForm">
+                    <h3>uID:
+                        <input type="text" name="u_id" placeholder="Enter uID"></h3>
+                    <h3>Amount:
+                        <input type="text" name="amount" placeholder="Enter your amount"></h3>
+                    <input type="submit" name="Submit" value="Submit">
+                </form>
+            </div>
+        </div> <a href="login_vendor.php">Go Back</a>
+        </div>
         <?php
 include 'connection.php';
     //Get current date and time

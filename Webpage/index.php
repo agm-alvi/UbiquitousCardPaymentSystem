@@ -14,6 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/indexPageStyle.css">
+    <link rel="stylesheet" href="css/HeaderFooterStyle.css">
 </head>
 
 <body>
@@ -21,7 +22,8 @@
     <div class="container-fluid" id="header">
         <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-                <div class="logo"> <img src="img/logoTop.png" alt="LOGO" width="200px"> </div>
+                <div class="logo">
+                    <a href="index.php"><img src="img/logoTop.png" alt="LOGO" width="200px"></a> </div>
             </div>
             <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                 <div class="menu">
@@ -53,6 +55,7 @@
                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                         <li data-target="#myCarousel" data-slide-to="1"></li>
                         <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
                     </ol>
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
@@ -71,6 +74,11 @@
                                 <h1>Filling Station</h1>
                             </div>
                         </div>
+                        <div class="item"> <img src="img/bannerFerryTerminal.png" alt="Ferry Terminal" style="width:100%;">
+                            <div class="carousel-caption myclass">
+                                <h1>Ferry Terminal</h1>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -82,11 +90,11 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <h1>Goals</h1>
-                <p>Lorem ipsum dolor sit amet, ea doming until epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est.</p>
+                <p>More easy and hassle free bill payment system. No more waiting in a queue.</p>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
                 <h1>Future Plans</h1>
-                <p>Lorem ipsum dolor sit amet, ea doming until epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est.</p>
+                <p>We are going to intregarate the bill payment system among all other sectors of paying bills.</p>
             </div>
         </div>
     </div>
@@ -104,21 +112,21 @@
                 </div>
                 <div class="row fields">
                     <div class="col-md-6">
-                        <h3><span class="glyphicon glyphicon-globe icon1"></span>Toll Booth Payment</h3>
+                        <h3><span class="fa fa-credit-card-alt" aria-hidden="true" style='color:pink'></span>Toll Booth Payment</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     </div>
                     <div class="col-md-6">
-                        <h3><span class="glyphicon glyphicon-pencil icon1"></span>Parking Lot Payment</h3>
+                        <h3><span class="fa fa-credit-card-alt" aria-hidden="true" style='color:blue'></span>Parking Lot Payment</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     </div>
                 </div>
                 <div class="row fields">
                     <div class="col-md-6">
-                        <h3><span class="glyphicon glyphicon-user icon1"></span>Filling Station Payment</h3>
+                        <h3><span class="fa fa-credit-card-alt" aria-hidden="true" style='color:purple'></span>Filling Station Payment</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     </div>
                     <div class="col-md-6">
-                        <h3><span class="glyphicon glyphicon-link icon1"></span>Card Recharge</h3>
+                        <h3><span class="fa fa-credit-card-alt" aria-hidden="true" style='color:gold'></span>Ferry Terminal Payment</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     </div>
                 </div>
@@ -140,15 +148,15 @@
             <div class="carousel-inner">
                 <div class="item active">
                     <p>“Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam.”</p>
-                    <h5>JOHN STONE</h5>
+                    <h5>Alvi</h5>
                 </div>
                 <div class="item">
                     <p>“Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam.”</p>
-                    <h5>JOHN STONE</h5>
+                    <h5>Ekhtear</h5>
                 </div>
                 <div class="item">
                     <p>“Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam.”</p>
-                    <h5>JOHN STONE</h5>
+                    <h5>Asha</h5>
                 </div>
             </div>
         </div>
@@ -167,6 +175,7 @@
                         <li><a href="#TB">Toll Booths</a></li>
                         <li><a href="#PL">Parking Lots</a></li>
                         <li><a href="#FS">Filling Stations</a></li>
+                        <li><a href="#FT">Ferry Terminals</a></li>
                         <li><a href="#CR">Recharge Counters</a></li>
                     </ul>
                 </div>
@@ -189,6 +198,11 @@
             <div class="col-md-4"><img src="img/FS2.jpg" alt="FS2"></div>
             <div class="col-md-4"><img src="img/FS1.jpg" alt="FS1"></div>
         </div>
+        <div class="row" id="FT">
+            <div class="col-md-4"><img src="img/FT3.jpg" alt="FT3"></div>
+            <div class="col-md-4"><img src="img/FT2.jpg" alt="FT2"></div>
+            <div class="col-md-4"><img src="img/FT1.jpg" alt="FT1"></div>
+        </div>
     </div>
     <!-- portfolio ends -->
     <!-- Footer Container Starts -->
@@ -202,7 +216,7 @@
                     <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                     <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                    <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                    <li><a href="#"><i class="fa fa-telegram"></i></a></li>
                     <li><a href="#"><i class="fa fa-snapchat-ghost"></i></a></li>
                     <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
                 </ul>
