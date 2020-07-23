@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2020 at 01:14 PM
+-- Generation Time: Jul 23, 2020 at 02:17 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -47,7 +47,8 @@ INSERT INTO `vendors` (`id`, `Field`, `Thana`, `District`, `Division`, `username
 (2, 'Parking Lot', 'Vatara', 'Dhaka', 'Dhaka', 30143205, 'qwert'),
 (3, 'Filling Station', 'Mirpur Model', 'Dhaka', 'Dhaka', 30122404, 'zxcvb'),
 (4, 'Recharge Center', 'Shyampur', 'Dhaka', 'Dhaka', 30136002, 'poiuy'),
-(5, 'Toll Booth', 'Badda', 'Dhaka', 'Dhaka', 30102603, 'asdfg');
+(5, 'Toll Booth', 'Badda', 'Dhaka', 'Dhaka', 30102603, 'asdfg'),
+(6, 'Ferry Terminal', 'Louhajang', 'Munshiganj', 'Dhaka', 30802803, 'asdfg');
 
 --
 -- Indexes for dumped tables
@@ -67,7 +68,7 @@ ALTER TABLE `vendors`
 -- AUTO_INCREMENT for table `vendors`
 --
 ALTER TABLE `vendors`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
