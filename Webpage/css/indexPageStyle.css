@@ -22,9 +22,11 @@
 
 .starter .carousel-inner .item {
     text-transform: uppercase;
-    top: 50px;
+    max-width: 120%;
 }
-
+.starter .carousel-inner .item img{
+     width:100%;
+}
 .starter .carousel-inner .item h1 {
     border-bottom: 2px solid white;
     border-top: 2px solid white;
@@ -53,16 +55,17 @@
 #explanations {
     margin-top: 100px;
     margin-bottom: 100px;
+    text-align: center;
 }
 
 #explanations h1 {
     color: #566366;
-    font-size: 5vw;
+    font-size: 4vw;
 }
 
 #explanations p {
     color: #919191;
-    font-size: 2vw;
+    font-size: 1vw;
 }
 
 #about_us {
@@ -121,13 +124,13 @@
 }
 
 .speech .item p {
-    font-size: 24px;
+    font-size: 2vw;
     color: #919191;
     padding: 5px 120px;
 }
 
 .speech .item h5 {
-    font-size: 18px;
+    font-size: 4vw;
     color: #566366;
     font-weight: bolder;
     margin: 40px 0px;
