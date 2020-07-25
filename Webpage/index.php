@@ -59,22 +59,22 @@
                     </ol>
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
-                        <div class="item active"> <img src="img/bannerTollBooth.png" alt="Toll Booth" style="width:100%;">
+                        <div class="item active"> <img src="img/bannerTollBooth.png" alt="Toll Booth">
                             <div class="carousel-caption myclass">
                                 <h1>Toll Booth</h1>
                             </div>
                         </div>
-                        <div class="item"> <img src="img/bannerParkingLot.png" alt="Parking Lot" style="width:100%;">
+                        <div class="item"> <img src="img/bannerParkingLot.png" alt="Parking Lot">
                             <div class="carousel-caption myclass">
                                 <h1> Parking Lot</h1>
                             </div>
                         </div>
-                        <div class="item"> <img src="img/bannerFillingStation.png" alt="Filling Station" style="width:100%;">
+                        <div class="item"> <img src="img/bannerFillingStation.png" alt="Filling Station">
                             <div class="carousel-caption myclass">
                                 <h1>Filling Station</h1>
                             </div>
                         </div>
-                        <div class="item"> <img src="img/bannerFerryTerminal.png" alt="Ferry Terminal" style="width:100%;">
+                        <div class="item"> <img src="img/bannerFerryTerminal.png" alt="Ferry Terminal">
                             <div class="carousel-caption myclass">
                                 <h1>Ferry Terminal</h1>
                             </div>
@@ -88,11 +88,12 @@
     <!-- End Container -->
     <div class="container" id="explanations">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
                 <h1>Goals</h1>
                 <p>More easy and hassle free bill payment system. No more waiting in a queue.</p>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="col-xs-12 col-sm-12 col-md-2 col-lg-2"></div>
+            <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
                 <h1>Future Plans</h1>
                 <p>We are going to intregarate the bill payment system among all other sectors of paying bills.</p>
             </div>
@@ -112,17 +113,17 @@
                 </div>
                 <div class="row fields">
                     <div class="col-md-6">
-                        <h3><span class="fa fa-credit-card-alt" aria-hidden="true" style='color:pink'></span>Toll Booth Payment</h3>
+                        <h3><span class="fa fa-credit-card-alt" aria-hidden="true" style='color:crimson'></span>Toll Booth Payment</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     </div>
                     <div class="col-md-6">
-                        <h3><span class="fa fa-credit-card-alt" aria-hidden="true" style='color:blue'></span>Parking Lot Payment</h3>
+                        <h3><span class="fa fa-credit-card-alt" aria-hidden="true" style='color:olive'></span>Parking Lot Payment</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     </div>
                 </div>
                 <div class="row fields">
                     <div class="col-md-6">
-                        <h3><span class="fa fa-credit-card-alt" aria-hidden="true" style='color:purple'></span>Filling Station Payment</h3>
+                        <h3><span class="fa fa-credit-card-alt" aria-hidden="true" style='color:darkorchid'></span>Filling Station Payment</h3>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     </div>
                     <div class="col-md-6">
