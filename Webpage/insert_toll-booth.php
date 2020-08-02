@@ -47,6 +47,7 @@ $amount = 0;
                             <select class="vType" id="vType" name="vType">
                                 <option value="none" selected disabled <?php if (isset($vType) && $vType=="null") echo "selected";?>>--Select--</option>
                                 <option value="privateCar" <?php if (isset($vType) && $vType=="privateCar") echo "selected";?>>Private Car</option>
+                                <option value="micro" <?php if (isset($vType) && $vType=="micro") echo "selected";?>>Micro Bus</option>
                                 <option value="bus" <?php if (isset($vType) && $vType=="bus") echo "selected";?>>Bus</option>
                                 <option value="cng" <?php if (isset($vType) && $vType=="cng") echo "selected";?>>CNG</option>
                                 <option value="motorCycle" <?php if (isset($vType) && $vType=="motorCycle") echo "selected";?>>Motor Cycle</option>
@@ -54,6 +55,9 @@ $amount = 0;
                             <?php
                             if($vType=="privateCar"){
                                 $amount = 100;
+                            }
+                            else if($vType=="micro"){
+                                $amount = 150;
                             }
                             else if($vType=="bus"){
                                 $amount = 300;
