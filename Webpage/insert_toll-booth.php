@@ -120,9 +120,9 @@ include 'connection.php';
 		}
 	}
 	$conn->close();
-    
+   */ 
  include 'Footer.php';
-   */ ?>
+    ?>
     </body>
 
     </html>
