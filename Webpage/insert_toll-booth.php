@@ -8,6 +8,7 @@ require 'connection.php';
 
 $name = $_SESSION["username"];
 $wid = substr($name,-3);
+$vType = "null";
 
 $vType = $_POST["vType"];
 $amount = 0;
@@ -41,7 +42,7 @@ $amount = 0;
                         <form action="insert_toll-booth.php" method="post" name="TBForm" id="TBForm">
                             <div class="form-group">
                                 <h3>uID:
-                            <input type="text" name="u_id" placeholder="Enter uID"></h3> </div>
+                            <input type="text" name="u_id" placeholder="Enter UserID" required></h3> </div>
                             <div class="form-group">
                                 <h3><label for="vType">Vehicle:</label>
                             <select class="vType" id="vType" name="vType">
@@ -53,6 +54,7 @@ $amount = 0;
                                 <option value="motorCycle" <?php if (isset($vType) && $vType=="motorCycle") echo "selected";?>>Motor Cycle</option>
                             </select></h3> </div>
                             <?php
+                            
                             if($vType=="privateCar"){
                                 $amount = 100;
                             }
@@ -68,6 +70,10 @@ $amount = 0;
                             else if($vType=="motorCycle"){
                             $amount = 10;
                             }
+                            else{
+                                $amount = 0;
+                            }
+                                
                             ?>
                             <div class="form-group">
                                 <h3>Amount:
@@ -79,7 +85,7 @@ $amount = 0;
                 </div> <a href="login_vendor.php">Go Back</a> </div>
             <?php
                                           echo $vType;
-        /*
+        ///*
 include 'connection.php';
     //Get current date and time
     date_default_timezone_set('Asia/Dhaka');
@@ -93,7 +99,7 @@ include 'connection.php';
         $idValue = (int)$wid;
 		$u_id = $_POST['u_id'];
 	//	$u_name = $_POST['u_name'];
-		$amount = $_POST['amount'];
+	//	$amount = $_POST['amount'];
         $amountValue = (int)$amount;
         $trx_field = "Toll Booth ". $wid;//tollbooth
         
@@ -124,7 +130,7 @@ include 'connection.php';
 		}
 	}
 	$conn->close();
-   */ 
+   //*/ 
  include 'Footer.php';
     ?>
     </body>
