@@ -44,7 +44,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="css/signPageStyle.css"> </head>
+        <link rel="stylesheet" href="css/signInPageStyle.css"> </head>
     <style>
         body {
             background-image: url("img/bg.jpg");
@@ -74,7 +74,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
                             </form>
                         </div>
                         <div class="panel-footer" align="right">
-                            <p>Not Registered yet? <a href="signup.php">Sign Up</a></p>
+                            <p>Return to <a href="index.php">Home Page</a></p>
                         </div>
                     </div>
                 </div>
