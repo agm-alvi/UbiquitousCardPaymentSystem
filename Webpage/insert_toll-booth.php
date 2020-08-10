@@ -10,7 +10,10 @@ $name = $_SESSION["username"];
 $wid = substr($name,-3);
 $vType = "null";
 
-$vType = $_POST["vType"];
+if (!empty($_POST["vType"])){
+    
+    $vType = $_POST["vType"];
+    }
 $amount = 0;
   
 ?>
@@ -41,8 +44,12 @@ $amount = 0;
                         <hr>
                         <form action="insert_toll-booth.php" method="post" name="TBForm" id="TBForm">
                             <div class="form-group">
-                                <h3>uID:
-                            <input type="text" name="u_id" placeholder="Enter UserID" required></h3> </div>
+                                <h3>Toll Booth ID:
+                            <input type="text" name="u_id" value="<?php
+                                echo $wid?>" disabled></h3> </div>
+                            <div class="form-group">
+                                <h3>User ID:
+                            <input type="text" name="u_id" placeholder="Enter User ID" required></h3> </div>
                             <div class="form-group">
                                 <h3><label for="vType">Vehicle:</label>
                             <select class="vType" id="vType" name="vType">
@@ -75,11 +82,11 @@ $amount = 0;
                             }
                                 
                             ?>
-                            <div class="form-group">
-                                <h3>Amount:
+                                <div class="form-group">
+                                    <h3>Amount:
                             <input type="text" name="amount" placeholder="null" value="<?php
                                 echo $amount?>" disabled></h3> </div>
-                            <button type="submit" class="btn btn-dark" style="font-weight:900;" value="submit">Submit</button>
+                                <button type="submit" class="btn btn-dark" style="font-weight:900;" value="submit">Submit</button>
                         </form>
                     </div>
                 </div> <a href="login_vendor.php">Go Back</a> </div>
