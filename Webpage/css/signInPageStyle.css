@@ -1,0 +1,22 @@
+body {
+    background-image: url("img/bg.jpg");
+    background-color: #115511;
+    background-size: 100%;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+panel-body {
+    background: #2ecc71;
+}
+.panel-primary>.panel-heading{
+    background-color: #2ecc71;
+    font-weight: 900;
+}
+
+.btn-primary {
+    background-color: #2ecc71;
+    font-weight: 800;
+}
