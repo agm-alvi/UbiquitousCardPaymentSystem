@@ -44,12 +44,13 @@ if(isset($_POST['username']) && isset($_POST['password']))
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/signPageStyle.css">
+    <link rel="stylesheet" href="css/signInPageStyle.css">
 </head>
 <style>
     body {
         background-image: url("img/bg.jpg");
     }
+   
 
 </style>
 
@@ -66,15 +67,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
                     </div>
                     <div class="panel-body">
                         <form action="login_vendor.php" method="post">
-                            <div class="form-group">
-                                <label for="fType">Field Type:</label>
-                                <input type="radio" id="Toll Booth" name="fieldType">
-                                <label for="Toll Booth">Toll Booth</label>
-                                <input type="radio" id="Parking Lot" name="fieldType">
-                                <label for="Parking Lot">Parking Lot</label>
-                                <input type="radio" id="Filling Station" name="fieldType">
-                                <label for="Filling Station">Filling Station</label>
-                            </div>
+                            
                             <div class="form-group">
                                 <label for="username">Field ID:</label>
                                 <input type="text" class="form-control" id="username" name="username" required placeholder="Field ID"> </div>
@@ -86,7 +79,7 @@ if(isset($_POST['username']) && isset($_POST['password']))
                         </form>
                     </div>
                     <div class="panel-footer" align="right">
-                        <p>Not Registered yet? <a href="signup.php">Sign Up</a></p>
+                        <p>Return to <a href="index.php">Home Page</a></p>
                     </div>
                 </div>
             </div>
