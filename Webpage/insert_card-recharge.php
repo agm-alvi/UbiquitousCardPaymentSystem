@@ -10,7 +10,10 @@ $name = $_SESSION["username"];
 $wid = substr($name,-3);
 $vType = "null";
 
-$vType = $_POST["vType"];
+if (!empty($_POST["vType"])){
+    
+    $vType = $_POST["vType"];
+    }
 $amount = 0;
   
 ?>
@@ -41,8 +44,12 @@ $amount = 0;
                         <hr>
                         <form action="insert_card-recharge.php" method="post" name="CRForm" id="CRForm">
                             <div class="form-group">
-                                <h3>uID:
-                            <input type="text" name="u_id" placeholder="Enter UserID" required></h3> </div>
+                                <h3>Card Recharge ID:
+                            <input type="text" name="u_id" value="<?php
+                                echo $wid?>" disabled></h3> </div>
+                            <div class="form-group">
+                                <h3>User ID:
+                            <input type="text" name="u_id" placeholder="Enter User ID" required></h3> </div>
                             <div class="form-group">
                                 <h3><label for="vType">Vehicle:</label>
                             <select class="vType" id="vType" name="vType">
@@ -75,11 +82,11 @@ $amount = 0;
                             }
                                 
                             ?>
-                            <div class="form-group">
-                                <h3>Amount:
+                                <div class="form-group">
+                                    <h3>Amount:
                             <input type="text" name="amount" placeholder="null" value="<?php
                                 echo $amount?>" disabled></h3> </div>
-                            <button type="submit" class="btn btn-dark" style="font-weight:900;" value="submit">Submit</button>
+                                <button type="submit" class="btn btn-dark" style="font-weight:900;" value="submit">Submit</button>
                         </form>
                     </div>
                 </div> <a href="login_vendor.php">Go Back</a> </div>
@@ -97,9 +104,9 @@ include 'connection.php';
         echo "online";
         
         $idValue = (int)$wid;
-        $u_id = $_POST['u_id'];
-    //  $u_name = $_POST['u_name'];
-    //  $amount = $_POST['amount'];
+		$u_id = $_POST['u_id'];
+	//	$u_name = $_POST['u_name'];
+	//	$amount = $_POST['amount'];
         $amountValue = (int)$amount;
         $trx_field = "Card Recharge ". $wid;//cardrecharge
         
@@ -119,17 +126,17 @@ include 'connection.php';
         echo $trx_id;
         $sqlUp = "UPDATE `customers` SET `Balance`='".$bal."' WHERE u_id='".$u_id."'";
         
-        $sql1 = "INSERT INTO card_recharge (ID, u_id, u_Name, Amount, Date, Time, trx_id) VALUES ('".$wid."','".$u_id."','".$u_name."','".$amountValue."', '".$d."', '".$t."', '".$trx_id."')"; //insert on card recharge table
+		$sql1 = "INSERT INTO card_recharge (ID, u_id, u_Name, Amount, Date, Time, trx_id) VALUES ('".$wid."','".$u_id."','".$u_name."','".$amountValue."', '".$d."', '".$t."', '".$trx_id."')"; //insert on Card Recharge table
         
         $sql2 = "INSERT INTO transactions (u_id, u_Name, Amount, trx_field, Date, Time, trx_id) VALUES ('".$u_id."','".$u_name."','".$amountValue."','".$trx_field."', '".$d."', '".$t."', '".$trx_id."')"; //insert on transaction table
         echo "insert";
-        if ($conn->query($sql1) === TRUE&&$conn->query($sql2) === TRUE&&$conn->query($sqlUp) === TRUE) {
-            echo "OK";
-        } else {
-            echo "Error: " . $sql1 . "<br>" . $conn->error;
-        }
-    }
-    $conn->close();
+		if ($conn->query($sql1) === TRUE&&$conn->query($sql2) === TRUE&&$conn->query($sqlUp) === TRUE) {
+		    echo "OK";
+		} else {
+		    echo "Error: " . $sql1 . "<br>" . $conn->error;
+		}
+	}
+	$conn->close();
    //*/ 
  include 'Footer.php';
     ?>
