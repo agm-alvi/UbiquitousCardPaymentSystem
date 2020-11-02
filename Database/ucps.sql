@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 23, 2020 at 12:17 AM
+-- Generation Time: Nov 02, 2020 at 03:22 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -74,8 +74,8 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`u_sl`, `u_id`, `name`, `Balance`, `username`, `password`, `contact_no`, `email`, `gender`, `hNs_no`, `thana`, `district`, `zip_code`, `country`) VALUES
-('000', '000', 'admin', 0, 'admin', 'admin', '00000000000', 'null', 'null', 'null', 'null', 'null', 0, 'null'),
-('001', '3F AD 4D 29', 'Jahid Hasan Alvi', 5500, 'alvi', 'abcd', '01822933773', 'agm.alvi@northsouth.edu', 'Male', '15/1 Faridabad Lane,  Besides Faridabad High School', 'Gendaria', 'Dhaka', 1204, 'Bangladesh'),
+('000', '000', 'admin', 0, 'admin', 'admin', '00000000000', 'null', '', 'null', 'null', 'null', 0, 'null'),
+('001', '3F AD 4D 29', 'Jahid Hasan Alvi', 5400, 'alvi', 'abcd', '01822933773', 'jahidhasanalvi007@gmail.com', 'Male', '15/1 Faridabad Lane,  Besides Faridabad High School', 'Gendaria', 'Dhaka', 1204, 'Bangladesh'),
 ('002', 'B0 77 BB 25', 'Ekhtear Uddin Khan', 4700, 'ekhtear', 'efgh', '0', '', 'Male', '', '', '', 0, ''),
 ('003', 'A1 F4 78 D5', 'Asha Das', 4800, 'asha', 'ijkl', '0', '', 'Female', '', '', '', 0, ''),
 ('005', '71 F3 3D 08', 'Auni', 1700, 'auni', 'nta', '0', '', 'Female', '', '', '', 0, ''),
@@ -141,7 +141,8 @@ INSERT INTO `toll_booth` (`sl`, `ID`, `u_id`, `u_Name`, `Amount`, `Date`, `Time`
 (0000000129, 603, '3F AD 4D 29', 'Jahid Hasan Alvi', 500, '2020-03-25', '18:42:44', 'TB603-001-200325184244'),
 (0000000130, 615, 'B0 77 BB 25', 'Ekhtear Uddin Khan', 300, '2020-03-25', '18:44:50', 'TB615-002-200325184450'),
 (0000000134, 615, 'A1 F4 78 D5', 'Asha Das', 900, '2020-03-27', '02:11:55', 'TB615-003-200327021155'),
-(0000000137, 615, 'A1 F4 78 D5', 'Asha Das', 300, '2020-07-10', '17:04:27', 'TB615-003-200710170427');
+(0000000137, 615, 'A1 F4 78 D5', 'Asha Das', 300, '2020-07-10', '17:04:27', 'TB615-003-200710170427'),
+(0000000138, 615, '3F AD 4D 29', 'Jahid Hasan Alvi', 100, '2020-08-02', '07:06:08', 'TB615-001-200802070608');
 
 -- --------------------------------------------------------
 
@@ -168,7 +169,8 @@ INSERT INTO `transactions` (`sl`, `u_id`, `u_Name`, `Amount`, `trx_field`, `Date
 (107, '3F AD 4D 29', 'Jahid Hasan Alvi', 500, 'Toll Booth 603', '2020-03-25', '18:42:44', 'TB603-001-200325184244'),
 (108, 'B0 77 BB 25', 'Ekhtear Uddin Khan', 300, 'Toll Booth 615', '2020-03-25', '18:44:50', 'TB615-002-200325184450'),
 (112, 'A1 F4 78 D5', 'Asha Das', 900, 'Toll Booth 615', '2020-03-27', '02:11:55', 'TB615-003-200327021155'),
-(115, 'A1 F4 78 D5', 'Asha Das', 300, 'Toll Booth 615', '2020-07-10', '17:04:27', 'TB615-003-200710170427');
+(115, 'A1 F4 78 D5', 'Asha Das', 300, 'Toll Booth 615', '2020-07-10', '17:04:27', 'TB615-003-200710170427'),
+(116, '3F AD 4D 29', 'Jahid Hasan Alvi', 100, 'Toll Booth 615', '2020-08-02', '07:06:08', 'TB615-001-200802070608');
 
 -- --------------------------------------------------------
 
@@ -195,7 +197,8 @@ INSERT INTO `vendors` (`id`, `Field`, `Thana`, `District`, `Division`, `username
 (2, 'Parking Lot', 'Vatara', 'Dhaka', 'Dhaka', 30143205, 'qwert'),
 (3, 'Filling Station', 'Mirpur Model', 'Dhaka', 'Dhaka', 30122404, 'zxcvb'),
 (4, 'Recharge Center', 'Shyampur', 'Dhaka', 'Dhaka', 30136002, 'poiuy'),
-(5, 'Toll Booth', 'Badda', 'Dhaka', 'Dhaka', 30102603, 'asdfg');
+(5, 'Toll Booth', 'Badda', 'Dhaka', 'Dhaka', 30102603, 'asdfg'),
+(6, 'Ferry Terminal', 'Louhajang', 'Munshiganj', 'Dhaka', 30802803, 'asdfg');
 
 --
 -- Indexes for dumped tables
@@ -280,19 +283,19 @@ ALTER TABLE `parking_lot`
 -- AUTO_INCREMENT for table `toll_booth`
 --
 ALTER TABLE `toll_booth`
-  MODIFY `sl` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=138;
+  MODIFY `sl` int(10) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
 
 --
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `sl` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+  MODIFY `sl` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
 
 --
 -- AUTO_INCREMENT for table `vendors`
 --
 ALTER TABLE `vendors`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
