@@ -17,9 +17,6 @@ $result = mysqli_query($conn, $result);
 $resultr = "SELECT * FROM card_recharge C, customers U where C.u_id = U.u_id && U.username = '".$username."'";
 $resultr = mysqli_query($conn, $resultr);
 
-$results = "SELECT * FROM card_recharge C, transactions T, customers U where C.u_id = U.u_id && U.username = '".$username."' || T.u_id = U.u_id && U.username = '".$username."'" ;
-$results = mysqli_query($conn, $results);
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,10 +59,12 @@ $results = mysqli_query($conn, $results);
         <div class="row">
             <nav class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
                 <ul class="nav nav-pills flex-column">
-                    <li class="active"><a data-toggle="tab" href="#Profile">Profile</a></li><br>
-                    <li><a data-toggle="tab" href="#Transactions">Transactions</a></li><br>
-                    <li><a data-toggle="tab" href="#Recharges">Recharges</a></li><br>
-                    
+                    <li class="active"><a data-toggle="tab" href="#Profile">Profile</a></li>
+                    <br>
+                    <li><a data-toggle="tab" href="#Transactions">Transactions</a></li>
+                    <br>
+                    <li><a data-toggle="tab" href="#Recharges">Recharges</a></li>
+                    <br>
                     <li><a data-toggle="tab" href="#Summery">Monthly Summery</a></li>
                 </ul>
             </nav>
@@ -251,16 +250,28 @@ $results = mysqli_query($conn, $results);
                     ?>
                         </table>
                     </div>
-                                        <div id="Summery" class="tab-pane fade">
+                    <div id="Summery" class="tab-pane fade">
                         <h2>Monthly Summery</h2>
-                             <form action="" method="post" name="">
-    
-                <h3>Month:
-				<input type="text" name="month" placeholder="Enter month No"></h3> <br/>
-			
-				<h3>	<input type="submit" name="Submit" value="Submit"></h3>
-
-	</form>
+                        <form action="" method="post" name="">
+                            <h3>Month:
+                                <input type="text" name="month" placeholder="Enter month No"></h3>
+                            <br />
+                            <h3> <input type="submit" name="Submit" value="Submit"></h3>
+                        </form>
+                        
+        <?php
+                        $month = date("m");
+                        
+                        if(!empty($_POST['Submit']))
+                        {
+                            $month = $_POST['month'];
+                        }
+                        
+                        
+                        
+$results = "SELECT * FROM card_recharge C, customers U where C.u_id = U.u_id && U.username = '".$username."' && MONTH(Date) == '".$month."'" ;
+$results = mysqli_query($conn, $results);
+                        ?>
                         <table class="table table-hover">
                             <thead>
                                 <tr>
