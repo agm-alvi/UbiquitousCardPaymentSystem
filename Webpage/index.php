@@ -14,8 +14,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/indexPageStyle.css">
-    <link rel="stylesheet" href="css/HeaderFooterStyle.css">
-</head>
+    <link rel="stylesheet" href="css/HeaderFooterStyle.css"> </head>
 
 <body>
     <!-- Start Header Container -->
@@ -23,7 +22,8 @@
         <div class="row">
             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
                 <div class="logo">
-                    <a href="index.php"><img src="img/logoTop.png" alt="LOGO" width="200px"></a> </div>
+                    <a href="index.php"><img src="img/logoTop.png" alt="LOGO" width="200px"></a>
+                </div>
             </div>
             <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
                 <div class="menu">
@@ -48,7 +48,6 @@
     <div class="container-fluid starter">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
@@ -61,23 +60,19 @@
                     <div class="carousel-inner">
                         <div class="item active"> <img src="img/bannerTollBooth.png" alt="Toll Booth">
                             <div class="carousel-caption myclass">
-                                <h1>Toll Booth</h1>
-                            </div>
+                                <h1>Toll Booth</h1> </div>
                         </div>
                         <div class="item"> <img src="img/bannerParkingLot.png" alt="Parking Lot">
                             <div class="carousel-caption myclass">
-                                <h1> Parking Lot</h1>
-                            </div>
+                                <h1> Parking Lot</h1> </div>
                         </div>
                         <div class="item"> <img src="img/bannerFillingStation.png" alt="Filling Station">
                             <div class="carousel-caption myclass">
-                                <h1>Filling Station</h1>
-                            </div>
+                                <h1>Filling Station</h1> </div>
                         </div>
                         <div class="item"> <img src="img/bannerFerryTerminal.png" alt="Ferry Terminal">
                             <div class="carousel-caption myclass">
-                                <h1>Ferry Terminal</h1>
-                            </div>
+                                <h1>Ferry Terminal</h1> </div>
                         </div>
                     </div>
                 </div>
@@ -107,8 +102,9 @@
                 <div class="row">
                     <div class="about_us_p">
                         <h1>About Us</h1>
-                        <p>Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri.</p>
-                        <p> Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei.</p>
+                        <p>Managing multiple toll booths, car lots, filling stations is a very complicated task. Specially for paying bills and fares of the respective places. The customer/user might not have full payment, or change. Also dealing via direct cash takes a lot of time as one has to count the money, and also have to give change. </p>
+                        <p> Time is very important in a human's life. But due to payments of the bills and fares via Cash may take a long time, especially when dealing with change. Sometimes while paying bills others have to wait and it might create a Traffic Jam. For controlling the jam, more Traffic police will be required, which will cost more to the State. </p>
+                        <p> We here, proposing a smart card based Ubiquitous Payment System that will be monitored over IOT. The internet server maintains all the data of the user accounts and also their balance. All users would possess an RFID based card that stores their account number. Our system at the respective places will monitor the card scanned by a user.</p>
                     </div>
                 </div>
                 <div class="row fields">
@@ -149,16 +145,13 @@
             <div class="carousel-inner">
                 <div class="item active">
                     <p>“Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam.”</p>
-                    <h5>Alvi</h5>
-                </div>
+                    <h5>Alvi</h5> </div>
                 <div class="item">
                     <p>“Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam.”</p>
-                    <h5>Ekhtear</h5>
-                </div>
+                    <h5>Ekhtear</h5> </div>
                 <div class="item">
                     <p>“Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam.”</p>
-                    <h5>Asha</h5>
-                </div>
+                    <h5>Asha</h5> </div>
             </div>
         </div>
     </div>
