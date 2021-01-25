@@ -196,13 +196,17 @@
     background: #252e30;
     padding-bottom: 100px;
 }
-
+#contact .bottom{
+    padding: 100px 50px 0px 200px;
+color: #ddffdd;
+}
 #contact .c_left {
     padding: 100px 50px 0px 200px;
+    color: #ddffdd;
 }
 
 #contact .c_left h1 {
-    color: #ffffff;
+    color: #ddffdd;
     margin-bottom: 20px;
 }
 
@@ -214,7 +218,7 @@
 }
 
 #contact .c_left p span {
-    color: #ffffff;
+    color: #ddffdd;
     padding-right: 10px;
 }
 
@@ -223,7 +227,7 @@
 }
 
 #contact .c_right h5 {
-    color: #ffffff;
+    color: #eeffee;
     margin-top: 35px;
     font-size: 18px;
     margin-bottom: 10px;
