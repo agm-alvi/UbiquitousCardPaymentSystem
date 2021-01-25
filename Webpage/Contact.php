@@ -13,7 +13,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/indexPageStyle.css"> </head>
+    <link rel="stylesheet" href="css/indexPageStyle.css">
+</head>
 
 <body>
     <?php include "Header.php" ?>
@@ -35,11 +36,38 @@
                     <h5>Email Address*:</h5>
                     <input type="email" class="form-control">
                     <h5>Comments*:</h5>
-                    <textarea id="" cols="30" rows="10" style="width:100%; color:#fff;"></textarea> <a href="#" class="btn btn-info" role="button" value="Contact Me">Contact Us</a> </form>
+                    <textarea id="" cols="30" rows="10" style="width:100%; color:#fff;"></textarea> <a href="#" class="btn btn-info" role="button" value="Contact Me">Contact Us</a>
+                </form>
+            </div>
+        </div>
+        <h2>Find Us</h2>
+        <div class="mapouter">
+            <div class="gmap_canvas">
+                <iframe width="100%" height="350" id="gmap_canvas" src="https://maps.google.com/maps?q=north%20south%20university&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                <a href="https://123movies-to.org"></a>
+                <br>
+                <style>
+                    .mapouter {
+                        position: relative;
+                        text-align: right;
+                        height: 350px;
+                        width: 100%;
+                    }
+
+                </style><a href="https://google-map-generator.com">google maps in iframe</a>
+                <style>
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        height: 350px;
+                        width: 100%;
+                    }
+
+                </style>
             </div>
         </div>
     </div>
-    <div class="mapouter"><div class="gmap_canvas"><iframe width="800" height="350" id="gmap_canvas" src="https://maps.google.com/maps?q=north%20south%20university&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:relative;text-align:right;height:350px;width:800px;}</style><a href="https://google-map-generator.com">google maps in iframe</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:350px;width:800px;}</style></div></div>
+
     <?php include "Footer.php" ?>
 </body>
 
