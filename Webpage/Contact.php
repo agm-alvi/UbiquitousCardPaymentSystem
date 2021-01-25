@@ -34,12 +34,12 @@
                     <input type="text" class="form-control">
                     <h5>Email Address*:</h5>
                     <input type="email" class="form-control">
-                    <h5>Email Address*:</h5>
+                    <h5>Comments*:</h5>
                     <textarea id="" cols="30" rows="10" style="width:100%; color:#fff;"></textarea> <a href="#" class="btn btn-info" role="button" value="Contact Me">Contact Us</a> </form>
             </div>
         </div>
     </div>
-    
+    <div class="mapouter"><div class="gmap_canvas"><iframe width="800" height="350" id="gmap_canvas" src="https://maps.google.com/maps?q=north%20south%20university&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>.mapouter{position:relative;text-align:right;height:350px;width:800px;}</style><a href="https://google-map-generator.com">google maps in iframe</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:350px;width:800px;}</style></div></div>
     <?php include "Footer.php" ?>
 </body>
 
