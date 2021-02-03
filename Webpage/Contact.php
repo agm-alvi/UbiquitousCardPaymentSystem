@@ -33,10 +33,13 @@ $msg ="";
                             <br><span>Phone:</span>+88-0120-8277223</p>
                     </div>
                     <div class="col-md-6 c_right">
-                        <form class="form" action="Contact.php" method="post">                            <h5>Name*:</h5>
+                        <form class="form" action="Contact.php" method="post">
+                            <h5>Name*:</h5>
                             <input type="text" class="form-control" name="name" required>
                             <h5>Email Address*:</h5>
                             <input type="email" class="form-control" name="email" required>
+                            <h5>Subject*:</h5>
+                            <input type="text" class="form-control" name="subject" required>
                             <h5>Comments*:</h5>
                             <textarea id="" cols="30" rows="10" style="width:100%; color:#fff;" name="comments" required></textarea>
                             <input type="Submit" name="" id="button" class="btn btn-info" value="Contact Us"> </form>
@@ -73,10 +76,11 @@ $msg ="";
 if(isset($_POST['name'])){
 $name = $_POST['name'];
 $email = $_POST['email'];
+$subject = $_POST['subject'];
 $comments = $_POST['comments'];
 $timestamp = date('Y-m-d H:i:s');
 if($name != ""){
-	if (mysqli_query($conn,  "INSERT INTO contacts(name, email, comments, timestamp) VALUES ('$name', '$email', '$comments', '$timestamp')")) {
+	if (mysqli_query($conn,  "INSERT INTO contacts(name, email, subject, comments, timestamp) VALUES ('$name', '$email', '$subject' '$comments', '$timestamp')")) {
 	echo  "Thanks for your precious Review";
 	} else {
 	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
