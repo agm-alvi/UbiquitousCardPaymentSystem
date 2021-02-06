@@ -1,6 +1,7 @@
 <?php
 include 'connection.php';
 $msg =""; 
+$sql = "";
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -42,7 +43,7 @@ $msg ="";
                             <input type="text" class="form-control" name="subject" required>
                             <h5>Comments*:</h5>
                             <textarea id="" cols="30" rows="10" style="width:100%; color:#fff;" name="comments" required></textarea>
-                            <input type="Submit" name="" id="button" class="btn btn-info" value="Contact Us"> </form>
+                            <input type="Submit" name="" id="button" class="btn btn-info" value="Send"> </form>
                     </div>
                 </div>
                 <div class="bottom">
@@ -80,7 +81,9 @@ $subject = $_POST['subject'];
 $comments = $_POST['comments'];
 $timestamp = date('Y-m-d H:i:s');
 if($name != ""){
-	if (mysqli_query($conn,  "INSERT INTO contacts(name, email, subject, comments, timestamp) VALUES ('$name', '$email', '$subject' '$comments', '$timestamp')")) {
+    
+    
+	if (mysqli_query($conn,  "INSERT INTO contacts(name, email, subject, comments, timestamp) VALUES ('$name', '$email', '$subject', '$comments', '$timestamp')")) {
 	echo  "Thanks for your precious Review";
 	} else {
 	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
