@@ -10,11 +10,11 @@ $username = $_SESSION["username"];
 $resultu = "SELECT * FROM customers U where U.username = '".$username."' ";
 $resultu = mysqli_query($conn, $resultu);
 
-$result = "SELECT * FROM transactions T, customers U where T.u_id = U.u_id && U.username = '".$username."'";
+$result = "SELECT * FROM transactions T, customers U where T.uAccountNo = U.uAccountNo && U.username = '".$username."'";
 $result = mysqli_query($conn, $result);
 
 
-$resultr = "SELECT * FROM card_recharge C, customers U where C.u_id = U.u_id && U.username = '".$username."'";
+$resultr = "SELECT * FROM card_recharge C, customers U where C.uAccountNo = U.uAccountNo && U.username = '".$username."'";
 $resultr = mysqli_query($conn, $resultr);
 
 ?>
@@ -83,15 +83,21 @@ $resultr = mysqli_query($conn, $resultr);
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>User ID:</td>
+                                        <td>Account No:</td>
                                         <td>
-                                            <?php echo $resu['u_id']; ?>
+                                            <?php echo $resu['uAccountNo']; ?>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Gender:</td>
                                         <td>
-                                            <?php echo $resu['gender']; ?>
+                                            <?php 
+                                            if($resu['gender']==1)
+                                                echo "Male";
+                                            else if($resu['gender']==2)
+                                                echo "Female";
+                                            else
+                                            echo "Other"?>
                                         </td>
                                     </tr>
                                     <tr>
@@ -109,7 +115,7 @@ $resultr = mysqli_query($conn, $resultr);
                                     <tr>
                                         <td>House & Street no:</td>
                                         <td>
-                                            <?php echo $resu['hNs_no']; ?>
+                                            <?php echo $resu['houseAndStreet']; ?>
                                         </td>
                                     </tr>
                                     <tr>
@@ -140,7 +146,7 @@ $resultr = mysqli_query($conn, $resultr);
                                 <?php   //}                    ?>
                             </div>
                             <div class="col-xs-12 col-sm-8 col-md-4 col-lg-4">
-                                <?php if ($resu['gender']=='Male'){?> <img src="img/profile-pic-male.jpg">
+                                <?php if ($resu['gender']==1){?> <img src="img/profile-pic-male.jpg">
                                 <?php
     
                                         } else{?> <img src="img/profile-pic-female.jpg">
@@ -156,8 +162,7 @@ $resultr = mysqli_query($conn, $resultr);
                             <thead>
                                 <tr>
                                     <th>Sl</th>
-                                    <th>Name</th>
-                                    <th>User Id</th>
+                                    <th>Account No</th>
                                     <th>Amount</th>
                                     <th>Sector</th>
                                     <th>Date</th>
@@ -173,11 +178,9 @@ $resultr = mysqli_query($conn, $resultr);
                                     <td>
                                         <?php echo $res['sl']; ?>
                                     </td>
+
                                     <td>
-                                        <?php echo $res['u_Name']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $res['u_id']; ?>
+                                        <?php echo $res['uAccountNo']; ?>
                                     </td>
                                     <td>
                                         <?php echo $res['Amount'];?>
@@ -207,8 +210,7 @@ $resultr = mysqli_query($conn, $resultr);
                             <thead>
                                 <tr>
                                     <th>Sl</th>
-                                    <th>Name</th>
-                                    <th>User Id</th>
+                                    <th>Account No</th>
                                     <th>Amount</th>
                                     <th>Sector</th>
                                     <th>Date</th>
@@ -225,10 +227,7 @@ $resultr = mysqli_query($conn, $resultr);
                                         <?php echo $res['sl']; ?>
                                     </td>
                                     <td>
-                                        <?php echo $res['u_Name']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $res['u_id']; ?>
+                                        <?php echo $res['uAccountNo']; ?>
                                     </td>
                                     <td>
                                         <?php echo $res['Amount'];?>
@@ -276,8 +275,7 @@ $results = mysqli_query($conn, $results);
                             <thead>
                                 <tr>
                                     <th>Sl</th>
-                                    <th>Name</th>
-                                    <th>User Id</th>
+                                    <th>Account No</th>
                                     <th>Amount</th>
                                     <th>Sector</th>
                                     <th>Date</th>
@@ -294,10 +292,7 @@ $results = mysqli_query($conn, $results);
                                         <?php echo $res['sl']; ?>
                                     </td>
                                     <td>
-                                        <?php echo $res['u_Name']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $res['u_id']; ?>
+                                        <?php echo $res['uAccountNo']; ?>
                                     </td>
                                     <td>
                                         <?php echo $res['Amount'];?>
