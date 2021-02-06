@@ -111,7 +111,7 @@ include 'connection.php';
         $trx_field = "Toll Booth ". $wid;//tollbooth
         
         
-        $result = "SELECT U.u_sl, U.u_id, U.Name, U.Balance FROM customers U WHERE U.u_id = '$u_id'";
+        $result = "SELECT U.u_sl, U.uAccountNo, U.Balance FROM customers U WHERE U.u_id = '$u_id'";
         $result = mysqli_query($conn, $result);
 
         $res = mysqli_fetch_array($result);
@@ -124,11 +124,11 @@ include 'connection.php';
         echo $res['Balance'];
         echo $bal;
         echo $trx_id;
-        $sqlUp = "UPDATE `customers` SET `Balance`='".$bal."' WHERE u_id='".$u_id."'";
+        $sqlUp = "UPDATE `customers` SET `Balance`='".$bal."' WHERE uAccountNo='".$u_id."'";
         
-		$sql1 = "INSERT INTO toll_booth (ID, u_id, u_Name, Amount, Date, Time, trx_id) VALUES ('".$wid."','".$u_id."','".$u_name."','".$amountValue."', '".$d."', '".$t."', '".$trx_id."')"; //insert on toll booth table
+		$sql1 = "INSERT INTO toll_booth (ID, uAccountNo, Amount, Date, Time, trx_id) VALUES ('".$wid."','".$u_id."','".$amountValue."', '".$d."', '".$t."', '".$trx_id."')"; //insert on toll booth table
         
-        $sql2 = "INSERT INTO transactions (u_id, u_Name, Amount, trx_field, Date, Time, trx_id) VALUES ('".$u_id."','".$u_name."','".$amountValue."','".$trx_field."', '".$d."', '".$t."', '".$trx_id."')"; //insert on transaction table
+        $sql2 = "INSERT INTO transactions (u_id, u_Name, Amount, trx_field, Date, Time, trx_id) VALUES ('".$u_id."','".$amountValue."','".$trx_field."', '".$d."', '".$t."', '".$trx_id."')"; //insert on transaction table
         echo "insert";
 		if ($conn->query($sql1) === TRUE&&$conn->query($sql2) === TRUE&&$conn->query($sqlUp) === TRUE) {
 		    echo "OK";
