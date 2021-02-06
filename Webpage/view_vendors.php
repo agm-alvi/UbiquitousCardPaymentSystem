@@ -97,6 +97,7 @@ $result = mysqli_query($conn, $result);
                     </div>
                     <div class="col-md-2"></div>
                 </div>
+                <a href="admin_profile.php">Go Back</a>
             </div>
             <?php include 'Footer.php'; ?>
     </body>
