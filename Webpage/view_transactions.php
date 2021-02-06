@@ -12,7 +12,7 @@ if(empty($_SESSION["username"]))
 
 include 'connection.php';
 
-$result = "SELECT T.sl, T.u_id, T.u_Name, T.Amount, T.trx_field, T.Date, T.Time, T.trx_id FROM transactions T ORDER BY T.sl ASC";
+$result = "SELECT t.sl, t.uAccountNo, t.Amount,t.Date, t.Time, t.trx_id, c.username FROM transactions t, customers c WHERE t.uAccountNo= c.uAccountNo";
 $result = mysqli_query($conn, $result);
 
 ?>
@@ -60,7 +60,7 @@ $result = mysqli_query($conn, $result);
                                 <tr>
                                     <th>Sl</th>
                                     <th>Name</th>
-                                    <th>User Id</th>
+                                    <th>Account No</th>
                                     <th>Amount</th>
                                     <th>Sector</th>
                                     <th>Date</th>
@@ -77,10 +77,10 @@ $result = mysqli_query($conn, $result);
                                             <?php echo $res['sl']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $res['u_Name']; ?>
+                                            <?php echo $res['username']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $res['u_id']; ?>
+                                            <?php echo $res['uAccountNo']; ?>
                                         </td>
                                         <td>
                                             <?php echo $res['Amount'];?>
