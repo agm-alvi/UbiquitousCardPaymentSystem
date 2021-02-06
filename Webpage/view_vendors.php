@@ -11,7 +11,7 @@ if(empty($_SESSION["username"]))
 }
 include 'connection.php';
 
-$result = "SELECT v.id, v.Field, v.Thana, v.District, v.Division, v.username FROM vendors v ORDER BY v.id ASC";
+$result = "SELECT v.vID, v.Field, v.Thana, v.District, v.Division, v.username FROM vendors v ORDER BY v.vID ASC";
 $result = mysqli_query($conn, $result);
 
 ?>
@@ -71,7 +71,7 @@ $result = mysqli_query($conn, $result);
                                 <tbody>
                                     <tr>
                                         <td>
-                                            <?php echo $res['id']; ?>
+                                            <?php echo $res['vID']; ?>
                                         </td>
                                         <td>
                                             <?php echo $res['Field']; ?>
