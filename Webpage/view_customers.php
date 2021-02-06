@@ -84,7 +84,7 @@ $result = mysqli_query($conn, $result);
                                             <?php echo $res['name']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $res['u_id']; ?>
+                                            <?php echo $res['uAccountNo']; ?>
                                         </td>
                                         <td>
                                             <?php echo $res['gender'];?>
@@ -94,7 +94,7 @@ $result = mysqli_query($conn, $result);
                                             <?php echo $res['Balance'];?>
                                         </td>
                                         <td>
-                                            <?php echo $res['hNs_no'];?>
+                                            <?php echo $res['houseAndStreet'];?>
                                         </td>
                                         <td>
                                             <?php echo $res['thana'];?>
