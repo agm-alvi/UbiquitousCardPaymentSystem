@@ -86,7 +86,8 @@ $result = mysqli_query($conn, $result);
                                             <?php echo $res['Amount'];?>
                                         </td>
                                         <td>
-                                            <?php echo $res['trx_field']; ?>
+                                            
+                                            <?php echo substr($res['trx_id'],0,5); ?>
                                         </td>
                                         <td>
                                             <?php echo $res['Date']; ?>
@@ -106,6 +107,7 @@ $result = mysqli_query($conn, $result);
                     </div>
                     <div class="col-md-2"></div>
                 </div>
+                <a href="admin_profile.php">Go Back</a>
             </div>
             <?php include 'Footer.php'; ?>
     </body>
