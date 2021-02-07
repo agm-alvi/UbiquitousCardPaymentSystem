@@ -38,7 +38,7 @@ echo "found";
         
         $bal = (int)$res['Balance'] ;
          $bal = $bal - $amountValue;
-        
+        $trx_field = "Toll Booth ".$idValue;
         $trx_id = "TB".$idValue."-".sprintf('%03d', $res['cSL'])."-".$timestamp;//id for Toll Booth (TB)
         echo $res['Balance'];
         echo $bal;
