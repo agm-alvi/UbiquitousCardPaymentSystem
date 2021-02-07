@@ -12,7 +12,7 @@ if(empty($_SESSION["username"]))
 
 include 'connection.php';
 
-$result = "SELECT t.sl, t.uAccountNo, t.Amount,t.Date, t.Time, t.trx_id, c.username FROM transactions t, customers c WHERE t.uAccountNo= c.uAccountNo";
+$result = "SELECT t.sl, t.uAccountNo, t.trx_field, t.Amount,t.Date, t.Time, t.trx_id, c.username FROM transactions t, customers c WHERE t.uAccountNo= c.uAccountNo";
 $result = mysqli_query($conn, $result);
 
 ?>
@@ -86,8 +86,8 @@ $result = mysqli_query($conn, $result);
                                             <?php echo $res['Amount'];?>
                                         </td>
                                         <td>
-                                            
-                                            <?php echo substr($res['trx_id'],0,5); ?>
+                                            <?php //echo substr($res['trx_id'],0,5); 
+                                            echo $res['trx_field'];?>
                                         </td>
                                         <td>
                                             <?php echo $res['Date']; ?>
@@ -106,9 +106,7 @@ $result = mysqli_query($conn, $result);
                         </table>
                     </div>
                     <div class="col-md-2"></div>
-                </div>
-                <a href="admin_profile.php">Go Back</a>
-            </div>
+                </div> <a href="admin_profile.php">Go Back</a> </div>
             <?php include 'Footer.php'; ?>
     </body>
 
