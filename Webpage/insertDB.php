@@ -14,7 +14,7 @@
     </body>
 </html>
 <?php include 'connection.php';
-echo ok;
+echo "found";
     //Get current date and time
     date_default_timezone_set('Asia/Dhaka');
     $d = date("Y-m-d");
@@ -31,24 +31,23 @@ echo ok;
         $amountValue = (int)$amount;
         
         
-        $result = "SELECT U.u_sl, U.uAccountNo, U.Balance FROM customers U WHERE U.u_id = '$acNo'";
+        $result = "SELECT U.cSL, U.uAccountNo, U.Balance FROM customers U WHERE U.uAccountNo = '$acNo'";
         $result = mysqli_query($conn, $result);
 
         $res = mysqli_fetch_array($result);
         
         $bal = (int)$res['Balance'] ;
          $bal = $bal - $amountValue;
-        $u_name = $res['Name']; 
         
-        $trx_id = "TB".$idValue."-".$res['u_sl']."-".$timestamp;//id for Toll Booth (TB)
+        $trx_id = "TB".$idValue."-".sprintf('%03d', $res['cSL'])."-".$timestamp;//id for Toll Booth (TB)
         echo $res['Balance'];
         echo $bal;
         echo $trx_id;
         $sqlUp = "UPDATE `customers` SET `Balance`='".$bal."' WHERE uAccountNo='".$acNo."'";
         
-		$sql1 = "INSERT INTO toll_booth (ID, uAccountNo, Amount, Date, Time, trx_id) VALUES ('".$idValue."','".$acNo."','".$amountValue."', '".$d."', '".$t."', '".$trx_id."')"; //insert on toll booth table
+		$sql1 = "INSERT INTO toll_booth (tbID, uAccountNo, Amount, Date, Time, trx_id) VALUES ('".$idValue."','".$acNo."','".$amountValue."', '".$d."', '".$t."', '".$trx_id."')"; //insert on toll booth table
         
-        $sql2 = "INSERT INTO transactions (u_id, u_Name, Amount, Date, Time, trx_id) VALUES ('".$acNo."','".$amountValue."', '".$d."', '".$t."', '".$trx_id."')"; //insert on transaction table
+        $sql2 = "INSERT INTO transactions (uAccountNo, Amount, Date, Time, trx_id) VALUES ('".$acNo."','".$amountValue."', '".$d."', '".$t."', '".$trx_id."')"; //insert on transaction table
         echo "insert";
 		if ($conn->query($sql1) === TRUE&&$conn->query($sql2) === TRUE&&$conn->query($sqlUp) === TRUE) {
 		    echo "OK";
