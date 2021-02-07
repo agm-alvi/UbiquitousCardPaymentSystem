@@ -29,7 +29,7 @@
                 <div class="menu">
                     <ul>
                         <li><a href="#">Home</a></li>
-                        <li><a href="#about_us">About Us</a></li>
+                        <li><a href="about_us.php">About Us</a></li>
                         <li><a href="#portfolio">Fields</a></li>
                         <li class="dropdown"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sign In <span class="caret"></span></a>
                             <ul class="dropdown-menu">
@@ -101,7 +101,7 @@
             <div class="col-md-7">
                 <div class="row">
                     <div class="about_us_p">
-                        <h1>About Us</h1>
+                        <h1>Overview</h1>
                         <p>Managing multiple toll booths, car lots, filling stations is a very complicated task. Specially for paying bills and fares of the respective places. The customer/user might not have full payment, or change. Also dealing via direct cash takes a lot of time as one has to count the money, and also have to give change. </p>
                         <p> Time is very important in a human's life. But due to payments of the bills and fares via Cash may take a long time, especially when dealing with change. Sometimes while paying bills others have to wait and it might create a Traffic Jam. For controlling the jam, more Traffic police will be required, which will cost more to the State. </p>
                         <p> We here, proposing a smart card based Ubiquitous Payment System that will be monitored over IOT. The internet server maintains all the data of the user accounts and also their balance. All users would possess an RFID based card that stores their account number. Our system at the respective places will monitor the card scanned by a user.</p>
@@ -144,14 +144,14 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <p>“Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam.”</p>
-                    <h5>Alvi</h5> </div>
+                    <p>“On a Hurry?!!”</p>
+                    <h5>Just Swipe</h5> </div>
                 <div class="item">
-                    <p>“Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam.”</p>
-                    <h5>Ekhtear</h5> </div>
+                    <p>“Don't have change”</p>
+                    <h5>No Need.</h5> </div>
                 <div class="item">
-                    <p>“Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam, te usu virtute placerat. Purto brute disputando cu est, eam dicam soluta ei. Vel dicam vivendo accusata ei, cum ne periculis molestiae pri. Lorem ipsum dolor sit amet, ea doming epicuri iudicabit nam.”</p>
-                    <h5>Asha</h5> </div>
+                    <p>“No more waiting on a queue”</p>
+                    <h5>Just pay and go.</h5> </div>
             </div>
         </div>
     </div>
