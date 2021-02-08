@@ -20,7 +20,7 @@ include 'connection.php';
 
     <body>
         <header>
-            <?php include 'header.php';?>
+            <?php include 'Header.php';?>
         </header>
         <div class="Developed__By">
             <div class="container">
@@ -32,39 +32,43 @@ include 'connection.php';
                 </div>
                 <div class="row">
                     <div class="team-members">
-                        <div class="member"> <img src="Images/alvi.jpg">
+                        <div class="member"> <img src="img/members/alvi.jpg">
                             <div class="inner">
                                 <div class="info">
-                                    <h5>Jahid Hasan Alvi</h5>
+                                    <h5>A. G. M. Jahid Hasan Alvi</h5>
                                     <p>Developer & Assembler</p>
-                                    <div class="social-links"> <a href="https://www.facebook.com/alvi226"><span class="fa fa-facebook"></span></a> <a href=""><span class="fa fa-instagram"></span></a> <a href=""><span class="fa fa-twitter"></span></a> <a href=""><span class="fa fa-linkedin"></span></a> </div>
+                                    <div class="social-links"> <a href="https://www.facebook.com/alvi226"><span class="fa fa-facebook"></span></a> <a href="https://github.com/agm-alvi"><span class="fa fa-github"></span></a> <a href="https://www.linkedin.com/in/jahidhasanalvi/"><span class="fa fa-linkedin">
+                                        </span></a> <a href="mailto: agm.alvi@northsouth.edu?subject = Feedback%20UCPS&body = Message"><span class="fa fa-envelope"></span></a> </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="member"> <img src="Images/asha.jpg">
+                        <div class="member"> <img src="img/members/asha.jpg">
                             <div class="inner">
                                 <div class="info">
                                     <h5>Asha Das</h5>
                                     <p>Creative Designer & Content Maker</p>
-                                    <div class="social-links"> <a href="https://www.facebook.com/"><span class="fa fa-facebook"></span></a> <a href=""><span class="fa fa-instagram"></span></a> <a href=""><span class="fa fa-twitter"></span></a> <a href=""><span class="fa fa-linkedin"></span></a> </div>
+                                    <div class="social-links"> <a href="https://www.facebook.com/"><span class="fa fa-facebook"></span></a> <a href="https://github.com/"><span class="fa fa-github"></span></a> <a href="https://www.linkedin.com/in/"><span class="fa fa-linkedin">
+                                        </span></a> <a href="mailto: asha.das@northsouth.edu?subject = Feedback%20UCPS&body = Message"><span class="fa fa-envelope"></span></a> </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="member"> <img src="Images/ekhtear.jpg">
+                        <div class="member"> <img src="img/members/ekhtear.jpg">
                             <div class="inner">
                                 <div class="info">
                                     <h5>Md. Ekhtear Uddin Khan</h5>
                                     <p>QA Manager & Analyst</p>
-                                    <div class="social-links"> <a href="https://www.facebook.com/EkhtearUddinKhan"><span class="fa fa-facebook"></span></a> <a href=""><span class="fa fa-instagram"></span></a> <a href=""><span class="fa fa-twitter"></span></a> <a href=""><span class="fa fa-linkedin"></span></a> </div>
+                                    <div class="social-links"> <a href="https://www.facebook.com/EkhtearUddinKhan"><span class="fa fa-facebook"></span></a> <a href="https://github.com/"><span class="fa fa-github"></span></a> <a href="https://www.linkedin.com/in/"><span class="fa fa-linkedin">
+                                        </span></a> <a href="mailto: ekhtear.khan@northsouth.edu?subject = Feedback%20UCPS&body = Message"><span class="fa fa-envelope"></span></a> </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="member"> <img src="Images/tnf.jpg">
+                        <div class="member"> <img src="img/members/tnf.jpg">
                             <div class="inner">
                                 <div class="info">
-                                    <h5>Tanjila Farah</h5>
+                                    <h5>Ms. Tanjila Farah<br><br></h5>
                                     <p>Supervisor</p>
-                                    <div class="social-links"> <a href="https://www.facebook.com/"><span class="fa fa-facebook"></span></a> <a href=""><span class="fa fa-instagram"></span></a> <a href=""><span class="fa fa-twitter"></span></a> <a href=""><span class="fa fa-linkedin"></span></a> </div>
+                                    <div class="social-links"> <a href="https://www.facebook.com/"><span class="fa fa-facebook"></span></a> <a href="https://github.com/"><span class="fa fa-github"></span></a> <a href="https://www.linkedin.com/in/"><span class="fa fa-linkedin">
+                                        </span></a> <a href="mailto: tanjila.farah@northsouth.edu?subject = Feedback%20UCPS&body = Message"><span class="fa fa-envelope"></span></a> </div>
                                 </div>
                             </div>
                         </div>
@@ -73,7 +77,7 @@ include 'connection.php';
             </div>
         </div>
         <footer>
-            <?php include 'footer.php';?>
+            <?php include 'Footer.php';?>
         </footer>
     </body>
 
