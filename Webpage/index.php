@@ -37,7 +37,7 @@
                                 <li><a href="login_vendor.php">Vendor Sign In</a></li>
                             </ul>
                         </li>
-                        <li><a href="Contact.php">Contact Us</a></li>
+                        <li><a href="contact.php">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
