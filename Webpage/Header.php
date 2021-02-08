@@ -29,7 +29,7 @@ if(!isset($_SESSION))
                     <div class="menu">
                         <ul>
                             <li><a href="index.php">Home</a></li>
-                            <li><a href="index.php#about_us">About Us</a></li>
+                            <li><a href="about_us.php">About Us</a></li>
                             <li><a href="index.php#portfolio">Fields</a></li>
                             <?php 
                         if(empty($_SESSION["username"])){?>
@@ -49,7 +49,7 @@ if(!isset($_SESSION))
                                         </ul>
                                     </li>
                                     <?php } ?>
-                                        <li><a href="Contact.php">Contact Us</a></li>
+                                        <li><a href="contact.php">Contact Us</a></li>
                         </ul>
                     </div>
                 </div>
