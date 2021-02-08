@@ -111,3 +111,7 @@
     line-height: 32px;
     font-size: 16px;
 }
+
+.social-links a:hover{
+    color: #2ecc71;
+}
