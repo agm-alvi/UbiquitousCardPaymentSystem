@@ -86,8 +86,7 @@ $result = mysqli_query($conn, $result);
                                             <?php echo $res['Amount'];?>
                                         </td>
                                         <td>
-                                            <?php //echo substr($res['trx_id'],0,5); 
-                                            echo $res['trx_field'];?>
+                                            <?php echo $res['trx_field'];?>
                                         </td>
                                         <td>
                                             <?php echo $res['Date']; ?>
