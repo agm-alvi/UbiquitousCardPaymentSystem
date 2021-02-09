@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/Profile"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="@string/profile" />
+        <item
+            android:id="@+id/Transactions"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/transactions" />
+        <item
+            android:id="@+id/Recharges"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="@string/recharges" />
+        <item
+            android:id="@+id/Summery"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="@string/summery" />
+    </group>
+
+    <item android:title="@string/communicate">
+        <menu>
+            <item
+                android:id="@+id/Share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/share" />
+            <item
+                android:id="@+id/Contact"
+                android:icon="@drawable/ic_menu_send"
+                android:title="@string/contact" />
+            <item
+                android:id="@+id/Developers"
+                android:title="@string/developers"
+                app:actionProviderClass="android.support.v7.app.MediaRouteActionProvider"
+                tools:icon="@drawable/mr_button_light" />
+        </menu>
+    </item>
+
+</menu>
