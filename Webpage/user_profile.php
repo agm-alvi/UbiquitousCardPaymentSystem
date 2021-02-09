@@ -251,68 +251,8 @@ $resultr = mysqli_query($conn, $resultr);
                     </div>
                     <div id="Summery" class="tab-pane fade">
                         <h2>Monthly Summery</h2>
-                        <form action="" method="post" name="">
-                            <h3>Month:
-                                <input type="text" name="month" placeholder="Enter month No"></h3>
-                            <br />
-                            <h3> <input type="submit" name="Submit" value="Submit"></h3>
-                        </form>
-                        
-        <?php
-                        $month = date("m");
-                        
-                        if(!empty($_POST['Submit']))
-                        {
-                            $month = $_POST['month'];
-                        }
-                        
-                        
-                        
-$results = "SELECT * FROM card_recharge C, customers U where C.u_id = U.u_id && U.username = '".$username."' && MONTH(Date) == '".$month."'" ;
-$results = mysqli_query($conn, $results);
-                        ?>
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Sl</th>
-                                    <th>Account No</th>
-                                    <th>Amount</th>
-                                    <th>Sector</th>
-                                    <th>Date</th>
-                                    <th>Time</th>
-                                    <th>Recharge Id</th>
-                                </tr>
-                            </thead>
-                            <?php 
-                    while($res = mysqli_fetch_array($results)) { 
-                    ?>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <?php echo $res['sl']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $res['uAccountNo']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $res['Amount'];?>
-                                    </td>
-                                    <td> </td>
-                                    <td>
-                                        <?php echo $res['Date']; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $res['Time'];?>
-                                    </td>
-                                    <td>
-                                        <?php echo $res['trx_id'];?>
-                                    </td>
-                                </tr>
-                            </tbody>
-                            <?php   
-                    }
-                    ?>
-                        </table>
+                        <?php include 'customer_monthlyTransactions.php'?>
+                        <?php include 'customer_Graph.php'?>
                     </div>
                 </div>
             </div>
