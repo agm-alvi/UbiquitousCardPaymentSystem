@@ -7,19 +7,19 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/Profile"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/profile"
             android:title="@string/profile" />
         <item
             android:id="@+id/Transactions"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/payment"
             android:title="@string/transactions" />
         <item
             android:id="@+id/Recharges"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/recharge"
             android:title="@string/recharges" />
         <item
             android:id="@+id/Summery"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/summery"
             android:title="@string/summery" />
     </group>
 
@@ -37,7 +37,7 @@
                 android:id="@+id/Developers"
                 android:title="@string/developers"
                 app:actionProviderClass="android.support.v7.app.MediaRouteActionProvider"
-                tools:icon="@drawable/mr_button_light" />
+                tools:icon="@drawable/developers" />
         </menu>
     </item>
 
