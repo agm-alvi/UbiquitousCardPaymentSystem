@@ -27,8 +27,7 @@ include 'connection.php';
                 <div class="row">
                     <div class="section-title">
                         <h1>Designed And Developed By</h1>
-                        <p>We strategically design and develop websites that elevate your brand and communicate your message effectively. </p>
-                    </div>
+                                            </div>
                 </div>
                 <div class="row">
                     <div class="team-members">
