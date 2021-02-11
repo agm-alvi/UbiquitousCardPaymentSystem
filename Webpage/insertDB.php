@@ -1,4 +1,4 @@
-<html>
+<!--<html>
 
 <head> </head>
 
@@ -42,7 +42,7 @@
         <input type="submit"> </form>
 </body>
 
-</html>
+</html>-->
 <?php include 'connection.php';
 echo "found";
     if(!empty($_POST['uAccountNo']))
