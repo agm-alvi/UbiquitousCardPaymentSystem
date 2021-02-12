@@ -64,7 +64,7 @@
                         </div>
                         <div class="item"> <img src="img/bannerParkingLot.png" alt="Parking Lot">
                             <div class="carousel-caption myclass">
-                                <h1> Parking Lot</h1> </div>
+                                <h1>Parking Lot</h1> </div>
                         </div>
                         <div class="item"> <img src="img/bannerFillingStation.png" alt="Filling Station">
                             <div class="carousel-caption myclass">
