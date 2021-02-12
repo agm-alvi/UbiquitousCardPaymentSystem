@@ -27,8 +27,8 @@ $result = mysqli_query($conn, $result);
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta property="og:image" content="img/UCPS.png" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-        //<link rel="stylesheet" href="listViewStyle.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> //
+        <link rel="stylesheet" href="listViewStyle.css">
         <style>
             table {
                 counter-reset: section;
@@ -62,8 +62,10 @@ $result = mysqli_query($conn, $result);
                                     <th>Sl</th>
                                     <th>Name</th>
                                     <th>User Id</th>
-                                    <th>Gender</th>
                                     <th>Balance</th>
+                                    <th>Member Since</th>
+                                    <th>Level</th>
+                                    <th>Gender</th>
                                     <th>House & Street no</th>
                                     <th>Thana</th>
                                     <th>District</th>
@@ -71,11 +73,13 @@ $result = mysqli_query($conn, $result);
                                     <th>Country</th>
                                     <th>Contact No</th>
                                     <th>Email</th>
-                                    
                                 </tr>
                             </thead>
                             <?php 
                     while($res = mysqli_fetch_array($result)) { 
+                        if($res['uAccountNo']=="000"){
+                            continue;
+                        }
                     ?>
                                 <tbody>
                                     <tr>
@@ -87,11 +91,34 @@ $result = mysqli_query($conn, $result);
                                             <?php echo $res['uAccountNo']; ?>
                                         </td>
                                         <td>
-                                            <?php echo $res['gender'];?>
-                                        </td>
-                                        
-                                        <td>
                                             <?php echo $res['Balance'];?>
+                                        </td>
+                                        <td>
+                                            <?php echo $res['regDate'];?>
+                                        </td>
+                                        <td>
+                                            <?php if( $res['level']==1){
+                        echo "Premium";
+                    }
+                        else if( $res['level']==2){
+                        echo "Elite";
+                    }
+                        else{
+                            echo "General";
+                        }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php if( $res['gender']==1){
+                        echo "Male";
+                    }
+                        else if( $res['gender']==2){
+                        echo "Female";
+                    }
+                        else{
+                            echo "Other";
+                        }
+                                            ?>
                                         </td>
                                         <td>
                                             <?php echo $res['houseAndStreet'];?>
@@ -122,9 +149,7 @@ $result = mysqli_query($conn, $result);
                         </table>
                     </div>
                     <div class="col-md-1"></div>
-                </div>
-                <a href="admin_profile.php">Go Back</a>
-            </div>
+                </div> <a href="admin_profile.php">Go Back</a> </div>
             <?php include 'Footer.php'; ?>
     </body>
 
