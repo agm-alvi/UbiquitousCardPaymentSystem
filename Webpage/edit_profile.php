@@ -31,7 +31,12 @@ if(isset($_POST['submit']))
 {
   $password = $_POST['password'];
     $name = $_POST['name'];
-    $gender = $_POST['gender'];
+    if($_POST['gender']=='Male'){
+    $gender = 1;
+    }
+    else if($_POST['gender']=='Female'){
+    $gender = 2;
+    }
     $contact_no = $_POST['contact_no'];
     $email = $_POST['email'];
     $hNs_no = $_POST['houseAndStreet'];
