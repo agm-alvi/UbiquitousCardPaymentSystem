@@ -26,6 +26,7 @@
 }
 .starter .carousel-inner .item img{
      width:100%;
+    height: 630px;
 }
 .starter .carousel-inner .item h1 {
     border-bottom: 2px solid white;
