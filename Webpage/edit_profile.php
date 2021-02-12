@@ -97,8 +97,14 @@ if(isset($_POST['submit']))
                         <input type="checkbox" onclick="myFunction()"> &nbsp;Show Password
                     </div>
                     <div class="form-group">
-                        <label for="Gender">Gender:</label>
-                        <input type="text" class="form-control" id="name" placeholder="Update Gender (Male/Female)" name="gender" value="<?php echo $gender ?>" required>
+                        <label>Gender:</label>
+                        <input type="radio" name="gender" id="gender" value="Male">
+                        <label>Male</label>
+                        <input type="radio" name="gender" id="gender" value="Female">
+                        <label>Female</label>
+                        <input type="radio" name="gender" id="gender" value="Other">
+                        <label>Other</label>
+                        <label id="genderError"></label>
                     </div>
                     
                     <div class="form-group">
