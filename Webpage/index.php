@@ -147,10 +147,10 @@
                     <p>“On a Hurry?!!”</p>
                     <h5>Just Swipe</h5> </div>
                 <div class="item">
-                    <p>“Don't have change”</p>
-                    <h5>No Need.</h5> </div>
+                    <p>“Hard to Handle Multiple Transactions”</p>
+                    <h5>One Card, All Platforms Payment.</h5> </div>
                 <div class="item">
-                    <p>“No more waiting on a queue”</p>
+                    <p>“No more Waiting for Change”</p>
                     <h5>Just pay and go.</h5> </div>
             </div>
         </div>
