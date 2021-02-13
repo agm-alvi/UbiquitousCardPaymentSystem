@@ -13,7 +13,7 @@ if(empty($_SESSION["username"]))
 
 include 'connection.php';
 
-$result = "SELECT * FROM customers U ORDER BY U.Name ASC";
+$result = "SELECT * FROM customers U ORDER BY U.regDate ASC";
 $result = mysqli_query($conn, $result);
 
 ?>
@@ -61,7 +61,7 @@ $result = mysqli_query($conn, $result);
                                 <tr>
                                     <th>Sl</th>
                                     <th>Name</th>
-                                    <th>User Id</th>
+                                    <th>User Account No</th>
                                     <th>Balance</th>
                                     <th>Member Since</th>
                                     <th>Level</th>
