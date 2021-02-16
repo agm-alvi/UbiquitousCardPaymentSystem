@@ -22,7 +22,7 @@ $resultr = mysqli_query($conn, $resultr);
 <html lang="en">
 
 <head>
-    <title>User Profile || UCPS</title>
+    <title>Customer Profile || UCPS</title>
     <meta charset="utf-8">
     <link rel="icon" type="image/png" href="img/titleIcon.png">
     <meta charset="utf-8">
