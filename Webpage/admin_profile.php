@@ -43,6 +43,8 @@ if(empty($_SESSION["username"]))
                 <div class="row"> <a href="view_customers.php">View Customers</a>
                     <br><br> <a href="view_vendors.php">View Vendors</a>
                     <br><br> <a href="view_transactions.php">View Transactions</a>
+                    <br><br> <a href="view_reviews.php">View Reviews</a>
+                    
                     <br><br> <a href="regVendor.php">Add new Vendor/Agent</a>
                     <br><br> <a href="regCustomer.php">Add New Customer</a>
                     <br><br> <a href="insert_admin.php">Manual Payment</a>
