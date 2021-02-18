@@ -51,7 +51,7 @@ if(empty($_SESSION["username"]))
                     <br><br> <a href="recharge.php">Card Recharge</a>
                    
                    
-                    <br> </div>
+                    <br> <br><br></div>
             </div>
             <?php include 'Footer.php'; ?>
     </body>
