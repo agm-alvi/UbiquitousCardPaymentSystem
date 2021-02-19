@@ -26,32 +26,37 @@ if(empty($_SESSION["username"]))
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <link rel="stylesheet" href="css/profilePageStyle.css"> </head>
-        <style>
-            body{
-            }
-            a{
+    <style>
+        body {}
         
-            }
-        
-        </style>
+        a {}
+    </style>
 
     <body>
         <?php include 'Header.php'; ?>
             <div class="container">
-                <h2>Admin Management</h2><br>
-                
-                <div class="row"> <a href="view_customers.php">View Customers</a>
-                    <br><br> <a href="view_vendors.php">View Vendors</a>
-                    <br><br> <a href="view_transactions.php">View Transactions</a>
-                    <br><br> <a href="view_reviews.php">View Reviews</a>
-                    
-                    <br><br> <a href="regVendor.php">Add new Vendor/Agent</a>
-                    <br><br> <a href="regCustomer.php">Add New Customer</a>
-                    <br><br> <a href="insert_admin.php">Manual Payment</a>
-                    <br><br> <a href="recharge.php">Card Recharge</a>
-                   
-                   
-                    <br> <br><br></div>
+                <h2>Admin Management</h2>
+                <div class="row">
+                    <br>
+                    <br><a href="view_customers.php">View Customers</a>
+                    <br>
+                    <br> <a href="view_vendors.php">View Vendors</a>
+                    <br>
+                    <br> <a href="view_transactions.php">View Transactions</a>
+                    <br>
+                    <br> <a href="view_reviews.php">View Reviews</a>
+                    <br>
+                    <br> <a href="regVendor.php">Add new Vendor/Agent</a>
+                    <br>
+                    <br> <a href="regCustomer.php">Add New Customer</a>
+                    <br>
+                    <br> <a href="insert_admin.php">Manual Payment</a>
+                    <br>
+                    <br> <a href="recharge.php">Card Recharge</a>
+                    <br>
+                    <br>
+                    <br>
+                </div>
             </div>
             <?php include 'Footer.php'; ?>
     </body>
