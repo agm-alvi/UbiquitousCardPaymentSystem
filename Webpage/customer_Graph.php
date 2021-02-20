@@ -29,7 +29,7 @@ ORDER BY YEAR(Date) DESC, MONTH(Date) DESC";
          $chart_data="";
          while ($row = mysqli_fetch_array($result)) { 
  
- if($row['MONTH']== date("m") && $row['YEAR']==(date("Y")-1))
+ if($row['MONTH']<= date("m") && $row['YEAR']<(date("Y")))
  {
  	break;
  }
