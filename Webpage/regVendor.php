@@ -128,7 +128,8 @@ $thana = $_POST['thana'];
 
 
 if($uname != ""){
-	if (mysqli_query($conn,  "INSERT INTO vendors(username, fullname, password, gender, location, contact, email) VALUES ('$uname','$fname','$psw','$gender','$location','$contact','$email')")) {
+
+	if (mysqli_query($conn,  "INSERT INTO vendors (Field, Category, Thana, District, Division, username, password, contact_no, email) VALUES ('".$field."','".$category."','".$thana."','".$district."','".$division."','".$uname."','".$psw."','".$contact."','".$email."')")) {
 	echo "New record created successfully";
 	} else {
 	echo "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -167,7 +168,12 @@ mysqli_close($conn);
         if (username == "") {
             document.getElementById('usernameError').innerHTML = "Username cannot be empty";
             flag = false;
-        } else {
+        }else if(username.length!=8){
+            flag = false;
+                    document.getElementById('usernameError').innerHTML = "Username must be 8 digits";
+                    
+        } 
+        else {
             for (var i = 0; i < username.length; i++) {
                 if (username[i] == ' ') {
                     flag = false;
