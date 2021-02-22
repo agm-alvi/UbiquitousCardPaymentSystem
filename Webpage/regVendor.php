@@ -23,12 +23,16 @@ session_destroy();
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/regStyle.css">
     <style type="text/css">
-        body {
-            background-color: lightskyblue;
+        table {
+            margin-left: 10%;
         }
 
-        input {
-            left: 100px;
+        td {
+            padding: 5px;
+        }
+
+        h1 {
+            text-align: center;
         }
 
     </style>
@@ -39,77 +43,121 @@ session_destroy();
     <h1>Vendor Registration</h1>
     <div class="regform">
         <form name="LoginForms" class="" action="regVendor.php" method="POST" onsubmit="return validateForm();">
-            <nav>
-                <label>Field:</label>
-                <input type="radio" name="field" id="field" value="Recharge Center">
-                <label>Recharge Center</label>
-               
-                <input type="radio" name="field" id="field" value="Parking Lot">
-                <label>Parking Lot</label>
-                <input type="radio" name="field" id="field" value="Filling Station">
-                <label>Filling Station</label>
-                <input type="radio" name="field" id="field" value="Toll Booth">
-                <label>Toll Booth</label>
-                <input type="radio" name="field" id="field" value="Ferry Terminal">
-                <label>Ferry Terminal</label>
-                <label id="fieldError"></label>
-            </nav>
-            <nav>
-                <label>Category:</label>
-                <input type="number" name="category" value="" placeholder="Category">
-                <label id="categoryError"></label>
-            </nav>
-            <nav>
-                <label>Username:</label>
-                <input type="text" name="uname" value="" placeholder="Username">
-                <label id="usernameError"></label>
-            </nav>
-            <nav>
-                <label>Password:</label>
-                <input type="password" name="psw" value="" placeholder="Password">
-                <label id="passwordError"></label>
-            </nav>
-            <nav>
-                <label>Re-type password:</label>
-                <input type="password" name="repsw" value="" placeholder="Re-type Password">
-                <label id="repasswordError"></label>
-            </nav>
-            <nav>
-                <label>Contact no:</label>
-                <input type="text" name="contact" value="" placeholder="Contact No">
-                <label id="contactError"></label>
-            </nav>
-            <nav>
-                <label>Email:</label>
-                <input type="Email" name="email" value="" placeholder="Email@ucps.com"> </nav>
-            <nav>
-                <label>Division:</label>
-                <select name="division">
-                    <option value="">Choose Division</option>
-                    <option value="Barishal" name="division">Barishal</option>
-                    <option value="Chattogram" name="division">Chattogram</option>
-                    <option value="Dhaka" name="division">Dhaka</option>
-                    <option value="Khulna" name="division">Khulna</option>
-                    <option value="Mymensingh" name="division">Mymensingh</option>
-                    <option value="Rajshahi" name="division">Rajshahi</option>
-                    <option value="Rangpur" name="division">Rangpur</option>
-                    <option value="Sylhet" name="division">Sylhet</option>
-                    
-                </select>
-                <label id="divisionError"></label>
-            </nav>
-            <nav>
-                <label>District:</label>
-                <input type="text" name="district" value="" placeholder="District">
-                <label id="districtError"></label>
-            </nav>
-            <nav>
-                <label>Thana:</label>
-                <input type="text" name="thana" value="" placeholder="Thana">
-                <label id="thanaError"></label>
-            </nav>
-            <nav>
-                <input type="Submit" id="button" name="" value="Submit"> </nav>
+            <table>
+                <tr>
+                    <td>
+                        <label>Field:</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="field" id="field" value="Recharge Center">
+                        <label>Recharge Center</label>
+                        <input type="radio" name="field" id="field" value="Parking Lot">
+                        <label>Parking Lot</label>
+                        <input type="radio" name="field" id="field" value="Filling Station">
+                        <label>Filling Station</label>
+                        <input type="radio" name="field" id="field" value="Toll Booth">
+                        <label>Toll Booth</label>
+                        <input type="radio" name="field" id="field" value="Ferry Terminal">
+                        <label>Ferry Terminal</label>
+                        <label id="fieldError"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Category:</label>
+                    </td>
+                    <td>
+                        <input type="number" name="category" value="" placeholder="Category">
+                        <label id="categoryError"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Username:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="uname" value="" placeholder="Username">
+                        <label id="usernameError"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Password:</label>
+                    </td>
+                    <td>
+                        <input type="password" name="psw" value="" placeholder="Password">
+                        <label id="passwordError"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Re-type password:</label>
+                    </td>
+                    <td>
+                        <input type="password" name="repsw" value="" placeholder="Re-type Password">
+                        <label id="repasswordError"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Contact no:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="contact" value="" placeholder="Contact No">
+                        <label id="contactError"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Email:</label>
+                    </td>
+                    <td>
+                        <input type="Email" name="email" value="" placeholder="Email@ucps.com">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Division:</label>
+                    </td>
+                    <td>
+                        <select name="division">
+                            <option value="">Choose Division</option>
+                            <option value="Barishal" name="division">Barishal</option>
+                            <option value="Chattogram" name="division">Chattogram</option>
+                            <option value="Dhaka" name="division">Dhaka</option>
+                            <option value="Khulna" name="division">Khulna</option>
+                            <option value="Mymensingh" name="division">Mymensingh</option>
+                            <option value="Rajshahi" name="division">Rajshahi</option>
+                            <option value="Rangpur" name="division">Rangpur</option>
+                            <option value="Sylhet" name="division">Sylhet</option>
+                        </select>
+                        <label id="divisionError"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>District:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="district" value="" placeholder="District">
+                        <label id="districtError"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Thana:</label>
+                    </td>
+                    <td>
+                        <input type="text" name="thana" value="" placeholder="Thana">
+                        <label id="thanaError"></label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="Submit" id="button" name="" value="Submit">
+                </tr>
+                </td>
+            </table>
         </form>
     </div>
     <?php
@@ -140,7 +188,7 @@ if($uname != ""){
 
 mysqli_close($conn);
 }
-?>
+?> <a href="admin_profile.php">Go Back</a>
     <?php include 'Footer.php'; ?>
 </body>
 <script type="text/javascript">
@@ -155,7 +203,6 @@ mysqli_close($conn);
         var division = document.forms["LoginForms"]["division"].value;
         var district = document.forms["LoginForms"]["district"].value;
         var thana = document.forms["LoginForms"]["district"].value;
-        
         var flag = true;
         if (field == "") {
             document.getElementById('fieldError').innerHTML = "Field cannot be empty";
@@ -168,12 +215,10 @@ mysqli_close($conn);
         if (username == "") {
             document.getElementById('usernameError').innerHTML = "Username cannot be empty";
             flag = false;
-        }else if(username.length!=8){
+        } else if (username.length != 8) {
             flag = false;
-                    document.getElementById('usernameError').innerHTML = "Username must be 8 digits";
-                    
-        } 
-        else {
+            document.getElementById('usernameError').innerHTML = "Username must be 8 digits";
+        } else {
             for (var i = 0; i < username.length; i++) {
                 if (username[i] == ' ') {
                     flag = false;
@@ -195,7 +240,6 @@ mysqli_close($conn);
             document.getElementById('repasswordError').innerHTML = "Password doesn't Match";
             flag = false;
         }
-
         if (contact == "") {
             document.getElementById('contactError').innerHTML = "Contact cannot be empty";
             flag = false;
