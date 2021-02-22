@@ -1,5 +1,9 @@
-nav{
-    margin: 15px 35px; 
+table{
+    margin-left: 10%;
+}
+
+td{
+    padding: 5px; 
 }
 h1{
     text-align: center;
