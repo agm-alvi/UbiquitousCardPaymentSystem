@@ -47,7 +47,7 @@ $resultr = mysqli_query($conn, $resultr);
                         <center>
                             <h1>Welcome <?php echo $resu['name'];?>
                             </h1>
-                            <h4>Your Current Balance: <?php echo $resu['Balance'];?></h4> <a href="edit_profile.php">Edit Profile</a>
+                            <h4>Your Current Balance: <?php echo $resu['Balance']." ";?> BDT</h4> <a href="edit_profile.php">Edit Profile</a>
                         </center>
                     </div>
                 </div>
