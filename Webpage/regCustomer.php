@@ -39,94 +39,130 @@ session_destroy();
     <h1>Customer Registration</h1>
     <div class="regform">
         <form name="LoginForms" class="" action="regCustomer.php" method="POST" onsubmit="return validateForm();">
-            <nav>
-                <label>Name:</label>
-                <input type="text" name="name" value="" placeholder="Full Name">
-                <label id="nameError"></label>
-            </nav>
-            <nav>
-                <label>Username:</label>
-                <input type="text" name="uname" value="" placeholder="Username">
-                <label id="usernameError"></label>
-            </nav>
-            <nav>
-                <label>Account No:</label>
-                <input type="text" name="ac1" maxlength="2" size="2">
-                <input type="text" name="ac2" maxlength="2" size="2">
-                <input type="text" name="ac3" maxlength="2" size="2">
-                <input type="text" name="ac4" maxlength="2" size="2">
-                <label id="acnError"></label>
-            </nav>
-            <nav>
-                <label>Password:</label>
-                <input type="password" name="psw" value="" placeholder="Password">
-                <label id="passwordError"></label>
-            </nav>
-            <nav>
-                <label>Re-type password:</label>
-                <input type="password" name="repsw" value="" placeholder="Re-type Password">
-                <label id="repasswordError"></label>
-            </nav>
-            <nav>
-                <label>Level:</label>
-                <input type="radio" name="field" id="field" value="0">
-                <label>General Member</label>
-                <input type="radio" name="field" id="field" value="1">
-                <label>Premium Member</label>
-                <input type="radio" name="field" id="field" value="2">
-                <label>Elite Member</label>
-                <label id="levelError"></label>
-            </nav>
-            <nav>
-                <label>Contact no:</label>
-                <input type="text" name="contact" value="" placeholder="Contact No">
-                <label id="contactError"></label>
-            </nav>
-            <nav>
-                <label>Email:</label>
-                <input type="Email" name="email" value="" placeholder="Email@ucps.com"> </nav>
-            <nav>
-                <label>Gender:</label>
-                <input type="radio" name="field" id="field" value="1">
-                <label>Male</label>
-                <input type="radio" name="field" id="field" value="2">
-                <label>Female</label>
-                <input type="radio" name="field" id="field" value="0">
-                <label>Others</label>
-                <label id="genderError"></label>
-            </nav>
-            <nav>
-                <label>House no:</label>
-                <input type="text" name="house" value="" placeholder="House No">
-                <label id="HouseError"></label>
-            </nav>
-            <nav>
-                <label>Street No:</label>
-                <input type="text" name="street" value="" placeholder="Street No">
-                <label id="streetError"></label>
-            </nav>
-            <nav>
-                <label>Thana:</label>
-                <input type="text" name="thana" value="" placeholder="Thana">
-                <label id="thanaError"></label>
-            </nav>
-            <nav>
-                <label>District:</label>
-                <input type="text" name="district" value="" placeholder="District">
-                <label id="districtError"></label>
-            </nav>
-            <nav>
-                <label>Zip Code:</label>
-                <input type="number" name="category" value="" placeholder="Category">
-                <label id="zipError"></label>
-            </nav>
-            <nav>
-                <label>Country:</label>
-                <input type="text" name="country" value="" placeholder="Country">
-                <label id="countryError"></label>
-            </nav>
-            <nav>
-                <input type="Submit" id="button" name="" value="Submit"> </nav>
+            <table>
+                <tr>
+                    <td>
+                        <label>Name:</label></td>
+                    <td>
+                        <input type="text" name="name" value="" placeholder="Full Name">
+                        <label id="nameError"></label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Username:</label></td>
+                    <td>
+                        <input type="text" name="uname" value="" placeholder="Username">
+                        <label id="usernameError"></label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Account No:</label></td>
+                    <td>
+                        <input type="text" name="ac1" maxlength="2" size="2">
+                        <input type="text" name="ac2" maxlength="2" size="2">
+                        <input type="text" name="ac3" maxlength="2" size="2">
+                        <input type="text" name="ac4" maxlength="2" size="2">
+                        <label id="acnError"></label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Password:</label></td>
+                    <td>
+                        <input type="password" name="psw" value="" placeholder="Password">
+                        <label id="passwordError"></label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Re-type password:</label></td>
+                    <td>
+                        <input type="password" name="repsw" value="" placeholder="Re-type Password">
+                        <label id="repasswordError"></label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Level:</label></td>
+                    <td>
+                        <input type="radio" name="field" id="field" value="0">
+                        <label>General Member</label>
+                        <input type="radio" name="field" id="field" value="1">
+                        <label>Premium Member</label>
+                        <input type="radio" name="field" id="field" value="2">
+                        <label>Elite Member</label>
+                        <label id="levelError"></label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Contact no:</label></td>
+                    <td>
+                        <input type="text" name="contact" value="" placeholder="Contact No">
+                        <label id="contactError"></label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Email:</label></td>
+                    <td>
+                        <input type="Email" name="email" value="" placeholder="Email@ucps.com"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Gender:</label></td>
+                    <td>
+                        <input type="radio" name="field" id="field" value="1">
+                        <label>Male</label>
+                        <input type="radio" name="field" id="field" value="2">
+                        <label>Female</label>
+                        <input type="radio" name="field" id="field" value="0">
+                        <label>Others</label>
+                        <label id="genderError"></label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>House no:</label></td>
+                    <td>
+                        <input type="text" name="house" value="" placeholder="House No">
+                        <label id="HouseError"></label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Street No:</label></td>
+                    <td>
+                        <input type="text" name="street" value="" placeholder="Street No">
+                        <label id="streetError"></label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Thana:</label></td>
+                    <td>
+                        <input type="text" name="thana" value="" placeholder="Thana">
+                        <label id="thanaError"></label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>District:</label></td>
+                    <td>
+                        <input type="text" name="district" value="" placeholder="District">
+                        <label id="districtError"></label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Zip Code:</label></td>
+                    <td>
+                        <input type="number" name="category" value="" placeholder="Zip Code">
+                        <label id="zipError"></label></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>Country:</label></td>
+                    <td>
+                        <input type="text" name="country" value="" placeholder="Country">
+                        <label id="countryError"></label></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="Submit" id="button" name="" value="Submit">
+                    <td>
+                </tr>
+            </table>
         </form>
     </div>
     <?php
