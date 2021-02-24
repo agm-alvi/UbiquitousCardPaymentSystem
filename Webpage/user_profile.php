@@ -10,11 +10,11 @@ $username = $_SESSION["username"];
 $resultu = "SELECT * FROM customers U where U.username = '".$username."' ";
 $resultu = mysqli_query($conn, $resultu);
 
-$result = "SELECT * FROM transactions T, customers U where T.uAccountNo = U.uAccountNo && U.username = '".$username."'";
+$result = "SELECT * FROM transactions T, customers U where T.uAccountNo = U.uAccountNo && U.username = '".$username."' GROUP BY T.Date DESC";
 $result = mysqli_query($conn, $result);
 
 
-$resultr = "SELECT * FROM card_recharge C, customers U where C.uAccountNo = U.uAccountNo && U.username = '".$username."'";
+$resultr = "SELECT * FROM card_recharge C, customers U where C.uAccountNo = U.uAccountNo && U.username = '".$username."' GROUP BY C.Date DESC";
 $resultr = mysqli_query($conn, $resultr);
 
 ?>
@@ -33,6 +33,17 @@ $resultr = mysqli_query($conn, $resultr);
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="css/profilePageStyle.css">
+    <style>
+        table {
+            counter-reset: section;
+        }
+
+        .count:before {
+            counter-increment: section;
+            content: counter(section);
+        }
+
+    </style>
 </head>
 
 <body>
@@ -175,10 +186,7 @@ $resultr = mysqli_query($conn, $resultr);
                     ?>
                             <tbody>
                                 <tr>
-                                    <td>
-                                        <?php echo $res['sl']; ?>
-                                    </td>
-
+                                    <td class="count"></td>
                                     <td>
                                         <?php echo $res['uAccountNo']; ?>
                                     </td>
@@ -223,9 +231,7 @@ $resultr = mysqli_query($conn, $resultr);
                     ?>
                             <tbody>
                                 <tr>
-                                    <td>
-                                        <?php echo $res['sl']; ?>
-                                    </td>
+                                    <td class="count"></td>
                                     <td>
                                         <?php echo $res['uAccountNo']; ?>
                                     </td>
