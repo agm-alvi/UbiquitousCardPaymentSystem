@@ -47,7 +47,7 @@ if(empty($_SESSION["username"]))
 <body>
     <?php include 'Header.php'; ?>
     <div class="container">
- <h2>Admin Management</h2>
+ <h2>Admin Panel</h2>
    
         <div class="row">
             <div class="col-md-2"></div>
