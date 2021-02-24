@@ -60,7 +60,11 @@ $resultc = mysqli_query($conn, $resultc);
                         </tr>
                     </thead>
                     <?php 
-                    while($res = mysqli_fetch_array($resultw)) { 
+                    while($res = mysqli_fetch_array($resultw)) {
+                        if($res['MONTH']<= date("m") && $res['YEAR']<(date("Y")))
+ {
+ 	break;
+ }
                     ?>
                     <tbody>
                         <tr>
