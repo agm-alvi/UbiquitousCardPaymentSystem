@@ -33,10 +33,15 @@ $amount = 0;
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/insertPagesStyle.css"> </head>
+        <style>
+            select{
+                color: black;
+            }
+        </style></head>
 
     <body>
         <?php include 'Header.php'; ?>
-            <div class="container">
+            <div class="container inputform">
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3"></div>
                     <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
@@ -48,11 +53,11 @@ $amount = 0;
                             <input type="text" name="u_id" value="<?php
                                 echo $wid?>" disabled></h3> </div>
                             <div class="form-group">
-                                <h3>User ID:
+                                <h3><label for="uId">User ID:</label>
                             <input type="text" name="u_id" placeholder="Enter User ID" required></h3> </div>
                             <div class="form-group">
                                 <h3><label for="vType">Vehicle:</label>
-                            <select class="vType" id="vType" name="vType">
+                            <select class="vType" id="vType" name="vType" style="color: black;">  
                                 <option value="none" selected disabled <?php if (isset($vType) && $vType=="null") echo "selected";?>>--Select--</option>
                                 <option value="privateCar" <?php if (isset($vType) && $vType=="privateCar") echo "selected";?>>Private Car</option>
                                 <option value="micro" <?php if (isset($vType) && $vType=="micro") echo "selected";?>>Micro Bus</option>
@@ -83,13 +88,13 @@ $amount = 0;
                                 
                             ?>
                                 <div class="form-group">
-                                    <h3>Amount:
+                                    <h3><label for="amount">Amount:</label>
                             <input type="text" name="amount" placeholder="null" value="<?php
                                 echo $amount?>" disabled></h3> </div>
                                 <button type="submit" class="btn btn-dark" style="font-weight:900;" value="submit">Submit</button>
                         </form>
                     </div>
-                </div> <a href="login_vendor.php">Go Back</a> </div>
+                </div> <a class="btn2"  href="login_vendor.php">Go Back</a> </div>
             <?php
                                           echo $vType;
         ///*
@@ -109,6 +114,7 @@ include 'connection.php';
 	//	$amount = $_POST['amount'];
         $amountValue = (int)$amount;
         $trx_field = "Ferry Terminal ". $wid;//ferryterminal
+        
         
         $result = "SELECT U.u_sl, U.u_id, U.Name, U.Balance FROM customers U WHERE U.u_id = '$u_id'";
         $result = mysqli_query($conn, $result);
