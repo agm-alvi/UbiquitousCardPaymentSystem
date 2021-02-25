@@ -29,16 +29,21 @@ if(empty($_SESSION["username"]))
 </head>
 <style>
     body {
-        font-family: Roboto;
+        background-image: url("img/profileBG.jpg");
+        background-color: #115511;
+        background-size: 100%;
     }
 
-    table {
+    .table-bordered {
         border: 1px solid black;
+        background: white;
     }
-    thead{
+
+    thead {
         font-size: 1vw;
     }
-    h2{
+
+    h2 {
         text-align: center;
     }
 
@@ -47,8 +52,8 @@ if(empty($_SESSION["username"]))
 <body>
     <?php include 'Header.php'; ?>
     <div class="container">
- <h2>Admin Panel</h2>
-   
+        <h2>Admin Panel</h2>
+
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
