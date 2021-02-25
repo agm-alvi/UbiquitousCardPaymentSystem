@@ -30,6 +30,16 @@ $result = mysqli_query($conn, $result);
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"> //
     <link rel="stylesheet" href="listViewStyle.css">
     <style>
+        body {
+            background-image: url("img/profileBG.jpg");
+            background-color: #115511;
+            background-size: 100%;
+        }
+        .table-hover {
+        border: 1px solid black;
+        background: white;
+    }
+
         table {
             counter-reset: section;
         }
