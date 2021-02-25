@@ -12,7 +12,7 @@ if(empty($_SESSION["username"]))
 
 include 'connection.php';
 
-$result = "SELECT t.sl, t.uAccountNo, t.trx_field, t.Amount,t.Date, t.Time, t.trx_id, c.username FROM transactions t, customers c WHERE t.uAccountNo= c.uAccountNo";
+$result = "SELECT t.sl, t.uAccountNo, t.trx_field, t.Amount,t.Date, t.Time, t.trx_id, c.username FROM transactions t, customers c WHERE t.uAccountNo= c.uAccountNo ORDER BY t.Date DESC";
 $result = mysqli_query($conn, $result);
 
 ?>
@@ -29,6 +29,17 @@ $result = mysqli_query($conn, $result);
         <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
         <link rel="stylesheet" href="listViewStyle.css">
         <style>
+              body {
+            background-image: url("img/profileBG.jpg");
+            background-color: #115511;
+            background-size: 100%;
+            background-repeat: round;
+        }
+
+        .table-hover {
+            border: 1px solid black;
+            background: white;
+        }
             table {
                 counter-reset: section;
             }

@@ -9,7 +9,7 @@ require 'connection.php';
 $name = $_SESSION["username"];
 $wid = substr($name,-3);
 $vType = "null";
-
+$category = "1";
 if (!empty($_POST["vType"])){
     
     $vType = $_POST["vType"];
@@ -52,6 +52,10 @@ $amount = 0;
                                 <h3>Toll Booth ID:
                             <input type="text" name="u_id" value="<?php
                                 echo $wid?>" disabled></h3> </div>
+                            <div class="form-group">
+                                <h3><label for="uId">Category:</label>
+                            <input type="text" name="category" placeholder="" value="<?php
+                                echo $category?>" disabled></h3> </div>
                             <div class="form-group">
                                 <h3><label for="uId">User ID:</label>
                             <input type="text" name="u_id" placeholder="Enter User ID" required></h3> </div>
