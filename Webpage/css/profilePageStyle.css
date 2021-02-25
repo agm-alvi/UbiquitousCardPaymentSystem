@@ -3,7 +3,10 @@
     font-weight: 800;
 }
 
-
+body{
+    background-image: url("img/profileBG.jpg");
+    background-color: #115511;
+}
 /* Style the tab */
 
 .tab {
