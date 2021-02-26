@@ -23,13 +23,7 @@ session_destroy();
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/regStyle.css">
     <style type="text/css">
-        table {
-            margin-left: 10%;
-        }
-
-        td {
-            padding: 5px;
-        }
+      
 
         h1 {
             text-align: center;
@@ -42,7 +36,7 @@ session_destroy();
     <?php include 'Header.php';?>
     <h1>Vendor Registration</h1>
     <div class="regform">
-        <form name="LoginForms" class="" action="regVendor.php" method="POST" onsubmit="return validateForm();">
+        <form name="LoginForms" class="regforms" action="regVendor.php" method="POST" onsubmit="return validateForm();">
             <table>
                 <tr>
                     <td>
@@ -154,9 +148,9 @@ session_destroy();
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="Submit" id="button" name="" value="Submit">
+                        <input type="Submit" class="btn2" id="button" name="" value="Submit"></td>
                 </tr>
-                </td>
+                
             </table>
         </form>
     </div>
