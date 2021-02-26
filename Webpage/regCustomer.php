@@ -38,7 +38,7 @@ session_destroy();
     <?php include 'Header.php';?>
     <h1>Customer Registration</h1>
     <div class="regform">
-        <form name="LoginForms" class="" action="regCustomer.php" method="POST" onsubmit="return validateForm();">
+        <form name="LoginForms" class="regforms" action="regCustomer.php" method="POST" onsubmit="return validateForm();">
             <table>
                 <tr>
                     <td>
@@ -159,7 +159,7 @@ session_destroy();
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <input type="Submit" id="button" name="" value="Submit">
+                        <input type="Submit" class="btn2" id="button" name="" value="Submit">
                     <td>
                 </tr>
             </table>
