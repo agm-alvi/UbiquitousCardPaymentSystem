@@ -1,8 +1,21 @@
 <html>
 
-<head> </head>
+<head>
+    <meta charset="UTF-8">
+        <title>Manual Pay Admin || UCPS</title>
+        <link rel="icon" type="image/png" href="img/titleIcon.png">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="css/insertPagesStyle.css"></head>
 
-<body><h3>Account No:</h3>
+<body>
+    <!--<h3>Account No:</h3>
     <h4>"3F AD 4D 29", "Jahid Hasan Alvi" <br>
   "B0 77 BB 25", "Ekhtear Uddin Khan"<br>
         "A1 F4 78 D5", "Asha Das"<br>
@@ -15,10 +28,11 @@
     <h3>FS ID</h3>
     <h4>422<br>529</h4>
     <h3>FT ID</h3>
-    <h4>803<br>812</h4>
+    <h4>803<br>812</h4>-->
     
-    
-    <form action="insert_admin.php" method="post">
+    <?php include 'Header.php';?>
+    <h1 style="text-aling:center;">Admin Manual Transaction</h1>
+    <form action="insert_admin.php" method="post" class="inputform">
         <nav>
             <label>Platform:</label>
             <input type="radio" name="platform" id="platform" value="TB">
@@ -46,8 +60,10 @@
         <nav>
             <label>Date: </label>
             <input type="date" name="date" placeholder="date" required> </nav>
-        <input type="submit"> </form>
-</body>
+        <input type="submit" class="btn2"> </form>
+    <?php include 'Footer.php';?>
+    
+    </body>
 
 </html>
 <?php include 'connection.php';
