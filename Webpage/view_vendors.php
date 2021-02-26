@@ -32,7 +32,7 @@ $result = mysqli_query($conn, $result);
             background-image: url("img/profileBG.jpg");
             background-color: #115511;
             background-size: 100%;
-            //background-repeat: repeat;
+            background-repeat: round;
         }
 
         .table-hover {

@@ -29,8 +29,8 @@ if(empty($_SESSION["username"]))
     <link rel="stylesheet" href="listViewStyle.css">
     <style type="text/css">
         body {
-            background-image: url("img/profileBG.jpg");
-            background-color: #115511;
+            //background-image: url("img/profileBG.jpg");
+            //background-color: #115511;
             background-size: 100%;
             background-repeat: round;
         }
